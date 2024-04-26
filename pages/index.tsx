@@ -41,7 +41,7 @@ const Index = (): ReactElement => {
               <p>Get your skate buds ready!</p>
             </div>
             <div className="col-md-4 fdc fae">
-              <img src="/images/logo.png" className="width-100" />
+              <img alt="" src="/images/logo.png" className="width-100" />
             </div>
           </div>
         </div>
