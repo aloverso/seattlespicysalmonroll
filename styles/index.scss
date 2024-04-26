@@ -9,6 +9,38 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
 
+@font-face {
+  font-family: 'Lilita One';
+  src: url('../public/fonts/LilitaOne-Regular.ttf');
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../public/fonts/OpenSans-VariableFont_wdth,wght.ttf');
+  font-style: normal;
+  font-weight: auto;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../public/fonts/OpenSans-Italic-VariableFont_wdth,wght.ttf');
+  font-style: italic;
+  font-weight: auto;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zero Gothic';
+  src: url('../public/fonts/ZeroGothic.otf');
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
