@@ -50,7 +50,7 @@ const EventPage = (props: Props): ReactElement => {
         <p>
           <span className="bold text-uppercase">Rating:</span>
           <span className="mls">{category.emoji}</span>
-          <a href="/pages/faq">
+          <a href="/faq">
             <span className="text-uppercase text-underline mls">{props.event.category}</span>
           </a>
           :
