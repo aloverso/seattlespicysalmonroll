@@ -1,0 +1,195 @@
+@import "sizes";
+@import "spacing";
+@import "colors";
+@import "borders";
+@import "flex";
+@import "typography";
+@import "css/bootstrap.css";
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+button {
+  font: unset;
+  text-align: unset;
+  background-color: unset;
+  border: unset;
+  cursor: pointer;
+}
+
+.button {
+  font-family: "Open Sans", sans-serif;
+  border-radius: 3px;
+  padding: 5px 10px;
+  font-weight: bold;
+
+  &:hover {
+    background-color: $light-teal;
+  }
+}
+
+strong {
+  font-weight: 800;
+}
+
+body {
+  line-height: 1.5rem;
+  margin: 0;
+  font-size: 100%;
+  font-family: "Open Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-y: scroll;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.height-100 {
+  height: 100%;
+}
+
+.height-full {
+  min-height: 100vh;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+a.no-link-format {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+a {
+  color: $dark-blue;
+}
+
+.nav-link {
+  padding: 0.5rem;
+}
+
+ul {
+  margin-bottom: 0;
+  padding-inline-start: 0;
+}
+
+li.nav-item {
+  list-style-type: none;
+}
+
+.nav-item {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  margin: 0 5px;
+  font-weight: 400;
+
+  @media (max-width: $sm) {
+    width: 100%;
+  }
+
+  &.icon {
+    margin: 8px;
+    padding: 0;
+
+    @media (max-width: $sm) {
+      margin: 0 8px;
+      padding: 8px 0;
+    }
+  }
+
+  a {
+    color: $black;
+  }
+
+  &:hover {
+    background-color: $light-teal;
+  }
+}
+
+.nav-item.active {
+  background-color: $teal;
+  border-radius: 3px;
+}
+
+.desktop-only {
+  @media (max-width: $sm) {
+    display: none;
+  }
+}
+
+.mobile-only {
+  display: none;
+  @media (max-width: $sm) {
+    display: block;
+  }
+}
+
+.bg-theme {
+  background: url(../public/images/middle-cover.jpg) no-repeat;
+}
+
+.height-15 {
+  min-height: 15vh;
+}
+
+main {
+  min-height: 82vh;
+}
+
+.footer {
+  position: relative;
+  bottom: 0;
+  color: $med-grey;
+  padding: 20px;
+  margin-top: 30px;
+
+  a {
+    color: $med-grey;
+    text-decoration: underline;
+  }
+}
+
+.radius {
+  border-radius: 100px;
+
+  @media (max-width: $sm) {
+    border-radius: 3px;
+  }
+}
+
+// google map
+.mapouter {
+  width: 100%;
+}
+
+.gmap_canvas {
+  overflow: hidden;
+  background: none !important;
+  width: 100%;
+}
+
+@import "hero.scss";

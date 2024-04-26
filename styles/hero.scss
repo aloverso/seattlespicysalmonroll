@@ -1,0 +1,148 @@
+.bg-hero {
+  padding: 100px 0 220px 0;
+  background: url("../public/images/seattle_banner3.png") no-repeat;
+  background-size: cover;
+
+  @media (max-width: $xxs) {
+    padding: 100px 0 100px 0;
+  }
+}
+
+.hero-date {
+  padding-top: 50px;
+  margin-right: 200px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  color: $white;
+
+  @media (max-width: $sm) {
+    margin-right: 80px;
+    font-size: 40px;
+  }
+
+  @media (max-width: $xs) {
+    margin-right: 60px;
+    font-size: 30px;
+  }
+
+  @media (max-width: $xxs) {
+    margin-right: 10px;
+    font-size: 20px;
+  }
+}
+
+.hero-header {
+  padding: 20px 50px;
+  margin-right: 80px;
+  font-family: "Lilita One", sans-serif;
+  font-size: 120px;
+  background: -webkit-linear-gradient(#00d0ff, #25ffbf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @media (max-width: $sm) {
+    padding: 30px;
+    margin-right: 0;
+    font-size: 100px;
+  }
+
+  @media (max-width: $xs) {
+    padding: 25px;
+    margin-right: 0;
+    font-size: 70px;
+  }
+
+  @media (max-width: $xxs) {
+    padding: 16px;
+    margin-right: 0;
+    font-size: 40px;
+  }
+}
+
+.button-hero {
+  background-color: #25ffbf;
+  color: $black;
+  width: 300px;
+  text-align: center;
+  padding: 12px 16px;
+  margin-right: 220px;
+  font-size: 32px;
+
+  @media (max-width: $sm) {
+    margin-right: 150px;
+  }
+
+  @media (max-width: $xs) {
+    font-size: 26px;
+    width: 250px;
+    padding: 10px;
+    margin-right: 80px;
+  }
+
+  @media (max-width: $xxs) {
+    font-size: 20px;
+    width: 200px;
+    padding: 10px;
+    margin-right: 20px;
+  }
+}
+
+.hero-countdown {
+  text-transform: uppercase;
+  padding-top: 50px;
+}
+
+.hero-number {
+  font-weight: 700;
+  font-size: 80px;
+  margin-bottom: 30px;
+
+  @media (max-width: $sm) {
+    font-size: 70px;
+    margin-bottom: 25px;
+  }
+
+  @media (max-width: $xs) {
+    font-size: 60px;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: $xxs) {
+    font-size: 40px;
+    margin-bottom: 5px;
+  }
+}
+
+.hero-label {
+  font-weight: 500;
+  font-size: 32px;
+
+  @media (max-width: $sm) {
+    font-size: 28px;
+  }
+
+  @media (max-width: $xs) {
+    font-size: 24px;
+  }
+
+  @media (max-width: $xxs) {
+    font-size: 16px;
+  }
+}
+
+.hero-countdown-item {
+  margin: 0 80px;
+
+  @media (max-width: $sm) {
+    margin: 0 60px;
+  }
+
+  @media (max-width: $xs) {
+    margin: 0 40px;
+  }
+
+  @media (max-width: $xxs) {
+    margin: 0 24px;
+  }
+}

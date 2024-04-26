@@ -1,0 +1,38 @@
+$white: #f8f8ff;
+$light-teal: #99ffe0;
+$teal: #25ffbf;
+$dark-teal: #00e09d;
+$blue: #00d0ff;
+$dark-blue: #0085a3;
+$black: #151515;
+$med-grey: #999;
+
+.text-black {
+  color: $black;
+}
+
+.text-white {
+  color: $white;
+}
+
+.text-blue {
+  color: $blue;
+}
+
+.text-teal {
+  color: $teal;
+}
+
+.bg-blue {
+  background-color: $blue;
+}
+
+.bg-teal {
+  background-color: $teal;
+}
+
+.hover-light-teal {
+  &:hover {
+    background-color: $light-teal;
+  }
+}
