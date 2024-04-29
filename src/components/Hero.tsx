@@ -1,5 +1,7 @@
 import React, { ReactElement, useState } from "react";
 import dayjs from "dayjs";
+import { useRouter } from "next/router";
+import { REGISTER_LINK } from "../domain/consts";
 
 type TimeUntil = {
   day: number;
@@ -21,6 +23,11 @@ const calcTimeUntil = (): TimeUntil => {
 
 export const Hero = (): ReactElement => {
   const [timeUntil, setTimeUntil] = useState<TimeUntil>(calcTimeUntil());
+  const router = useRouter()
+
+  const registerButton = () => {
+    router.push(REGISTER_LINK)
+  }
 
   React.useEffect(() => {
     const timer = setInterval(() => {
@@ -43,7 +50,7 @@ export const Hero = (): ReactElement => {
           </h1>
         </div>
         <div className="fdr fje">
-          <button className="button button-hero">Register Here</button>
+          <button className="button button-hero" onClick={registerButton}>Register Here</button>
         </div>
         <div className="fdr text-white hero-countdown fjc">
           <div className="fdc fac hero-countdown-item">
