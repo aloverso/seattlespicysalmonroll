@@ -29,7 +29,7 @@ const Schedule = (props: Props): ReactElement => {
   }, {} as Record<string, Event[]>);
 
   return (
-    <>
+    <div className="bg-theme">
       <header>
         <NavBar active="schedule" />
       </header>
@@ -49,7 +49,7 @@ const Schedule = (props: Props): ReactElement => {
         ))}
       </main>
       <Footer />
-    </>
+    </div>
   );
 };
 

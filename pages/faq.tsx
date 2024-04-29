@@ -4,7 +4,7 @@ import { Footer } from "../src/components/Footer";
 
 const Faq = (): ReactElement => {
   return (
-    <>
+    <div className="bg-theme">
       <header>
         <NavBar active="faq" />
       </header>
@@ -13,7 +13,7 @@ const Faq = (): ReactElement => {
         <p>Coming soon...</p>
       </main>
       <Footer />
-    </>
+    </div>
   );
 };
 
