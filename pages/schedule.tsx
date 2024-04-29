@@ -35,6 +35,7 @@ const Schedule = (props: Props): ReactElement => {
       </header>
       <main className="container mtxl">
         <h1 className="text-xxl font-lilita mbd">Schedule</h1>
+        Coming soon...
         {Object.keys(dayGroups).map((date) => (
           <div key={date}>
             <h2 className="text-xl bold mtl">{dayjs(date).format("dddd MMM DD, YYYY")}</h2>
@@ -53,9 +54,10 @@ const Schedule = (props: Props): ReactElement => {
 };
 
 export const getStaticProps = async (): Promise<GetStaticPropsResult<Props>> => {
+  const events = await Promise.all(loadAllEventIds().map((it) => loadEventById(it.params.eventId)))
   return {
     props: {
-      events: await Promise.all(loadAllEventIds().map((it) => loadEventById(it.params.eventId))),
+      events: [],
     },
   };
 };

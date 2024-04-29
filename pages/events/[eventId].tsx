@@ -68,9 +68,9 @@ const EventPage = (props: Props): ReactElement => {
 };
 
 export const getStaticPaths = (): GetStaticPathsResult<EventIdParam> => {
-  const paths = loadAllEventIds();
+  // const paths = loadAllEventIds();
   return {
-    paths,
+    paths: [],
     fallback: false,
   };
 };
