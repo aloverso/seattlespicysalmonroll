@@ -1,10 +1,22 @@
 .bg-hero {
-  padding: 100px 0 220px 0;
+  padding: 50px 0 220px 0;
   background: url("../public/images/seattle_banner3.png") no-repeat;
   background-size: cover;
 
   @media (max-width: $xxs) {
-    padding: 100px 0 100px 0;
+    padding: 50px 0 100px 0;
+  }
+}
+
+.hero-presents {
+  padding-bottom: 50px;
+  letter-spacing: 0.3rem;
+
+  @media (max-width: $xxs) {
+    margin-left: 10px;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 0.15rem;
   }
 }
 

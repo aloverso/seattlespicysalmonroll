@@ -39,6 +39,9 @@ export const Hero = (): ReactElement => {
   return (
     <>
       <div className="bg-hero">
+        <div className="text-uppercase text-white fdr fjc hero-presents">
+          Seattle Distance Skating Club presents:
+        </div>
         <div className="fdr fje">
           <div className="hero-date">July 18–21, 2024</div>
         </div>
