@@ -1,6 +1,7 @@
 import React, { ReactElement, useEffect } from "react";
 import { NavBar } from "../src/components/NavBar";
 import { Footer } from "../src/components/Footer";
+import { Metadata } from "../src/components/Metadata";
 
 const Media = (): ReactElement => {
   useEffect(() => {
@@ -13,6 +14,10 @@ const Media = (): ReactElement => {
 
   return (
     <>
+      <Metadata
+        title="Media"
+        description="Social media feed for Seattle's debut annual skating event - the 2024 Seattle Spicy Salmon Roll"
+      />
       <header>
         <NavBar active="media" />
       </header>

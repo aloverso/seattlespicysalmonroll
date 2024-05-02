@@ -6,6 +6,7 @@ import { GetStaticPropsResult } from "next";
 import { loadAllEventIds, loadEventById } from "../src/domain/loaders";
 import dayjs from "dayjs";
 import { EventSummary } from "../src/components/EventSummary";
+import { Metadata } from "../src/components/Metadata";
 
 interface Props {
   events: Event[];
@@ -30,6 +31,10 @@ const Schedule = (props: Props): ReactElement => {
 
   return (
     <div className="bg-theme">
+      <Metadata
+        title="Schedule"
+        description="Get the latest information on routes and event schedule for Seattle's debut annual skating event - the 2024 Seattle Spicy Salmon Roll"
+      />
       <header>
         <NavBar active="schedule" />
       </header>
@@ -54,7 +59,7 @@ const Schedule = (props: Props): ReactElement => {
 };
 
 export const getStaticProps = async (): Promise<GetStaticPropsResult<Props>> => {
-  const events = await Promise.all(loadAllEventIds().map((it) => loadEventById(it.params.eventId)))
+  const events = await Promise.all(loadAllEventIds().map((it) => loadEventById(it.params.eventId)));
   return {
     props: {
       events: [],
