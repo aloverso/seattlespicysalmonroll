@@ -24,9 +24,14 @@ const Media = (): ReactElement => {
       <main className="container mtxl">
         <h1 className="text-xxl font-lilita mbd">Media</h1>
         <p>
-          Use hashtag <b>#spicysalmonroll</b> on Instagram to get featured!
+          Visit&nbsp;
+          <a href="https://www.instagram.com/seattle_weekly_distance_skate/">
+            <i className="fa-brands fa-instagram mrs"></i>
+            <b>seattle_weekly_distance_skate</b>
+          </a>
+          &nbsp;for the latest updates!
         </p>
-        <div data-behold-id="dksy2MBq9ZvMabZldD2Y"></div>
+        <div data-behold-id="2HIuhuvsIPYYQ9zKd9AI"></div>
       </main>
       <Footer />
     </>
