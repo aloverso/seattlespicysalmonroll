@@ -27,7 +27,7 @@ const Media = (): ReactElement => {
           Visit&nbsp;
           <a href="https://www.instagram.com/seattle_weekly_distance_skate/">
             <i className="fa-brands fa-instagram mrs"></i>
-            <b>seattle_weekly_distance_skate</b>
+            seattle_weekly_distance_skate
           </a>
           &nbsp;for the latest updates!
         </p>

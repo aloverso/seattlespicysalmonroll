@@ -119,6 +119,10 @@ a {
   color: $dark-blue;
 }
 
+p a {
+  font-weight: 700;
+}
+
 .nav-link {
   padding: 0.5rem;
 }
@@ -203,6 +207,10 @@ main {
     color: $med-grey;
     text-decoration: underline;
   }
+}
+
+.brad {
+  border-radius: 3px;
 }
 
 .radius {
