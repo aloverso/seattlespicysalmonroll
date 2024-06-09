@@ -17,9 +17,19 @@ const Schedule = (props: Props): ReactElement => {
     if (acc[cur.date]) {
       return {
         ...acc,
-        [cur.date]: [...acc[cur.date], cur].sort((a, b) =>
-          a.meetingTime > b.meetingTime ? 1 : -1
-        ),
+        [cur.date]: [...acc[cur.date], cur].sort((a, b) => {
+          const times = {
+            Morning: 1,
+            Afternoon: 2,
+            "Afternoon/Evening": 3,
+            Evening: 4,
+          };
+          return times[a.timeOfDay] > times[b.timeOfDay] ? 1 : -1;
+        }),
+        /* uncomment when meetingTime is determined */
+        // [cur.date]: [...acc[cur.date], cur].sort((a, b) =>
+        //   a.meetingTime > b.meetingTime ? 1 : -1
+        // ),
       };
     } else {
       return {
@@ -40,7 +50,6 @@ const Schedule = (props: Props): ReactElement => {
       </header>
       <main className="container mtxl">
         <h1 className="text-xxl font-lilita mbd">Schedule</h1>
-        Coming soon...
         {Object.keys(dayGroups).map((date) => (
           <div key={date}>
             <h2 className="text-xl bold mtl">{dayjs(date).format("dddd MMM DD, YYYY")}</h2>
@@ -62,7 +71,7 @@ export const getStaticProps = async (): Promise<GetStaticPropsResult<Props>> => 
   const events = await Promise.all(loadAllEventIds().map((it) => loadEventById(it.params.eventId)));
   return {
     props: {
-      events: [],
+      events,
     },
   };
 };

@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import { NavBar } from "../../src/components/NavBar";
 import { Footer } from "../../src/components/Footer";
-import { CategoryMap, Event } from "../../src/domain/types";
+import { Event, SPICE } from "../../src/domain/types";
 import { GetStaticPathsResult, GetStaticPropsResult } from "next";
 import { EventIdParam, loadAllEventIds, loadEventById } from "../../src/domain/loaders";
 import dayjs from "dayjs";
@@ -11,9 +11,9 @@ interface Props {
 }
 
 const EventPage = (props: Props): ReactElement => {
-  const date = dayjs(`${props.event.date} ${props.event.meetingTime}`);
-  const startTime = dayjs(`${props.event.date} ${props.event.startTime}`);
-  const category = CategoryMap[props.event.category];
+  const date = dayjs(props.event.date);
+
+  const spice = Array(props.event.spice).fill(SPICE).join("");
 
   return (
     <>
@@ -24,42 +24,40 @@ const EventPage = (props: Props): ReactElement => {
         <a href="/schedule">
           <button className="button bg-teal mbm">← Back to Schedule</button>
         </a>
-        <div className="text-l bold mbd">{date.format("MMM DD, YYYY h:mm A")}</div>
+        <div className="text-l bold mbd">{date.format("MMM DD, YYYY")}</div>
         <h1 className="text-xxl font-lilita mbs bg-blue pas">
-          {category.emoji} {props.event.name}
+          {spice} {props.event.name}
         </h1>
-        <div className="text-m mbm">
+        <div className="text-m mbl">
           <em>{props.event.description}</em>
         </div>
-        <p>
-          <span className="bold text-uppercase">Distance:</span>
-          <span className="mls">{props.event.distance}</span>
-        </p>
-        <p>
-          <span className="bold text-uppercase">Meeting Time:</span>
-          <span className="mls">{date.format("h:mm A")}</span>
-        </p>
-        <p>
-          <span className="bold text-uppercase">Start Time:</span>
-          <span className="mls">{startTime.format("h:mm A")}</span>
-        </p>
-        <p>
-          <span className="bold text-uppercase">Meeting Location:</span>
-          <span className="mls">{props.event.meetingLocation}</span>
-        </p>
-        <p>
-          <span className="bold text-uppercase">Rating:</span>
-          <span className="mls">{category.emoji}</span>
-          <a href="/faq">
-            <span className="text-uppercase text-underline mls">{props.event.category}</span>
-          </a>
-          :
-          <span className="mls">
-            {category.difficulty}; {category.description}
-          </span>
-        </p>
 
-        <h2 className="text-l bold mtd mbs">Description</h2>
+        {props.event.type === "Skate" && (
+          <>
+            <p>
+              <span className="bold text-uppercase">Distance:</span>
+              <span className="mls">{props.event.distance}</span>
+            </p>
+            <p>
+              <span className="bold text-uppercase">Meeting Time:</span>
+              <span className="mls">{props.event.meetingTime}</span>
+            </p>
+            {/*<p>*/}
+            {/*  <span className="bold text-uppercase">Start Time:</span>*/}
+            {/*  <span className="mls">{startTime.format("h:mm A")}</span>*/}
+            {/*</p>*/}
+            <p>
+              <span className="bold text-uppercase">Meeting Location:</span>
+              <span className="mls">{props.event.meetingLocation}</span>
+            </p>
+            <p>
+              <span className="bold text-uppercase">Spice Level:</span>
+              <span className="mls">{spice}</span>
+            </p>
+          </>
+        )}
+
+        <h2 className="text-l bold mtl mbs">Description</h2>
         <div dangerouslySetInnerHTML={{ __html: props.event.body }} />
       </main>
       <Footer />
@@ -68,9 +66,9 @@ const EventPage = (props: Props): ReactElement => {
 };
 
 export const getStaticPaths = (): GetStaticPathsResult<EventIdParam> => {
-  // const paths = loadAllEventIds();
+  const paths = loadAllEventIds();
   return {
-    paths: [],
+    paths,
     fallback: false,
   };
 };

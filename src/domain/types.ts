@@ -3,16 +3,24 @@ import { Category } from "@material-ui/icons";
 export type Event = {
   id: string;
   date: string;
+  type: "Skate" | "Event";
   name: string;
   description: string;
   meetingTime: string;
   startTime: string;
+  timeOfDay: TimeOfDay;
   distance: string;
   meetingLocation: string;
   meetingLocationLink: string;
-  category: Category;
+  spice: number;
   body: string;
 };
+
+export type TimeOfDay = "Morning" | "Afternoon" | "Afternoon/Evening" | "Evening";
+
+export const SPICE = "🔥";
+
+/* disregard below for now, not using animal scale */
 
 export type Category = "hedgehog" | "bunny" | "elephant" | "mammoth" | "panther";
 
