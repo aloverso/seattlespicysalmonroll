@@ -110,10 +110,8 @@ const EventPage = (props: Props): ReactElement => {
             {prevEvent && (
               <Link href={`/events/${prevEvent.id}`}>
                 <button className="bg-teal pad mvd btn-block hover-light-teal">
-                  <h3 className="text-d fdr fac">
-                    <span className="text-d">← Prev Skate: </span>
-                    <span className="text-underline mls bold">{prevEvent.name}</span>
-                  </h3>
+                  <span className="text-d">← Prev Skate: </span>
+                  <span className="text-underline bold">{prevEvent.name}</span>
                 </button>
               </Link>
             )}
@@ -125,10 +123,8 @@ const EventPage = (props: Props): ReactElement => {
             {nextEvent && (
               <Link href={`/events/${nextEvent.id}`}>
                 <button className="bg-teal pad mvd btn-block hover-light-teal">
-                  <h3 className="text-d fdr fac">
-                    <span className="text-d">→ Next Skate: </span>
-                    <span className="text-underline mls bold">{nextEvent.name}</span>
-                  </h3>
+                  <span className="text-d">→ Next Skate: </span>
+                  <span className="text-underline bold">{nextEvent.name}</span>
                 </button>
               </Link>
             )}
