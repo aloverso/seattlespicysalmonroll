@@ -12,15 +12,15 @@ interface Props {
 
 const EventPage = (props: Props): ReactElement => {
   const date = dayjs(props.event.date);
-
   const spice = Array(props.event.spice).fill(SPICE).join("");
+  const startTime = dayjs(`${props.event.date} ${props.event.startTime}`);
 
   return (
-    <>
+    <div className="bg-theme">
       <header>
         <NavBar active="schedule" />
       </header>
-      <main className="container mtxl">
+      <main className="container mtxl bg-white">
         <a href="/schedule">
           <button className="button bg-teal mbm">← Back to Schedule</button>
         </a>
@@ -28,40 +28,70 @@ const EventPage = (props: Props): ReactElement => {
         <h1 className="text-xxl font-lilita mbs bg-blue pas">
           {spice} {props.event.name}
         </h1>
-        <div className="text-m mbl">
-          <em>{props.event.description}</em>
+        <div className="row">
+          <div className="col-md-5">
+            <div className="text-m mbl">
+              <em>{props.event.description}</em>
+            </div>
+
+            {props.event.type === "Skate" && (
+              <>
+                <p>
+                  <span className="bold text-uppercase">Distance:</span>
+                  <span className="mls">{props.event.distance}</span>
+                </p>
+                <p>
+                  <span className="bold text-uppercase">Meeting Time:</span>
+                  <span className="mls">{props.event.meetingTime}</span>
+                </p>
+                <p>
+                  <span className="bold text-uppercase">Start Time:</span>
+                  <span className="mls">{startTime.format("h:mm A")}</span>
+                </p>
+                <p>
+                  <span className="bold text-uppercase">Meeting Location:</span>
+                  <br />
+                  {props.event.meetingLocationAddress.split("\n").map((addressLine) => (
+                    <>
+                      <span className="mld">{addressLine}</span>
+                      <br />
+                    </>
+                  ))}
+                </p>
+                <p>
+                  <span className="bold text-uppercase">Spice Level:</span>
+                  <span className="mls">{spice}</span>
+                </p>
+              </>
+            )}
+          </div>
+
+          <div className="col-md-7">
+            <div className="mapouter">
+              <div className="gmap_canvas">
+                <iframe
+                  width={600}
+                  height={350}
+                  id="gmap_canvas"
+                  src={props.event.meetingLocationLink}
+                  frameBorder="0"
+                  scrolling="no"
+                  title={props.event.meetingLocationTitle}
+                />
+              </div>
+            </div>
+          </div>
         </div>
 
-        {props.event.type === "Skate" && (
-          <>
-            <p>
-              <span className="bold text-uppercase">Distance:</span>
-              <span className="mls">{props.event.distance}</span>
-            </p>
-            <p>
-              <span className="bold text-uppercase">Meeting Time:</span>
-              <span className="mls">{props.event.meetingTime}</span>
-            </p>
-            {/*<p>*/}
-            {/*  <span className="bold text-uppercase">Start Time:</span>*/}
-            {/*  <span className="mls">{startTime.format("h:mm A")}</span>*/}
-            {/*</p>*/}
-            <p>
-              <span className="bold text-uppercase">Meeting Location:</span>
-              <span className="mls">{props.event.meetingLocation}</span>
-            </p>
-            <p>
-              <span className="bold text-uppercase">Spice Level:</span>
-              <span className="mls">{spice}</span>
-            </p>
-          </>
-        )}
-
         <h2 className="text-l bold mtl mbs">Description</h2>
-        <div dangerouslySetInnerHTML={{ __html: props.event.body }} />
+        <div className="row">
+          <div className="col-md-8">
+            <div dangerouslySetInnerHTML={{ __html: props.event.body }} />
+          </div>
+        </div>
       </main>
       <Footer />
-    </>
+    </div>
   );
 };
 

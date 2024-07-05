@@ -10,7 +10,8 @@ export type Event = {
   startTime: string;
   timeOfDay: TimeOfDay;
   distance: string;
-  meetingLocation: string;
+  meetingLocationTitle: string;
+  meetingLocationAddress: string;
   meetingLocationLink: string;
   spice: number;
   body: string;

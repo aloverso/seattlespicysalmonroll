@@ -26,10 +26,9 @@ const Schedule = (props: Props): ReactElement => {
           };
           return times[a.timeOfDay] > times[b.timeOfDay] ? 1 : -1;
         }),
-        /* uncomment when meetingTime is determined */
-        // [cur.date]: [...acc[cur.date], cur].sort((a, b) =>
-        //   a.meetingTime > b.meetingTime ? 1 : -1
-        // ),
+        [cur.date]: [...acc[cur.date], cur].sort((a, b) =>
+          a.meetingTime > b.meetingTime ? 1 : -1
+        ),
       };
     } else {
       return {
@@ -48,7 +47,7 @@ const Schedule = (props: Props): ReactElement => {
       <header>
         <NavBar active="schedule" />
       </header>
-      <main className="container mtxl">
+      <main className="container mtxl bg-white">
         <h1 className="text-xxl font-lilita mbd">Schedule</h1>
         {Object.keys(dayGroups).map((date) => (
           <div key={date}>

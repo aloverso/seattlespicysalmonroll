@@ -23,7 +23,7 @@ export const NavBar = (props: Props): ReactElement => {
   };
 
   const navUl = (className: string) => (
-    <ul className={className}>
+    <ul className={`nav-ul ${className}`}>
       <li className={`nav-item fdr fjc ${props.active === "home" ? "active" : ""}`}>
         <a className="nav-link" href="/">
           Home
