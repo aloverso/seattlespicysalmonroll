@@ -17,15 +17,6 @@ const Schedule = (props: Props): ReactElement => {
     if (acc[cur.date]) {
       return {
         ...acc,
-        [cur.date]: [...acc[cur.date], cur].sort((a, b) => {
-          const times = {
-            Morning: 1,
-            Afternoon: 2,
-            "Afternoon/Evening": 3,
-            Evening: 4,
-          };
-          return times[a.timeOfDay] > times[b.timeOfDay] ? 1 : -1;
-        }),
         [cur.date]: [...acc[cur.date], cur].sort((a, b) =>
           a.meetingTime > b.meetingTime ? 1 : -1
         ),

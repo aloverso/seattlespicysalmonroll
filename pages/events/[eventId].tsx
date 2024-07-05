@@ -8,6 +8,7 @@ import dayjs from "dayjs";
 
 interface Props {
   event: Event;
+  allEventsOrdered: Event[]
 }
 
 const EventPage = (props: Props): ReactElement => {
@@ -51,11 +52,11 @@ const EventPage = (props: Props): ReactElement => {
                 <p>
                   <span className="bold text-uppercase">Meeting Location:</span>
                   <br />
-                  {props.event.meetingLocationAddress.split("\n").map((addressLine) => (
-                    <>
+                  {props.event.meetingLocationAddress.split("\n").map((addressLine, i) => (
+                    <div key={i}>
                       <span className="mld">{addressLine}</span>
                       <br />
-                    </>
+                    </div>
                   ))}
                 </p>
                 <p>
@@ -66,21 +67,23 @@ const EventPage = (props: Props): ReactElement => {
             )}
           </div>
 
-          <div className="col-md-7">
-            <div className="mapouter">
-              <div className="gmap_canvas">
-                <iframe
-                  width={600}
-                  height={350}
-                  id="gmap_canvas"
-                  src={props.event.meetingLocationLink}
-                  frameBorder="0"
-                  scrolling="no"
-                  title={props.event.meetingLocationTitle}
-                />
+          {props.event.meetingLocationLink && (
+            <div className="col-md-7">
+              <div className="mapouter">
+                <div className="gmap_canvas">
+                  <iframe
+                    width={600}
+                    height={350}
+                    id="gmap_canvas"
+                    src={props.event.meetingLocationLink}
+                    frameBorder="0"
+                    scrolling="no"
+                    title={props.event.meetingLocationTitle}
+                  />
+                </div>
               </div>
             </div>
-          </div>
+          )}
         </div>
 
         <h2 className="text-l bold mtl mbs">Description</h2>
@@ -108,8 +111,18 @@ export const getStaticProps = async ({
 }: {
   params: EventIdParam;
 }): Promise<GetStaticPropsResult<Props>> => {
+
+  const events = await Promise.all(loadAllEventIds().map((it) => loadEventById(it.params.eventId)));
+
+  events.sort((a, b) => {
+    const dateTimeA = dayjs(`${a.date} ${a.meetingTime}`);
+    const dateTimeB = dayjs(`${b.date} ${b.meetingTime}`);
+    return dateTimeA.isBefore(dateTimeB) ? -1 : 1
+  })
+
   return {
     props: {
+      allEventsOrdered: events,
       event: await loadEventById(params.eventId),
     },
   };
