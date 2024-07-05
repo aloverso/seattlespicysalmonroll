@@ -1,20 +1,32 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, useMemo } from "react";
 import { NavBar } from "../../src/components/NavBar";
 import { Footer } from "../../src/components/Footer";
 import { Event, SPICE } from "../../src/domain/types";
 import { GetStaticPathsResult, GetStaticPropsResult } from "next";
 import { EventIdParam, loadAllEventIds, loadEventById } from "../../src/domain/loaders";
 import dayjs from "dayjs";
+import Link from "next/link";
 
 interface Props {
   event: Event;
-  allEventsOrdered: Event[]
+  allEventsOrdered: Event[];
 }
 
 const EventPage = (props: Props): ReactElement => {
   const date = dayjs(props.event.date);
   const spice = Array(props.event.spice).fill(SPICE).join("");
   const startTime = dayjs(`${props.event.date} ${props.event.startTime}`);
+
+  const [nextEvent, prevEvent] = useMemo(() => {
+    const len = props.allEventsOrdered.length;
+    const index = props.allEventsOrdered.findIndex((it) => it.id === props.event.id);
+    if (index === undefined) return [undefined, undefined];
+
+    const nextEvent = index + 1 < len ? props.allEventsOrdered[index + 1] : undefined;
+    const prevEvent = index - 1 >= 0 ? props.allEventsOrdered[index - 1] : undefined;
+
+    return [nextEvent, prevEvent];
+  }, [props.event.id]);
 
   return (
     <div className="bg-theme">
@@ -92,6 +104,36 @@ const EventPage = (props: Props): ReactElement => {
             <div dangerouslySetInnerHTML={{ __html: props.event.body }} />
           </div>
         </div>
+
+        <div className="row">
+          <div className="col-5">
+            {prevEvent && (
+              <Link href={`/events/${prevEvent.id}`}>
+                <button className="bg-teal pad mvd btn-block hover-light-teal">
+                  <h3 className="text-d fdr fac">
+                    <span className="text-d">← Prev Skate: </span>
+                    <span className="text-underline mls bold">{prevEvent.name}</span>
+                  </h3>
+                </button>
+              </Link>
+            )}
+          </div>
+
+          <div className="col-2"></div>
+
+          <div className="col-5">
+            {nextEvent && (
+              <Link href={`/events/${nextEvent.id}`}>
+                <button className="bg-teal pad mvd btn-block hover-light-teal">
+                  <h3 className="text-d fdr fac">
+                    <span className="text-d">→ Next Skate: </span>
+                    <span className="text-underline mls bold">{nextEvent.name}</span>
+                  </h3>
+                </button>
+              </Link>
+            )}
+          </div>
+        </div>
       </main>
       <Footer />
     </div>
@@ -111,14 +153,13 @@ export const getStaticProps = async ({
 }: {
   params: EventIdParam;
 }): Promise<GetStaticPropsResult<Props>> => {
-
   const events = await Promise.all(loadAllEventIds().map((it) => loadEventById(it.params.eventId)));
 
   events.sort((a, b) => {
     const dateTimeA = dayjs(`${a.date} ${a.meetingTime}`);
     const dateTimeB = dayjs(`${b.date} ${b.meetingTime}`);
-    return dateTimeA.isBefore(dateTimeB) ? -1 : 1
-  })
+    return dateTimeA.isBefore(dateTimeB) ? -1 : 1;
+  });
 
   return {
     props: {
