@@ -119,6 +119,11 @@ a {
   color: $dark-blue;
 }
 
+a.underline {
+  text-decoration: underline;
+  color: $extra-dark-blue;
+}
+
 p a {
   font-weight: 700;
 }

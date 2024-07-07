@@ -7,6 +7,7 @@ import { EventIdParam, loadAllEventIds, loadEventById } from "../../src/domain/l
 import dayjs from "dayjs";
 import Link from "next/link";
 import { BeginnerRoute } from "../../src/components/BeginnerRoute";
+import { AlertBar } from "../../src/components/AlertBar";
 
 interface Props {
   event: Event;
@@ -33,6 +34,7 @@ const EventPage = (props: Props): ReactElement => {
     <div className="bg-theme">
       <header>
         <NavBar active="schedule" />
+        <AlertBar />
       </header>
       <main className="container mtxl bg-white">
         <a href="/schedule">

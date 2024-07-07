@@ -7,6 +7,7 @@ import { loadAllEventIds, loadEventById } from "../src/domain/loaders";
 import dayjs from "dayjs";
 import { EventSummary } from "../src/components/EventSummary";
 import { Metadata } from "../src/components/Metadata";
+import { AlertBar } from "../src/components/AlertBar";
 
 interface Props {
   events: Event[];
@@ -37,6 +38,7 @@ const Schedule = (props: Props): ReactElement => {
       />
       <header>
         <NavBar active="schedule" />
+        <AlertBar />
       </header>
       <main className="container mtxl bg-white">
         <h1 className="text-xxl font-lilita mbd">Schedule</h1>
