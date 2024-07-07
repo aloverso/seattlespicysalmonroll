@@ -13,8 +13,10 @@ export const EventSummary = (props: Props): ReactElement => {
         <div className="bold text-l mtd">{props.event.meetingTime}</div>
         <button className="bg-teal pad mvd btn-block hover-light-teal">
           <h3 className="text-l fdr fac">
-            <span className="text-xl">{Array(props.event.spice).fill(SPICE).join("")}</span>
-            <span className="font-lilita text-underline mld">{props.event.name}</span>
+            <div>
+              <span className="text-xl nowrap">{Array(props.event.spice).fill(SPICE).join("")}</span>
+              <span className="font-lilita text-underline mls">{props.event.name}</span>
+            </div>
           </h3>
         </button>
       </div>
