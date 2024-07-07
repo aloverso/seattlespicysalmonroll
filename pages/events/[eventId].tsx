@@ -6,6 +6,7 @@ import { GetStaticPathsResult, GetStaticPropsResult } from "next";
 import { EventIdParam, loadAllEventIds, loadEventById } from "../../src/domain/loaders";
 import dayjs from "dayjs";
 import Link from "next/link";
+import { BeginnerRoute } from "../../src/components/BeginnerRoute";
 
 interface Props {
   event: Event;
@@ -41,11 +42,18 @@ const EventPage = (props: Props): ReactElement => {
         <h1 className="text-xxl font-lilita mbs bg-blue pas">
           {spice} {props.event.name}
         </h1>
+
+
         <div className="row">
           <div className="col-md-5">
-            <div className="text-m mbl">
+            <div className="mbm">
+              {props.event.spice === 1 && <BeginnerRoute />}
+            </div>
+
+            <div className="text-m mbm">
               <em>{props.event.description}</em>
             </div>
+
 
             {props.event.type === "Skate" && (
               <>
@@ -81,7 +89,7 @@ const EventPage = (props: Props): ReactElement => {
 
           {props.event.meetingLocationLink && (
             <div className="col-md-7">
-              <div className="mapouter">
+            <div className="mapouter">
                 <div className="gmap_canvas">
                   <iframe
                     width={600}
@@ -97,6 +105,7 @@ const EventPage = (props: Props): ReactElement => {
             </div>
           )}
         </div>
+
 
         <h2 className="text-l bold mtl mbs">Description</h2>
         <div className="row">

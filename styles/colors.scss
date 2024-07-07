@@ -4,6 +4,7 @@ $teal: #25ffbf;
 $dark-teal: #00e09d;
 $blue: #00d0ff;
 $dark-blue: #0085a3;
+$alert: #FFA925;
 $black: #151515;
 $med-grey: #999;
 
@@ -31,8 +32,20 @@ $med-grey: #999;
   background-color: $black;
 }
 
+.bg-light-teal {
+  background-color: $light-teal;
+}
+
 .bg-teal {
   background-color: $teal;
+}
+
+.bg-alert {
+  background-color: $alert;
+}
+
+.border-blue {
+  border-color: $blue !important;
 }
 
 .hover-light-teal {
