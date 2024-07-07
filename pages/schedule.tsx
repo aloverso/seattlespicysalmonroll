@@ -18,9 +18,11 @@ const Schedule = (props: Props): ReactElement => {
     if (acc[cur.date]) {
       return {
         ...acc,
-        [cur.date]: [...acc[cur.date], cur].sort((a, b) =>
-          a.meetingTime > b.meetingTime ? 1 : -1
-        ),
+        [cur.date]: [...acc[cur.date], cur].sort((a, b) => {
+          const timeA = dayjs(`${a.date} ${a.meetingTime}`);
+          const timeB = dayjs(`${b.date} ${b.meetingTime}`);
+          return timeA > timeB ? 1 : -1
+        }),
       };
     } else {
       return {
