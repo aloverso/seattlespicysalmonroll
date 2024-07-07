@@ -46,12 +46,13 @@ export const NavBar = (props: Props): ReactElement => {
       </li>
       <li className="fdr fjc nav-item radius icon">
         <a href="https://www.instagram.com/seattle_weekly_distance_skate/">
-          <i className="fa-brands fa-instagram fa-xl"></i>
+          <img src="/icons/instagram.svg" alt="INSTAGRAM" style={{ width: "24px", height: "24px" }}/>
+
         </a>
       </li>
       <li className="fdr fjc nav-item radius icon">
         <a href="https://www.facebook.com/groups/135066862931505/">
-          <i className="fa-brands fa-facebook fa-xl"></i>
+          <img src="/icons/facebook.svg" alt="FACEBOOK" style={{ width: "24px", height: "24px" }} />
         </a>
       </li>
     </ul>
@@ -72,7 +73,7 @@ export const NavBar = (props: Props): ReactElement => {
             onClick={handleClick}
             aria-label="Open menu"
           >
-            <i className="fa-solid fa-bars fa-xl"></i>
+            <img src="/icons/bars.svg" alt="MENU" style={{ width: "24px", height: "24px" }} />
           </button>
         </div>
 

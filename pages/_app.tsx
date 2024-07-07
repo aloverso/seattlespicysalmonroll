@@ -19,8 +19,7 @@ const App = ({ Component, pageProps }: AppProps): ReactElement => {
         `,
           }}
         />
-        <script src="https://kit.fontawesome.com/636812bbf4.js" crossOrigin="anonymous"></script>
-        <title>Seattle Spicy Salmon Roll</title>
+        <title>Seattle Spicy Salmon Roll 2024</title>
       </Head>
       <Component {...pageProps} />
     </>
