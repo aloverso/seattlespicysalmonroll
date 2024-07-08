@@ -11,27 +11,10 @@ import { AlertBar } from "../src/components/AlertBar";
 
 interface Props {
   events: Event[];
+  dayGroups: Record<string, Event[]>
 }
 
 const Schedule = (props: Props): ReactElement => {
-  const dayGroups: Record<string, Event[]> = props.events.reduce((acc, cur) => {
-    if (acc[cur.date]) {
-      return {
-        ...acc,
-        [cur.date]: [...acc[cur.date], cur].sort((a, b) => {
-          const timeA = dayjs(`${a.date} ${a.meetingTime}`);
-          const timeB = dayjs(`${b.date} ${b.meetingTime}`);
-          return timeA > timeB ? 1 : -1
-        }),
-      };
-    } else {
-      return {
-        ...acc,
-        [cur.date]: [cur],
-      };
-    }
-  }, {} as Record<string, Event[]>);
-
   return (
     <div className="bg-theme">
       <Metadata
@@ -44,12 +27,12 @@ const Schedule = (props: Props): ReactElement => {
       </header>
       <main className="container mtxl bg-white">
         <h1 className="text-xxl font-lilita mbd">Schedule</h1>
-        {Object.keys(dayGroups).map((date) => (
+        {Object.keys(props.dayGroups).map((date) => (
           <div key={date}>
             <h2 className="text-xl bold mtl">{dayjs(date).format("dddd MMM DD, YYYY")}</h2>
             <hr />
             <div className="col-md-8">
-              {dayGroups[date].map((event) => (
+              {props.dayGroups[date].map((event) => (
                 <EventSummary key={event.id} event={event} />
               ))}
             </div>
@@ -63,9 +46,30 @@ const Schedule = (props: Props): ReactElement => {
 
 export const getStaticProps = async (): Promise<GetStaticPropsResult<Props>> => {
   const events = await Promise.all(loadAllEventIds().map((it) => loadEventById(it.params.eventId)));
+
+  const dayGroups: Record<string, Event[]> = events.reduce((acc, cur) => {
+    if (acc[cur.date]) {
+      return {
+        ...acc,
+        [cur.date]: [...acc[cur.date], cur].sort((a, b) => {
+          const timeA = dayjs(`${a.date} ${a.meetingTime}`);
+          const timeB = dayjs(`${b.date} ${b.meetingTime}`);
+          console.log(timeA, timeB)
+          return timeA > timeB ? 1 : -1
+        }),
+      };
+    } else {
+      return {
+        ...acc,
+        [cur.date]: [cur],
+      };
+    }
+  }, {} as Record<string, Event[]>);
+
   return {
     props: {
       events,
+      dayGroups
     },
   };
 };
