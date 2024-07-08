@@ -7,15 +7,14 @@ description: "Hit both the 520 and I-90 floating bridges of Lake Washington"
 spice: 5
 timeOfDay: "Afternoon/Evening"
 distance: "26+ miles"
-meetingLocationAddress: "TBD"
-meetingLocationTitle: "TBD"
-startTime: "2:30 PM"
-meetingTime: "2:00 PM"
-meetingLocationLink: ""
+meetingLocationAddress: "Triangle Garage\n
+Seattle, WA 98195"
+meetingLocationTitle: "Triangle Garage"
+startTime: "1:30 PM"
+meetingTime: "1:00 PM"
+meetingLocationLink: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9709.467055849913!2d-122.32088977039456!3d47.65221575329358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x549014ec836e16b9%3A0x4a82ded5d3d30152!2sTriangle%20Garage%2C%20Seattle%2C%20WA%2098195!5e0!3m2!1sen!2sus!4v1720458396259!5m2!1sen!2sus"
 ---
 
-More route details coming soon.
+Marathon loop route starting & ending near the light rail at University of Washington. We meet at the concrete benches on the top of the Triangle Garage.
 
-**Meeting time & start times are estimates, true time TBD!**
-
-Marathon loop route starting & ending near the light rail at University of Washington. Loop both floating bridges across Lake Washington. Take in everything Seattle has to offer, and finish this event by giving it everything you've got! Cover over 40 miles in one day if you do this plus the morning half-marathon!
+Loop both floating bridges across Lake Washington. Take in everything Seattle has to offer, and finish this event by giving it everything you've got! Cover over 40 miles in one day if you do this plus the morning half-marathon!
