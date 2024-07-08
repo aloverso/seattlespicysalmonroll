@@ -12,23 +12,15 @@ import { AlertBar } from "../../src/components/AlertBar";
 interface Props {
   event: Event;
   allEventsOrdered: Event[];
+  nextEvent: Event | null;
+  prevEvent: Event | null;
 }
 
 const EventPage = (props: Props): ReactElement => {
   const date = dayjs(props.event.date);
   const spice = Array(props.event.spice).fill(SPICE).join("");
-  const startTime = dayjs(`${props.event.date} ${props.event.startTime}`);
 
-  const [nextEvent, prevEvent] = useMemo(() => {
-    const len = props.allEventsOrdered.length;
-    const index = props.allEventsOrdered.findIndex((it) => it.id === props.event.id);
-    if (index === undefined) return [undefined, undefined];
-
-    const nextEvent = index + 1 < len ? props.allEventsOrdered[index + 1] : undefined;
-    const prevEvent = index - 1 >= 0 ? props.allEventsOrdered[index - 1] : undefined;
-
-    return [nextEvent, prevEvent];
-  }, [props.event.id]);
+  const {nextEvent, prevEvent} = props;
 
   return (
     <div className="bg-theme">
@@ -69,7 +61,7 @@ const EventPage = (props: Props): ReactElement => {
                 </p>
                 <p>
                   <span className="bold text-uppercase">Start Time:</span>
-                  <span className="mls">{startTime.format("h:mm A")}</span>
+                  <span className="mls">{props.event.startTime}</span>
                 </p>
                 <p>
                   <span className="bold text-uppercase">Meeting Location:</span>
@@ -161,6 +153,7 @@ export const getStaticProps = async ({
   params: EventIdParam;
 }): Promise<GetStaticPropsResult<Props>> => {
   const events = await Promise.all(loadAllEventIds().map((it) => loadEventById(it.params.eventId)));
+  const event = await loadEventById(params.eventId)
 
   events.sort((a, b) => {
     const dateTimeA = dayjs(`${a.date} ${a.meetingTime}`);
@@ -168,10 +161,26 @@ export const getStaticProps = async ({
     return dateTimeA.isBefore(dateTimeB) ? -1 : 1;
   });
 
+  const len = events.length;
+  const index = events.findIndex((it) => it.id === event.id);
+
+  let nextEvent;
+  let prevEvent;
+
+  if (index === undefined) {
+    nextEvent = null
+    prevEvent = null
+  } else {
+    nextEvent = index + 1 < len ? events[index + 1] : null;
+    prevEvent = index - 1 >= 0 ? events[index - 1] : null;
+  }
+
   return {
     props: {
       allEventsOrdered: events,
-      event: await loadEventById(params.eventId),
+      event: event,
+      nextEvent,
+      prevEvent,
     },
   };
 };

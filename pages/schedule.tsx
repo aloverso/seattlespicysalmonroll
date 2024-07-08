@@ -54,7 +54,6 @@ export const getStaticProps = async (): Promise<GetStaticPropsResult<Props>> => 
         [cur.date]: [...acc[cur.date], cur].sort((a, b) => {
           const timeA = dayjs(`${a.date} ${a.meetingTime}`);
           const timeB = dayjs(`${b.date} ${b.meetingTime}`);
-          console.log(timeA, timeB)
           return timeA > timeB ? 1 : -1
         }),
       };
