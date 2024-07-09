@@ -72,7 +72,7 @@ const EventPage = (props: Props): ReactElement => {
                 <p>
                   <span className="bold text-uppercase">Spice Level:</span>
                   <span className="mls">{spice}</span>
-                  <div className="mld">
+                  <div className="mld mbm">
                     <a href="/faq">What does this mean?</a>
                   </div>
                 </p>
