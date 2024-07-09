@@ -4,7 +4,7 @@ import { SPICE } from "../domain/types";
 export const SpiceLevels = (): ReactElement => {
   return (
     <>
-      <SpiceHeader>1/5 Spice - Beginner {SPICE}</SpiceHeader>
+      <SpiceHeader>{SPICE} 1/5 Spice - Beginner</SpiceHeader>
       <p>
         Speeds are slow to moderate, distances are approximately 3-10 miles, with many breaks.
         Skaters should know how to do basic forward stride, roll over small cracks or seams, and
@@ -14,8 +14,8 @@ export const SpiceLevels = (): ReactElement => {
       </p>
 
       <SpiceHeader>
-        2/5 Spice - Beginner/Intermediate {SPICE}
         {SPICE}
+        {SPICE}&nbsp; 2/5 Spice - Beginner/Intermediate
       </SpiceHeader>
       <p>
         Speed will be steady pace along scenic routes up to 10-15 miles, with a moderate amount of
@@ -27,9 +27,9 @@ export const SpiceLevels = (): ReactElement => {
       </p>
 
       <SpiceHeader>
-        3/5 Spice - Intermediate {SPICE}
         {SPICE}
         {SPICE}
+        {SPICE}&nbsp; 3/5 Spice - Intermediate
       </SpiceHeader>
       <p>
         Three spice skates will take place in urban settings, at moderate speeds spanning up to 10
@@ -46,10 +46,10 @@ export const SpiceLevels = (): ReactElement => {
       </p>
 
       <SpiceHeader>
-        4/5 Spice - Advanced {SPICE}
         {SPICE}
         {SPICE}
         {SPICE}
+        {SPICE}&nbsp; 4/5 Spice - Advanced
       </SpiceHeader>
       <p>
         Our single four Spice skate for the weekend will take place at night on Thursday, the first
@@ -65,11 +65,11 @@ export const SpiceLevels = (): ReactElement => {
       </p>
 
       <SpiceHeader>
-        5/5 Spice - Advanced + Stamina {SPICE}
         {SPICE}
         {SPICE}
         {SPICE}
         {SPICE}
+        {SPICE}&nbsp; 5/5 Spice - Advanced + Stamina
       </SpiceHeader>
       <p>
         The single five star spice skate happens on the last day of the Spicy Salmon Roll, c rossing
