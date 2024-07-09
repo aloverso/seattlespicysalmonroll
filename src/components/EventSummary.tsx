@@ -14,7 +14,9 @@ export const EventSummary = (props: Props): ReactElement => {
         <button className="bg-teal pad mvd btn-block hover-light-teal">
           <h3 className="text-l fdr fac">
             <div>
-              <span className="text-xl nowrap">{Array(props.event.spice).fill(SPICE).join("")}</span>
+              <span className="text-xl nowrap">
+                {Array(props.event.spice).fill(SPICE).join("")}
+              </span>
               <span className="font-lilita text-underline mls">{props.event.name}</span>
             </div>
           </h3>

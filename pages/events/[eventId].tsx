@@ -20,7 +20,7 @@ const EventPage = (props: Props): ReactElement => {
   const date = dayjs(props.event.date);
   const spice = Array(props.event.spice).fill(SPICE).join("");
 
-  const {nextEvent, prevEvent} = props;
+  const { nextEvent, prevEvent } = props;
 
   return (
     <div className="bg-theme">
@@ -32,22 +32,18 @@ const EventPage = (props: Props): ReactElement => {
         <a href="/schedule">
           <button className="button bg-teal mbm">← Back to Schedule</button>
         </a>
-        <div className="text-l bold mbd">{date.format("MMM DD, YYYY")}</div>
+        <div className="text-l bold mbd">{date.format("dddd MMM DD, YYYY")}</div>
         <h1 className="text-xxl font-lilita mbs bg-blue pas">
           {spice} {props.event.name}
         </h1>
 
-
         <div className="row">
           <div className="col-md-5">
-            <div className="mbm">
-              {props.event.spice === 1 && <BeginnerRoute />}
-            </div>
+            <div className="mbm">{props.event.spice === 1 && <BeginnerRoute />}</div>
 
             <div className="text-m mbm">
               <em>{props.event.description}</em>
             </div>
-
 
             {props.event.type === "Skate" && (
               <>
@@ -76,6 +72,9 @@ const EventPage = (props: Props): ReactElement => {
                 <p>
                   <span className="bold text-uppercase">Spice Level:</span>
                   <span className="mls">{spice}</span>
+                  <div className="mld">
+                    <a href="/faq">What does this mean?</a>
+                  </div>
                 </p>
               </>
             )}
@@ -83,7 +82,7 @@ const EventPage = (props: Props): ReactElement => {
 
           {props.event.meetingLocationLink && (
             <div className="col-md-7">
-            <div className="mapouter">
+              <div className="mapouter">
                 <div className="gmap_canvas">
                   <iframe
                     width={600}
@@ -99,7 +98,6 @@ const EventPage = (props: Props): ReactElement => {
             </div>
           )}
         </div>
-
 
         <h2 className="text-l bold mtl mbs">Description</h2>
         <div className="row">
@@ -153,7 +151,7 @@ export const getStaticProps = async ({
   params: EventIdParam;
 }): Promise<GetStaticPropsResult<Props>> => {
   const events = await Promise.all(loadAllEventIds().map((it) => loadEventById(it.params.eventId)));
-  const event = await loadEventById(params.eventId)
+  const event = await loadEventById(params.eventId);
 
   events.sort((a, b) => {
     const dateTimeA = dayjs(`${a.date} ${a.meetingTime}`);
@@ -168,8 +166,8 @@ export const getStaticProps = async ({
   let prevEvent;
 
   if (index === undefined) {
-    nextEvent = null
-    prevEvent = null
+    nextEvent = null;
+    prevEvent = null;
   } else {
     nextEvent = index + 1 < len ? events[index + 1] : null;
     prevEvent = index - 1 >= 0 ? events[index - 1] : null;

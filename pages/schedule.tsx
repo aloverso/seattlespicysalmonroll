@@ -11,7 +11,7 @@ import { AlertBar } from "../src/components/AlertBar";
 
 interface Props {
   events: Event[];
-  dayGroups: Record<string, Event[]>
+  dayGroups: Record<string, Event[]>;
 }
 
 const Schedule = (props: Props): ReactElement => {
@@ -54,7 +54,7 @@ export const getStaticProps = async (): Promise<GetStaticPropsResult<Props>> => 
         [cur.date]: [...acc[cur.date], cur].sort((a, b) => {
           const timeA = dayjs(`${a.date} ${a.meetingTime}`);
           const timeB = dayjs(`${b.date} ${b.meetingTime}`);
-          return timeA > timeB ? 1 : -1
+          return timeA > timeB ? 1 : -1;
         }),
       };
     } else {
@@ -68,7 +68,7 @@ export const getStaticProps = async (): Promise<GetStaticPropsResult<Props>> => 
   return {
     props: {
       events,
-      dayGroups
+      dayGroups,
     },
   };
 };

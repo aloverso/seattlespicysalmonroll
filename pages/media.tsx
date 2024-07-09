@@ -26,7 +26,12 @@ const Media = (): ReactElement => {
         <p>
           Visit&nbsp;
           <a href="https://www.instagram.com/seattle_weekly_distance_skate/">
-            <img className="mrxs" src="/icons/instagram.svg" alt="" style={{ width: "16px", height: "16px" }} />
+            <img
+              className="mrxs"
+              src="/icons/instagram.svg"
+              alt=""
+              style={{ width: "16px", height: "16px" }}
+            />
             seattle_weekly_distance_skate
           </a>
           &nbsp;for the latest updates!

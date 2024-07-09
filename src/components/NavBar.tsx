@@ -46,8 +46,11 @@ export const NavBar = (props: Props): ReactElement => {
       </li>
       <li className="fdr fjc nav-item radius icon">
         <a href="https://www.instagram.com/seattle_weekly_distance_skate/">
-          <img src="/icons/instagram.svg" alt="INSTAGRAM" style={{ width: "24px", height: "24px" }}/>
-
+          <img
+            src="/icons/instagram.svg"
+            alt="INSTAGRAM"
+            style={{ width: "24px", height: "24px" }}
+          />
         </a>
       </li>
       <li className="fdr fjc nav-item radius icon">
