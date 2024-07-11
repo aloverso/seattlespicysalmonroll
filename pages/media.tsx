@@ -13,7 +13,7 @@ const Media = (): ReactElement => {
   }, []);
 
   return (
-    <>
+    <div className="bg-theme">
       <Metadata
         title="Media"
         description="Social media feed for Seattle's debut annual skating event - the 2024 Seattle Spicy Salmon Roll"
@@ -39,7 +39,7 @@ const Media = (): ReactElement => {
         <div data-behold-id="2HIuhuvsIPYYQ9zKd9AI"></div>
       </main>
       <Footer />
-    </>
+    </div>
   );
 };
 
