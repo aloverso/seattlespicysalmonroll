@@ -2,22 +2,24 @@
 id: "2024-07-20-afternoon"
 type: "Skate"
 date: "2024-07-20"
-name: "Burke-Gilman trail to the beach"
-description: "Cruise through Fremont and Ballard to Golden Gardens beach"
+name: "Urban Skate Game: Duck Hunt"
+description: "Use your urban skating skills to discover Seattle charms"
 spice: 2
-timeOfDay: "Afternoon/Evening"
-distance: "5-10 miles"
-meetingLocationTitle: "Gas Works Park Main Building"
-meetingLocationAddress: "Gas Works Park Main Building\n
-2101 N Northlake Way\n
-Seattle, WA 98103"
-meetingTime: "6:00 PM"
-startTime: "6:30 PM"
-meetingLocationLink: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9968.093266839605!2d-122.34435168535644!3d47.64734767337213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54901502b25bb07f%3A0x1e6e55abec496196!2sGas%20Works%20Park!5e0!3m2!1sen!2sus!4v1720157058609!5m2!1sen!2sus"
+timeOfDay: "Afternoon"
+distance: "Varied distances within a 3-mile radius of Seattle Center"
+meetingLocationAddress: "KOMO Plaza\n
+140 4th Ave N\n
+Seattle, WA 98109"
+meetingLocationTitle: "KOMO Plaza"
+meetingTime: "1:00 PM"
+startTime: "1:00 PM"
+meetingLocationLink: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4090.395154797729!2d-122.34913718431325!3d47.619946450023434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5490154f5726a115%3A0x799dbe456cb4404!2sKOMO%20Plaza!5e0!3m2!1sen!2sus!4v1721081497979!5m2!1sen!2sus"
 ---
 
-We'll start at Gas Works and take the Burke-Gilman bike trail across Fremont and Ballard neighborhoods to Golden Garden beach.
+Meet at KOMO Plaza by the KOMO Plaza sign. 
 
-Along this route, look forward to opportunities to stop for a flatlands session in Fremont, visiting the Ballard Troll, and slides and hangouts at the marina and at Golden Gardens.
+This team game is designed for all skill levels. You will use teamwork to discover points of interest in Seattle within the set timeframe, competing for prizes!
 
-We'll take the same route to return.
+We'll spend about 2 hours playing the game, including time for rest, breaks, and snacks as you desire. 
+
+Teams will be assigned. We'll finish at KOMO Plaza and then regroup for the rest of our [Seattle Center urban skate](/events/2024-07-20-morning)!
