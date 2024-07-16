@@ -10,6 +10,7 @@ type TimeUntil = {
 };
 
 const DATE = "2024-07-18";
+const END_DATE = "2024-07-21";
 
 const calcTimeUntil = (): TimeUntil => {
   const date = dayjs(DATE);
@@ -29,12 +30,33 @@ export const Hero = (): ReactElement => {
     router.push(REGISTER_LINK);
   };
 
+  const isUpcoming = timeUntil.day >= 0 && timeUntil.hour >= 0 && timeUntil.minute >= 0;
+  const isPast = dayjs().isAfter(END_DATE)
+  const today = dayjs().format('YYYY-MM-DD')
+
   React.useEffect(() => {
     const timer = setInterval(() => {
       setTimeUntil(calcTimeUntil());
     }, 30000);
     return () => clearInterval(timer);
   }, []);
+
+  const countdown = () => (
+    <div className="fdr text-white hero-countdown fjc">
+      <div className="fdc fac hero-countdown-item">
+        <div className="hero-number">{timeUntil.day}</div>
+        <div className="hero-label">days</div>
+      </div>
+      <div className="fdc fac hero-countdown-item">
+        <div className="hero-number">{timeUntil.hour}</div>
+        <div className="hero-label">hours</div>
+      </div>
+      <div className="fdc fac hero-countdown-item">
+        <div className="hero-number">{timeUntil.minute}</div>
+        <div className="hero-label">minutes</div>
+      </div>
+    </div>
+  )
 
   return (
     <>
@@ -52,25 +74,26 @@ export const Hero = (): ReactElement => {
             Salmon Roll
           </h1>
         </div>
-        <div className="fdr fje">
-          <button className="button button-hero" onClick={registerButton}>
-            Register Here
-          </button>
-        </div>
-        <div className="fdr text-white hero-countdown fjc">
-          <div className="fdc fac hero-countdown-item">
-            <div className="hero-number">{timeUntil.day}</div>
-            <div className="hero-label">days</div>
+        {!isPast && (
+          <div className="fdr fje">
+            <button
+              className={`button button-hero ${!isUpcoming && "button-hero-secondary"}`}
+              onClick={registerButton}
+            >
+              Register Here
+            </button>
           </div>
-          <div className="fdc fac hero-countdown-item">
-            <div className="hero-number">{timeUntil.hour}</div>
-            <div className="hero-label">hours</div>
+        )}
+        {(!isUpcoming && !isPast) && (
+          <div className="fdr fje mtd">
+            <a href={`/schedule#${today}`}>
+              <button className="button button-hero" onClick={registerButton}>
+                Today&apos;s Schedule
+              </button>
+            </a>
           </div>
-          <div className="fdc fac hero-countdown-item">
-            <div className="hero-number">{timeUntil.minute}</div>
-            <div className="hero-label">minutes</div>
-          </div>
-        </div>
+        )}
+        {isUpcoming && countdown()}
       </div>
     </>
   );

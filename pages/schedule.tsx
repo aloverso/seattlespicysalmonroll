@@ -28,7 +28,7 @@ const Schedule = (props: Props): ReactElement => {
       <main className="container mtxl bg-white">
         <h1 className="text-xxl font-lilita mbd">Schedule</h1>
         {Object.keys(props.dayGroups).map((date) => (
-          <div key={date}>
+          <div key={date} id={date}>
             <h2 className="text-xl bold mtl">{dayjs(date).format("dddd MMM DD, YYYY")}</h2>
             <hr />
             <div className="col-md-8">
