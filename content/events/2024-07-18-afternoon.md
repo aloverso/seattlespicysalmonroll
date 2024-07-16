@@ -20,7 +20,7 @@ Take the skate way downtown to find your way to the starting point for today's e
 
 If you don't want to do this one, you can take the light rail downtown instead.
 
-This route departs Greenlake and heads up to Roosevelt, eventually through the University to Eastlake Bridge. From there, we carve a zigzag through the city towards downtown.
+This route departs Greenlake and heads up to Roosevelt, eventually through the University to Eastlake Bridge. From there, we ascend Capitol Hill to the beautiful Melrose Avenue view and skate through Broadway to the Seattle University campus on the way to bomb 12th Avenue and Jackson towards International and Stadium districts. Be prepared for a few miles of hills!
 
 <!--
 **Route Details:**
