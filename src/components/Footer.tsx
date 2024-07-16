@@ -11,7 +11,7 @@ export const Footer = (): ReactElement => {
           </span>
           <span className="mhs">•</span>
           <span>
-            <a href="/pages/thanks">Acknowledgements</a>
+            <a href="/thanks">Acknowledgements</a>
           </span>
         </div>
       </div>
