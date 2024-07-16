@@ -44,6 +44,11 @@ export const NavBar = (props: Props): ReactElement => {
           Media
         </a>
       </li>
+      <li className={`nav-item fdr fjc ${props.active === "media" ? "active" : ""}`}>
+        <a href="/thanks" className="nav-link">
+          Thanks
+        </a>
+      </li>
       <li className="fdr fjc nav-item radius icon">
         <a href="https://www.instagram.com/seattle_weekly_distance_skate/">
           <img
@@ -65,7 +70,7 @@ export const NavBar = (props: Props): ReactElement => {
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
         <a className="navbar-brand" href="/">
-          <span className="font-lilita text-xl text-black">Seattle Spicy Salmon Roll</span>
+        <span className="font-lilita text-xl text-black">Seattle Spicy Salmon Roll</span>
         </a>
         <div className="mobile-only">
           <button

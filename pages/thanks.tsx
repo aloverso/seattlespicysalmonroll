@@ -7,11 +7,11 @@ const Faq = (): ReactElement => {
   return (
     <div className="bg-theme">
       <Metadata
-        title="Acknowledgements"
+        title="Thanks"
         description="The people and organizations that are supporting us to make this happen"
       />
       <header>
-        <NavBar active="" />
+        <NavBar active="thanks" />
       </header>
       <main className="container mtxl">
         <h1 className="text-xxl font-lilita mbd">Acknowledgements & Special Thanks</h1>
