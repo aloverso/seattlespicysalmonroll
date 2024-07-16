@@ -2,6 +2,7 @@ import React, { ReactElement } from "react";
 import { NavBar } from "../src/components/NavBar";
 import { Footer } from "../src/components/Footer";
 import { Metadata } from "../src/components/Metadata";
+import { ThankYouLine } from "../src/components/ThankYouLine";
 
 const Faq = (): ReactElement => {
   return (
@@ -14,34 +15,57 @@ const Faq = (): ReactElement => {
         <NavBar active="thanks" />
       </header>
       <main className="container mtxl">
-        <h1 className="text-xxl font-lilita mbd">Acknowledgements & Special Thanks</h1>
-        <div className="col-md-8">
-          <ul className="bg-white pvm">
-            <li className="mbd">
-              <a className="bold" href="https://www.instagram.com/dna_skate_school/">DNA Skate School</a> for safety, administration, and
-              route guidance
-            </li>
-            <li className="mbd">
-              <a className="bold" href="https://www.instagram.com/skatejourneys/">Skate Journeys</a> for consultation and advice
-            </li>
-            <li className="mbd">
-              <a className="bold" href="https://www.instagram.com/woo.norn.in.line/">Woo Byeon</a> for original art and graphic design
-            </li>
-            <li className="mbd">
-              <a className="bold" href="https://www.instagram.com/ebbandflow.state/">ebbandflow</a> for leading route design
-            </li>
-            <li className="mbd">
-              <a className="bold" href="https://zylberschtein.com/">Zylberschtein&apos;s Delicatessen & Bakery</a> for their generous
-              bagel donation
-            </li>
-            <li className="mbd">The entire SDS team for putting this event on!</li>
+        <h1 className="text-xxl font-lilita mbd">Thank Yous</h1>
+        <div className="col-md-8 bg-white">
+          <h2 className="text-l bold ptd">Volunteers</h2>
+          <ul className="ptd bullet">
+            <ThankYouLine name="George Ozerov" handle="@dunkles451" />
+            <ThankYouLine name="Shaun Woods" handle="@snqk" />
+            <ThankYouLine name="Dawn Johnston" handle="@damajo_rollin" />
+          </ul>
+          <ul className="pts">
+            <ThankYouLine name="Michael Vincent" handle="@ebbandflow.state" />
+            <ThankYouLine name="Cameron Shore" handle="@by_the_c_shore" />
+            <ThankYouLine name="Alex Wilson" handle="@alekseywilson" />
+            <ThankYouLine name="Woo Byeon" handle="@woo.norn.in.line" />
+            <ThankYouLine name="Brian Leahy" handle="@brianleahwart" />
+            <ThankYouLine name="Dmitry Ornatsky" handle="@dornatsky" />
+            <ThankYouLine name="Anne LoVerso" handle="@dirt.and.roses" />
+            <ThankYouLine name="Anna Quilter" handle="@ladygaza007" />
+            <ThankYouLine name="Vanessa Zakowski" handle="@vanessazakowski" />
+            <ThankYouLine name="Lila Faulhaber" handle="@lilafaulhaber" />
+            <ThankYouLine name="Nate Sloan" handle="@zas.i.am" />
+          </ul>
+          <ul className="pts">
+            <ThankYouLine name="Derek Macias" handle="@derek_macias_" />
+            <ThankYouLine name="Aslie Juan" handle="@no_h_aslie" />
+            <ThankYouLine name="Dan Duman" handle="@seattleweeklyskatesession" />
+          </ul>
+          <ul className="pts">
+            <ThankYouLine name="Mason Sherry" handle="@my_iphone_camara" />
+            <ThankYouLine name="Trish Alexander" handle="@skatejourneys" />
           </ul>
 
+          <h2 className="text-l bold ptd">Local Skate Groups</h2>
+          <ul className="ptd">
+            <ThankYouLine name="Seattle Skates" handle="@seattle_skates" />
+            <ThankYouLine name="Seattle Weekly Session of Friendship" handle="@seattleweeklyskatesession" />
+          </ul>
+
+          <h2 className="text-l bold ptd">Donors and Partners</h2>
+          <ul className="ptd">
+            <ThankYouLine name="Shop Task" handle="@shoptaskusa" />
+            <ThankYouLine name="Skate Journeys" handle="@skatejourneys" />
+            <ThankYouLine name="Skate IA" handle="@skateia_" />
+            <ThankYouLine name="DNA Skate School" handle="@dna_skate_school" />
+            <ThankYouLine name="Zylberschtein's Delicatessen & Bakery" handle="@zylberschtein" />
+          </ul>
         </div>
       </main>
       <Footer />
     </div>
-  );
+  )
+    ;
 };
 
 export default Faq;

@@ -231,6 +231,17 @@ main {
   text-wrap: nowrap;
 }
 
+li.bullet {
+  margin: 0;
+  line-height: 2;
+  padding: 0 0 0 40px;
+  list-style: none;
+  background-image: url(../public/images/bullet.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 40px;
+}
+
 // google map
 .mapouter {
   width: 100%;
