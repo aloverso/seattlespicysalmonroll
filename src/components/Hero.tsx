@@ -9,7 +9,7 @@ type TimeUntil = {
   minute: number;
 };
 
-const DATE = "2024-07-18";
+const DATE = "2024-07-18 10:00:00";
 const END_DATE = "2024-07-21";
 
 const calcTimeUntil = (): TimeUntil => {
