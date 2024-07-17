@@ -26,8 +26,8 @@ const isVerified = (req: NextApiRequest): boolean => {
 
   console.log(req.headers)
 
-  const signature = req.headers["X-Signature-Ed25519"] as string;
-  const timestamp = req.headers["X-Signature-Timestamp"] as string;
+  const signature = req.headers["x-signature-ed25519"] as string;
+  const timestamp = req.headers["x-signature-timestamp"] as string;
 
   console.log({ signature, timestamp })
 
