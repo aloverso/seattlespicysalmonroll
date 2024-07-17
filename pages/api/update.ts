@@ -14,6 +14,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       res.status(200).json({ type: 1 })
     }
     else if (req.body["type"] === 2) {
+      console.log(req.body.data)
+      console.log(req.body.data.options)
       res.status(200).json({
         "type": 4,
         "data": {
