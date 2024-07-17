@@ -13,6 +13,17 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.body["type"] === 1) {
       res.status(200).json({ type: 1 })
     }
+    else if (req.body["type"] === 2) {
+      res.status(200).json({
+        "type": 4,
+        "data": {
+          "tts": false,
+          "content": "Congrats on sending your command!",
+          "embeds": [],
+          "allowed_mentions": { "parse": [] }
+        }
+      })
+    }
     else {
       res.status(200).json({ message: "nothing here yet - post" })
     }
@@ -24,12 +35,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 const isVerified = (req: NextApiRequest): boolean => {
   const PUBLIC_KEY = "37f4b808785ce0f2a558e5717c952f430ddf1bbac2fa85319952d7b4effa6ca3";
 
-  console.log(req.headers)
-
   const signature = req.headers["x-signature-ed25519"] as string;
   const timestamp = req.headers["x-signature-timestamp"] as string;
-
-  console.log({ signature, timestamp })
 
   if (!signature || !timestamp) return false;
 
@@ -40,8 +47,6 @@ const isVerified = (req: NextApiRequest): boolean => {
     Buffer.from(signature, "hex"),
     Buffer.from(PUBLIC_KEY, "hex")
   );
-
-  console.log('verified')
 
   return isVerified
 }
