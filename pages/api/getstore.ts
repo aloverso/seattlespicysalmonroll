@@ -9,7 +9,7 @@ export default async function handler(
   const updatesStore = getStore("updatesStore");
 
   try {
-    const updates = await updatesStore.get("updates")
+    const updates = await updatesStore.get("updates", { type: "json" })
     res.status(200).json(updates)
   }
   catch(e) {
