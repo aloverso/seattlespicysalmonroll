@@ -24,18 +24,26 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 const isVerified = (req: NextApiRequest): boolean => {
   const PUBLIC_KEY = "37f4b808785ce0f2a558e5717c952f430ddf1bbac2fa85319952d7b4effa6ca3";
 
+  console.log(req.headers)
+
   const signature = req.headers["X-Signature-Ed25519"] as string;
   const timestamp = req.headers["X-Signature-Timestamp"] as string;
+
+  console.log({ signature, timestamp })
 
   if (!signature || !timestamp) return false;
 
   const rawBody = JSON.stringify(req.body);
 
-  return  nacl.sign.detached.verify(
+  const isVerified = nacl.sign.detached.verify(
     Buffer.from(timestamp + rawBody),
     Buffer.from(signature, "hex"),
     Buffer.from(PUBLIC_KEY, "hex")
   );
+
+  console.log('verified')
+
+  return isVerified
 }
 
 
