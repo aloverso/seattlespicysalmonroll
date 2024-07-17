@@ -17,6 +17,15 @@ const Faq = (): ReactElement => {
       <main className="container mtxl">
         <h1 className="text-xxl font-lilita mbd">Thank Yous</h1>
         <div className="col-md-8 bg-white">
+          <h2 className="text-l bold pvd">Sponsors</h2>
+          <img src="/images/shop-task-logo-black.jpg" alt="" className="ptd pbm width-100" />
+          <p>
+            A huge thank-you to <a href="https://usa.shop-task.com/">Shop Task</a> for sponsoring this event!
+            Shop Task is located in South Lake Union in Seattle, and is an inline skate store by and for skaters.
+            We will visit Shop Task on our <a href="/events/2024-07-20-morning">Saturday skate</a> and at any point during the event,
+            they can be a source of skates, wheels, bearings, gear, and more.
+          </p>
+
           <h2 className="text-l bold ptd">Volunteers</h2>
           <ul className="ptd bullet">
             <ThankYouLine name="George Ozerov" handle="@dunkles451" />
@@ -54,7 +63,6 @@ const Faq = (): ReactElement => {
 
           <h2 className="text-l bold ptd">Donors and Partners</h2>
           <ul className="ptd">
-            <ThankYouLine name="Shop Task" handle="@shoptaskusa" />
             <ThankYouLine name="Skate Journeys" handle="@skatejourneys" />
             <ThankYouLine name="Skate IA" handle="@skateia_" />
             <ThankYouLine name="DNA Skate School" handle="@dna_skate_school" />
