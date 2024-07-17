@@ -10,6 +10,8 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ResponseData>
 ) {
+  console.log(req.headers)
+  
   const id = req.query.id
   const updatesStore = getStore("updatesStore");
   const updates: UpdateMessage[] = await updatesStore.get("updates", { type: "json" })
