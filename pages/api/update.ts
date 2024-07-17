@@ -1,7 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import * as nacl from "tweetnacl"
+import { getStore } from "@netlify/blobs";
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
 
   console.log('recieved', req.method, req.body)
 
@@ -16,6 +17,12 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     else if (req.body["type"] === 2) {
       const updateMessage = req.body.data.options[0].value
       console.log(updateMessage)
+
+      const updatesStore = getStore("updatesStore");
+      const updatesBlob = await updatesStore.get("updates", { type: "json"});
+      const newBlob = [...updatesBlob, updateMessage]
+      await updatesStore.setJSON("updates", newBlob);
+      
       res.status(200).json({
         "type": 4,
         "data": {

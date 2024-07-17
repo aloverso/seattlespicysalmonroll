@@ -9,10 +9,11 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ResponseData>
 ) {
-  const construction = getStore("construction");
+  const updatesStore = getStore("updatesStore");
 
   try {
-    await construction.setJSON("nails", { type: "common", finish: "bright" });
+    const entry1 = await updatesStore.get("updates")
+    res.status(200).json({ message: entry1 })
   }
   catch(e) {
     console.log(e)
@@ -20,8 +21,7 @@ export default async function handler(
   }
 
   try {
-    const entry1 = await construction.get("nails")
-    res.status(200).json({ message: entry1 })
+    await updatesStore.setJSON("updates", []);
   }
   catch(e) {
     console.log(e)
