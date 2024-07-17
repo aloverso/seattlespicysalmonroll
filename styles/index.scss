@@ -120,6 +120,12 @@ a {
   color: $dark-blue;
 }
 
+.event-summary-block a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 a.underline {
   text-decoration: underline;
   color: $extra-dark-blue;

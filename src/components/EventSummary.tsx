@@ -8,9 +8,9 @@ interface Props {
 
 export const EventSummary = (props: Props): ReactElement => {
   return (
-    <Link href={`/events/${props.event.id}`}>
-      <div>
-        <div className="bold text-l mtd">{props.event.meetingTime}</div>
+    <div className="event-summary-block">
+      <div className="bold text-l mtd">{props.event.meetingTime}</div>
+      <Link href={`/events/${props.event.id}`}>
         <button className="bg-teal pad mvd btn-block hover-light-teal">
           <h3 className="text-l fdr fac">
             <div>
@@ -21,7 +21,7 @@ export const EventSummary = (props: Props): ReactElement => {
             </div>
           </h3>
         </button>
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 };

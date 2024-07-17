@@ -45,7 +45,7 @@ export const NavBar = (props: Props): ReactElement => {
           Media
         </a>
       </li>
-      <li className={`nav-item fdr fjc ${props.active === "media" ? "active" : ""}`}>
+      <li className={`nav-item fdr fjc ${props.active === "thanks" ? "active" : ""}`}>
         <a href="/thanks" className="nav-link">
           Thanks
         </a>
