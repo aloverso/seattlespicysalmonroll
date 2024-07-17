@@ -15,6 +15,11 @@ export type Event = {
   body: string;
 };
 
+export type UpdateMessage = {
+  message: string;
+  timestamp: string;
+}
+
 export type TimeOfDay = "Morning" | "Afternoon" | "Afternoon/Evening" | "Evening";
 
 export const SPICE = "🔥";

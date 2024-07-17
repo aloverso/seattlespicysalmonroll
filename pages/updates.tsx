@@ -1,10 +1,12 @@
 import React, { ReactElement, useEffect, useState } from "react";
 import { NavBar } from "../src/components/NavBar";
 import { Footer } from "../src/components/Footer";
+import { UpdateMessage } from "../src/domain/types";
+import dayjs from "dayjs";
 
 const Updates = (): ReactElement => {
 
-  const [updates, setUpdates] = useState<string[]>([])
+  const [updates, setUpdates] = useState<UpdateMessage[]>([])
 
   useEffect(() => {
     fetch('/api/getstore')
@@ -25,7 +27,8 @@ const Updates = (): ReactElement => {
         <div className="col-md-8 bg-white">
           {updates.map((update,i) => (
             <div key={i}>
-              {update}
+              <div>{dayjs(update.timestamp).format('MM/DD/YY h:mm:ss')}</div>
+              <div>{update.message}</div>
             </div>
           ))}
         </div>

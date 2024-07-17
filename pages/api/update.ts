@@ -1,6 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import * as nacl from "tweetnacl"
 import { getStore } from "@netlify/blobs";
+import dayjs from "dayjs";
+import { UpdateMessage } from "../../src/domain/types";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
 
@@ -16,11 +18,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
     else if (req.body["type"] === 2) {
       const updateMessage = req.body.data.options[0].value
-      console.log(updateMessage)
+      const newUpdate: UpdateMessage = {
+        message: updateMessage,
+        timestamp: dayjs().format()
+      }
 
       const updatesStore = getStore("updatesStore");
       const updatesBlob = await updatesStore.get("updates", { type: "json"});
-      const newBlob = [updateMessage, ...updatesBlob]
+      const newBlob = [newUpdate, ...updatesBlob]
       await updatesStore.setJSON("updates", newBlob);
 
       res.status(200).json({
