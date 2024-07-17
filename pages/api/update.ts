@@ -3,6 +3,8 @@ import * as nacl from "tweetnacl"
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
+  console.log('recieved', req.method, req.body)
+
   if (!isVerified(req)) {
     return res.status(401).end("invalid request signature");
   }
