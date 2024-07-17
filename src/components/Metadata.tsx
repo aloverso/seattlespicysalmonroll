@@ -8,16 +8,11 @@ interface Props {
 
 export const Metadata = (props: Props): ReactElement => {
   const sitename = "Seattle Spicy Salmon Roll 2024";
+  const title = props.title ? `${props.title} | ${sitename}` : sitename
 
   return (
     <Head>
-      {props.title ? (
-        <title>
-          {props.title} | {sitename}
-        </title>
-      ) : (
-        <title>{sitename}</title>
-      )}
+      <title>{title}</title>
       <meta name="description" content={props.description} key="desc" />
       <meta property="og:description" content={props.description} />
       <meta property="og:title" content={sitename} />
