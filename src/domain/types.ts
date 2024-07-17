@@ -1,5 +1,3 @@
-import { Category } from "@material-ui/icons";
-
 export type Event = {
   id: string;
   date: string;

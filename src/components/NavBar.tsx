@@ -1,6 +1,7 @@
-import { Menu, useMediaQuery } from "@material-ui/core";
 import React, { ReactElement, useEffect } from "react";
 import { MediaQueries } from "../MediaQueries";
+import useMediaQuery from '@mui/material/useMediaQuery';
+import Menu from '@mui/material/Menu';
 
 interface Props {
   active: string;
