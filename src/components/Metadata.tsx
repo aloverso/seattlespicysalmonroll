@@ -19,6 +19,8 @@ export const Metadata = (props: Props): ReactElement => {
         <title>{sitename}</title>
       )}
       <meta name="description" content={props.description} key="desc" />
+      <meta property="og:description" content={props.description} />
+      <meta property="og:title" content={sitename} />
       <meta property="og:image" content="https://seattlespicysalmonroll.com/images/logo.png" />
     </Head>
   );
