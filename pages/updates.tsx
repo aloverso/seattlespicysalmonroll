@@ -25,8 +25,8 @@ const Updates = (): ReactElement => {
       <main className="container mtxl">
         <h1 className="text-xxl font-lilita mbd">Updates</h1>
         <div className="col-md-8 bg-white">
-          {updates.map((update,i) => (
-            <div key={i}>
+          {updates.map((update) => (
+            <div key={update.id}>
               <div>{dayjs(update.timestamp).format('MM/DD/YY h:mm:ss')}</div>
               <div>{update.message}</div>
             </div>

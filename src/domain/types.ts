@@ -18,6 +18,7 @@ export type Event = {
 export type UpdateMessage = {
   message: string;
   timestamp: string;
+  id: string;
 }
 
 export type TimeOfDay = "Morning" | "Afternoon" | "Afternoon/Evening" | "Evening";

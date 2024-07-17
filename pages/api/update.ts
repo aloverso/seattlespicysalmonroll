@@ -18,9 +18,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
     else if (req.body["type"] === 2) {
       const updateMessage = req.body.data.options[0].value
+      const randInt = Math.floor(Math.random()*100000000).toString()
       const newUpdate: UpdateMessage = {
         message: updateMessage,
-        timestamp: dayjs().format()
+        timestamp: dayjs().format(),
+        id: randInt
       }
 
       const updatesStore = getStore("updatesStore");
@@ -32,7 +34,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         "type": 4,
         "data": {
           "tts": false,
-          "content": "Congrats on sending your command!",
+          "content": `Sent this message: "${updateMessage}" - Your message ID is: ${randInt}. To delete this message, visit https://seattlespicysalmonroll.com/api/del?id=${randInt}`,
           "embeds": [],
           "allowed_mentions": { "parse": [] }
         }
