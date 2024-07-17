@@ -45,15 +45,15 @@ export const Hero = (): ReactElement => {
     <div className="fdr text-white hero-countdown fjc">
       <div className="fdc fac hero-countdown-item">
         <div className="hero-number">{timeUntil.day}</div>
-        <div className="hero-label">days</div>
+        <div className="hero-label">{timeUntil.day > 1 ? "days" : "day"}</div>
       </div>
       <div className="fdc fac hero-countdown-item">
         <div className="hero-number">{timeUntil.hour}</div>
-        <div className="hero-label">hours</div>
+        <div className="hero-label">{timeUntil.hour > 1 ? "hours" : "hour"}</div>
       </div>
       <div className="fdc fac hero-countdown-item">
         <div className="hero-number">{timeUntil.minute}</div>
-        <div className="hero-label">minutes</div>
+        <div className="hero-label">{timeUntil.minute > 1 ? "minutes" : "minute"}</div>
       </div>
     </div>
   )
