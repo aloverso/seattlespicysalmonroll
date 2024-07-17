@@ -12,19 +12,10 @@ export default async function handler(
   const updatesStore = getStore("updatesStore");
 
   try {
-    const entry1 = await updatesStore.get("updates")
-    res.status(200).json({ message: entry1 })
-  }
-  catch(e) {
-    console.log(e)
-    res.status(200).json({ message: 'failed ' + e })
-  }
-
-  try {
     await updatesStore.setJSON("updates", []);
+    res.status(200).json({ message: 'cleared the store' })
   }
   catch(e) {
     console.log(e)
-    res.status(200).json({ message: 'failed ' + e })
   }
 }

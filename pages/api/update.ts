@@ -22,7 +22,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const updatesBlob = await updatesStore.get("updates", { type: "json"});
       const newBlob = [...updatesBlob, updateMessage]
       await updatesStore.setJSON("updates", newBlob);
-      
+
       res.status(200).json({
         "type": 4,
         "data": {
