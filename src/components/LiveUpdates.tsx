@@ -8,25 +8,25 @@ export const LiveUpdates = (): ReactElement => {
 
   useEffect(() => {
 
-    setUpdates(
-      [
-        {"message":"third thing","timestamp":"2024-07-17T23:50:34+00:00","id":"9988764"},
-        // {"message":"test new","timestamp":"2024-07-17T23:50:26+00:00","id":"32913594"},
-        // {"message":"test new","timestamp":"2024-07-17T23:50:26+00:00","id":"329132594"},
-        // {"message":"test new","timestamp":"2024-07-17T23:50:26+00:00","id":"329153594"},
-        // {"message":"test new","timestamp":"2024-07-17T23:50:26+00:00","id":"32e913594"},
-        // {"message":"test new","timestamp":"2024-07-17T23:50:26+00:00","id":"32913594"},
-        // {"message":"test new","timestamp":"2024-07-17T23:50:26+00:00","id":"329132594"},
-        // {"message":"test new","timestamp":"2024-07-17T23:50:26+00:00","id":"329132594"},
-        // {"message":"test new","timestamp":"2024-07-17T23:50:26+00:00","id":"329113594"},
-      ]
-    )
-  //   fetch('/api/getstore')
-  //     .then(response => {
-  //       response.json().then((json) => {
-  //         setUpdates(json)
-  //       })
-  //     })
+    // setUpdates(
+    //   [
+    //     {"message":"third thing","timestamp":"2024-07-17T23:50:34+00:00","id":"9988764"},
+    //     // {"message":"test new","timestamp":"2024-07-17T23:50:26+00:00","id":"32913594"},
+    //     // {"message":"test new","timestamp":"2024-07-17T23:50:26+00:00","id":"329132594"},
+    //     // {"message":"test new","timestamp":"2024-07-17T23:50:26+00:00","id":"329153594"},
+    //     // {"message":"test new","timestamp":"2024-07-17T23:50:26+00:00","id":"32e913594"},
+    //     // {"message":"test new","timestamp":"2024-07-17T23:50:26+00:00","id":"32913594"},
+    //     // {"message":"test new","timestamp":"2024-07-17T23:50:26+00:00","id":"329132594"},
+    //     // {"message":"test new","timestamp":"2024-07-17T23:50:26+00:00","id":"329132594"},
+    //     // {"message":"test new","timestamp":"2024-07-17T23:50:26+00:00","id":"329113594"},
+    //   ]
+    // )
+    fetch('/api/getstore')
+      .then(response => {
+        response.json().then((json) => {
+          setUpdates(json)
+        })
+      })
   }, [])
 
   return (
