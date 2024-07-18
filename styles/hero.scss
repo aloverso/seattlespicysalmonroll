@@ -1,10 +1,14 @@
 .bg-hero {
-  padding: 50px 0 220px 0;
+  padding: 50px 0 40px 0;
   background: url("../public/images/seattle_banner3.png") no-repeat;
   background-size: cover;
 
+  @media (max-width: $sm) {
+    padding: 50px 0 20px 0;
+  }
+
   @media (max-width: $xxs) {
-    padding: 50px 0 100px 0;
+    padding: 50px 0 20px 0;
     background-position: 35% 100%;;
   }
 }
