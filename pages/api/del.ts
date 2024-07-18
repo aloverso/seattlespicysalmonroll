@@ -11,7 +11,11 @@ export default async function handler(
   res: NextApiResponse<ResponseData>
 ) {
   console.log(req.headers)
-  
+  if (req.headers['user-agent']?.includes('Discordbot')) {
+    res.status(200).json({ message: `discord agent detected, visit in a browser to delete` })
+    return;
+  }
+
   const id = req.query.id
   const updatesStore = getStore("updatesStore");
   const updates: UpdateMessage[] = await updatesStore.get("updates", { type: "json" })
