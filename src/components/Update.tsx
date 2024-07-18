@@ -9,7 +9,7 @@ interface Props {
 export const Update = (props: Props): ReactElement => {
   return (
     <div className="brad bg-white-overlay pad mvs text-black ">
-      <div className="text-s mbs">{dayjs(props.update.timestamp).format('MM/DD/YY h:mm A')}</div>
+      <div className="text-s mbs">{dayjs(props.update.timestamp).format('h:mm A M/D/YY')}</div>
       <div>{props.update.message}</div>
     </div>
   )
