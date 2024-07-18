@@ -2,6 +2,7 @@ import React, { ReactElement, useState } from "react";
 import dayjs from "dayjs";
 import { useRouter } from "next/router";
 import { REGISTER_LINK } from "../domain/consts";
+import { LiveUpdates } from "./LiveUpdates";
 
 type TimeUntil = {
   day: number;
@@ -64,36 +65,43 @@ export const Hero = (): ReactElement => {
         <div className="text-uppercase text-white fdr fjc hero-presents">
           Seattle Distance Skating Club presents:
         </div>
-        <div className="fdr fje">
-          <div className="hero-date">July 18–21, 2024</div>
-        </div>
-        <div className="fdr fje">
-          <h1 className="hero-header">
-            Seattle Spicy
-            <br />
-            Salmon Roll
-          </h1>
-        </div>
-        {!isPast && (
-          <div className="fdr fje">
-            <button
-              className={`button button-hero ${!isUpcoming && "button-hero-secondary"}`}
-              onClick={registerButton}
-            >
-              Register Here
-            </button>
+        <div className="row">
+          <div className="col-lg-4 order-lg-0 order-2 mtl feed-parent">
+            <LiveUpdates />
           </div>
-        )}
-        {(!isUpcoming && !isPast) && (
-          <div className="fdr fje mtd">
-            <a href={`/schedule#${today}`}>
-              <button className="button button-hero" onClick={registerButton}>
-                Today&apos;s Schedule
-              </button>
-            </a>
+          <div className="col-lg-8 order-1 mtl">
+            <div className="fdr hero-parent">
+              <div className="hero-date">July 18–21, 2024</div>
+            </div>
+            <div className="fdr hero-parent">
+              <h1 className="hero-header">
+                Seattle Spicy
+                <br />
+                Salmon Roll
+              </h1>
+            </div>
+            {!isPast && (
+              <div className="fdr hero-parent">
+                <button
+                  className={`button button-hero ${!isUpcoming && "button-hero-secondary"}`}
+                  onClick={registerButton}
+                >
+                  Register Here
+                </button>
+              </div>
+            )}
+            {(!isUpcoming && !isPast) && (
+              <div className="fdr hero-parent mtd">
+                <a href={`/schedule#${today}`}>
+                  <button className="button button-hero" onClick={registerButton}>
+                    Today&apos;s Schedule
+                  </button>
+                </a>
+              </div>
+            )}
+            {isUpcoming && countdown()}
           </div>
-        )}
-        {isUpcoming && countdown()}
+        </div>
       </div>
     </>
   );
