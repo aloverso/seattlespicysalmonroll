@@ -12,7 +12,7 @@ meetingLocationAddress: "KOMO Plaza\n
 Seattle, WA 98109"
 meetingLocationTitle: "KOMO Plaza"
 meetingTime: "1:00 PM"
-startTime: "1:00 PM"
+startTime: "1:15 PM"
 meetingLocationLink: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4090.395154797729!2d-122.34913718431325!3d47.619946450023434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5490154f5726a115%3A0x799dbe456cb4404!2sKOMO%20Plaza!5e0!3m2!1sen!2sus!4v1721081497979!5m2!1sen!2sus"
 ---
 
