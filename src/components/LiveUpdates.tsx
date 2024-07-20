@@ -29,6 +29,18 @@ export const LiveUpdates = (): ReactElement => {
       })
   }, [])
 
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      fetch('/api/getstore')
+        .then(response => {
+          response.json().then((json) => {
+            setUpdates(json)
+          })
+        })
+    }, 60000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div className="text-white bg-overlay pad">
       <h2 className="text-xl bold mbd">Live Updates</h2>
