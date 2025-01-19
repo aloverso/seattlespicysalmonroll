@@ -6,13 +6,14 @@ import Link from "next/link";
 import { FaqBlock } from "../src/components/FaqBlock";
 import { SPICE } from "../src/domain/types";
 import { SpiceLevels } from "../src/components/SpiceLevels";
+import { CONTROLS, INSTA_LINK, ORDINAL, YEAR } from "../src/domain/consts";
 
 const Faq = (): ReactElement => {
   return (
     <div className="bg-theme">
       <Metadata
         title="FAQ"
-        description="Get answers to you questions about Seattle's debut annual skating event - the 2024 Seattle Spicy Salmon Roll"
+        description={`Get answers to you questions about Seattle's ${ORDINAL} annual skating event - the ${YEAR} Seattle Spicy Salmon Roll`}
       />
       <header>
         <NavBar active="faq" />
@@ -20,7 +21,7 @@ const Faq = (): ReactElement => {
       <main className="container mtxl">
         <h1 className="text-xxl font-lilita mbd">FAQ</h1>
         <div className="col-md-8">
-          <FaqBlock q={`What do the ${SPICE} spice levels mean?`} a={<SpiceLevels />} />
+          {CONTROLS.showSpiceLevelFAQ && <FaqBlock q={`What do the ${SPICE} spice levels mean?`} a={<SpiceLevels />} />}
 
           <FaqBlock
             q="What can I expect from this event?"
@@ -42,7 +43,7 @@ const Faq = (): ReactElement => {
             a={
               <p>
                 The{" "}
-                <a href="https://www.instagram.com/seattle_weekly_distance_skate/">
+                <a href={INSTA_LINK} target="_blank" rel="noopener noreferrer">
                   Seattle Distance Skating Club
                 </a>
                 &nbsp;is hosting this event! We host weekly skates in the Seattle area to bring
@@ -103,7 +104,7 @@ const Faq = (): ReactElement => {
             q="Where can I get gear? Skates, wheels, bearings, etc"
             a={
               <p>
-                Check out <a href="https://usa.shop-task.com/">Shop Task</a> in South Lake Union!
+                Check out <a href="https://usa.shop-task.com/" target="_blank" rel="noopener noreferrer">Shop Task</a> in South Lake Union!
               </p>
             }
           />
@@ -113,7 +114,7 @@ const Faq = (): ReactElement => {
             a={
               <>
                 <p>
-                  <a href="https://app.leg.wa.gov/rcw/default.aspx?cite=9.91.025">Legally</a>:
+                  <a href="https://app.leg.wa.gov/rcw/default.aspx?cite=9.91.025" target="_blank" rel="noopener noreferrer">Legally</a>:
                   &quot;[Unlawful transit conduct:] Skates on roller skates or in-line skates, or
                   rides in or upon or by any means a coaster, skateboard, toy vehicle, or any
                   similar device. However, a person may walk while wearing skates or carry a

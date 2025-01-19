@@ -45,7 +45,7 @@ export const LiveUpdates = (): ReactElement => {
     <div className="text-white bg-overlay pad">
       <h2 className="text-xl bold mbd">Live Updates</h2>
       <p>Check here during the event for regular live updates on the group and routes! Or visit
-        our <a href="https://www.instagram.com/seattlespicysalmonroll_24/">event Instagram</a>.
+        our <a href="https://www.instagram.com/seattlespicysalmonroll_24/" target="_blank" rel="noopener noreferrer">event Instagram</a>.
       </p>
       <div className="pvs feed">
         <div className="brad bg-white-overlay pad mvs text-black ">

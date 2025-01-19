@@ -2,6 +2,7 @@ import React, { ReactElement, useEffect } from "react";
 import { MediaQueries } from "../MediaQueries";
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Menu from '@mui/material/Menu';
+import { CONTROLS, INSTA_LINK } from "../domain/consts";
 
 interface Props {
   active: string;
@@ -45,13 +46,15 @@ export const NavBar = (props: Props): ReactElement => {
           Media
         </a>
       </li>
-      <li className={`nav-item fdr fjc ${props.active === "thanks" ? "active" : ""}`}>
-        <a href="/thanks" className="nav-link">
-          Thanks
-        </a>
-      </li>
+      {CONTROLS.showThanks &&
+        <li className={`nav-item fdr fjc ${props.active === "thanks" ? "active" : ""}`}>
+          <a href="/thanks" className="nav-link">
+            Thanks
+          </a>
+        </li>
+      }
       <li className="fdr fjc nav-item radius icon">
-        <a href="https://www.instagram.com/seattle_weekly_distance_skate/">
+        <a href={INSTA_LINK} target="_blank" rel="noopener noreferrer">
           <img
             src="/icons/instagram.svg"
             alt="INSTAGRAM"
@@ -60,7 +63,7 @@ export const NavBar = (props: Props): ReactElement => {
         </a>
       </li>
       <li className="fdr fjc nav-item radius icon">
-        <a href="https://www.facebook.com/groups/135066862931505/">
+        <a href="https://www.facebook.com/groups/135066862931505/" target="_blank" rel="noopener noreferrer">
           <img src="/icons/facebook.svg" alt="FACEBOOK" style={{ width: "24px", height: "24px" }} />
         </a>
       </li>

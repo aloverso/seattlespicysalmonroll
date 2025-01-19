@@ -3,8 +3,12 @@ import { NavBar } from "../src/components/NavBar";
 import { Footer } from "../src/components/Footer";
 import { Metadata } from "../src/components/Metadata";
 import { ThankYouLine } from "../src/components/ThankYouLine";
+import { CONTROLS } from "../src/domain/consts";
 
 const Faq = (): ReactElement => {
+
+  if (!CONTROLS.showThanks) return <></>
+
   return (
     <div className="bg-theme">
       <Metadata
@@ -17,14 +21,17 @@ const Faq = (): ReactElement => {
       <main className="container mtxl">
         <h1 className="text-xxl font-lilita mbd">Thank Yous</h1>
         <div className="col-md-8 bg-white">
-          <h2 className="text-l bold pvd">Sponsors</h2>
-          <img src="/images/shop-task-logo-black.jpg" alt="" className="ptd pbm width-100" />
-          <p>
-            A huge thank-you to <a href="https://usa.shop-task.com/">Shop Task</a> for sponsoring this event!
-            Shop Task is located in South Lake Union in Seattle, and is an inline skate store by and for skaters.
-            We will visit Shop Task on our <a href="/events/2024-07-20-morning">Saturday skate</a> and at any point during the event,
-            they can be a source of skates, wheels, bearings, gear, and more.
-          </p>
+          {CONTROLS.showSponsorship && (
+            <>
+              <h2 className="text-l bold pvd">Sponsors</h2>
+              <img src="/images/shop-task-logo-black.jpg" alt="" className="ptd pbm width-100" />
+              <p>
+              A huge thank-you to <a href="https://usa.shop-task.com/" target="_blank" rel="noopener noreferrer">Shop Task</a> for sponsoring this event!
+              Shop Task is located in South Lake Union in Seattle, and is an inline skate store by and for skaters.
+              At any point during the event, they can be a source of skates, wheels, bearings, gear, and more.
+              </p>
+            </>
+          )}
 
           <h2 className="text-l bold ptd">Volunteers</h2>
           <ul className="ptd bullet">

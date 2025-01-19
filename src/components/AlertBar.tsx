@@ -1,10 +1,10 @@
 import React, { ReactElement, useState } from "react";
-import { REGISTER_LINK } from "../domain/consts";
+import { CONTROLS, REGISTER_LINK } from "../domain/consts";
 
 export const AlertBar = (): ReactElement => {
   const [showAlert, setShowAlert] = useState<boolean>(true);
 
-  if (!showAlert) return <></>;
+  if (!showAlert || !CONTROLS.registrationLive) return <></>;
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-alert">

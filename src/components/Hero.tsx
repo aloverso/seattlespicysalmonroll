@@ -1,7 +1,7 @@
 import React, { ReactElement, useState } from "react";
 import dayjs from "dayjs";
 import { useRouter } from "next/router";
-import { REGISTER_LINK } from "../domain/consts";
+import { CONTROLS, DATE, DATE_STRING, END_DATE, REGISTER_LINK } from "../domain/consts";
 import { LiveUpdates } from "./LiveUpdates";
 
 type TimeUntil = {
@@ -9,9 +9,6 @@ type TimeUntil = {
   hour: number;
   minute: number;
 };
-
-const DATE = "2024-07-18 10:00:00";
-const END_DATE = "2024-07-21";
 
 const calcTimeUntil = (): TimeUntil => {
   const date = dayjs(DATE);
@@ -66,12 +63,16 @@ export const Hero = (): ReactElement => {
           Seattle Distance Skating Club presents:
         </div>
         <div className="row">
-          <div className="col-lg-4 order-lg-0 order-2 mtl feed-parent">
-            <LiveUpdates />
-          </div>
+          {CONTROLS.showLiveUpdates
+            ? (<div className="col-lg-4 order-lg-0 order-2 mtl feed-parent">
+                <LiveUpdates />
+              </div>)
+            : (<div className="col-lg-3 order-lg-0 order-2 mtl feed-parent"/>)
+          }
+
           <div className="col-lg-8 order-1 mtl">
             <div className="fdr hero-parent">
-              <div className="hero-date">July 18–21, 2024</div>
+              <div className="hero-date">{DATE_STRING}</div>
             </div>
             <div className="fdr hero-parent">
               <h1 className="hero-header">
@@ -80,7 +81,7 @@ export const Hero = (): ReactElement => {
                 Salmon Roll
               </h1>
             </div>
-            {!isPast && (
+            {(!isPast && CONTROLS.registrationLive) && (
               <div className="fdr hero-parent">
                 <button
                   className={`button button-hero ${!isUpcoming && "button-hero-secondary"}`}

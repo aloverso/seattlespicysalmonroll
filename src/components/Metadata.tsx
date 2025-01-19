@@ -1,5 +1,6 @@
 import React, { ReactElement } from "react";
 import Head from "next/head";
+import { YEAR } from "../domain/consts";
 
 interface Props {
   title?: string | undefined;
@@ -7,7 +8,7 @@ interface Props {
 }
 
 export const Metadata = (props: Props): ReactElement => {
-  const sitename = "Seattle Spicy Salmon Roll 2024";
+  const sitename = `Seattle Spicy Salmon Roll ${YEAR}`;
   const title = props.title ? `${props.title} | ${sitename}` : sitename
 
   return (

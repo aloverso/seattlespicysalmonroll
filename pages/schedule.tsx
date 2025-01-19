@@ -8,6 +8,7 @@ import dayjs from "dayjs";
 import { EventSummary } from "../src/components/EventSummary";
 import { Metadata } from "../src/components/Metadata";
 import { AlertBar } from "../src/components/AlertBar";
+import { ORDINAL, YEAR } from "../src/domain/consts";
 
 interface Props {
   events: Event[];
@@ -19,7 +20,7 @@ const Schedule = (props: Props): ReactElement => {
     <div className="bg-theme">
       <Metadata
         title="Schedule"
-        description="Get the latest information on routes and event schedule for Seattle's debut annual skating event - the 2024 Seattle Spicy Salmon Roll"
+        description={`Get the latest information on routes and event schedule for Seattle's ${ORDINAL} annual skating event - the ${YEAR} Seattle Spicy Salmon Roll`}
       />
       <header>
         <NavBar active="schedule" />
@@ -38,6 +39,9 @@ const Schedule = (props: Props): ReactElement => {
             </div>
           </div>
         ))}
+        {(Object.keys(props.dayGroups).length === 0) && (
+          <p>Schedule coming later!</p>
+        )}
       </main>
       <Footer />
     </div>

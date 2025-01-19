@@ -2,6 +2,7 @@ import React, { ReactElement, useEffect } from "react";
 import { NavBar } from "../src/components/NavBar";
 import { Footer } from "../src/components/Footer";
 import { Metadata } from "../src/components/Metadata";
+import { INSTA_LINK, ORDINAL, YEAR } from "../src/domain/consts";
 
 const Media = (): ReactElement => {
   useEffect(() => {
@@ -16,7 +17,7 @@ const Media = (): ReactElement => {
     <div className="bg-theme">
       <Metadata
         title="Media"
-        description="Social media feed for Seattle's debut annual skating event - the 2024 Seattle Spicy Salmon Roll"
+        description={`Social media feed for Seattle's ${ORDINAL} annual skating event - the ${YEAR} Seattle Spicy Salmon Roll`}
       />
       <header>
         <NavBar active="media" />
@@ -25,7 +26,7 @@ const Media = (): ReactElement => {
         <h1 className="text-xxl font-lilita mbd">Media</h1>
         <p>
           Visit&nbsp;
-          <a href="https://www.instagram.com/seattle_weekly_distance_skate/">
+          <a href={INSTA_LINK} target="_blank" rel="noopener noreferrer">
             <img
               className="mrxs"
               src="/icons/instagram.svg"

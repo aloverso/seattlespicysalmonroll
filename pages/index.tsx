@@ -3,11 +3,12 @@ import { NavBar } from "../src/components/NavBar";
 import { Hero } from "../src/components/Hero";
 import { Footer } from "../src/components/Footer";
 import { Metadata } from "../src/components/Metadata";
+import { DATE_STRING, ORDINAL } from "../src/domain/consts";
 
 const Index = (): ReactElement => {
   return (
     <>
-      <Metadata description="Join us July 18-21, 2024 in the Emerald City for the Seattle Distance Skating team’s first annual skating event - all skaters welcome!" />
+      <Metadata description={`Join us ${DATE_STRING} in the Emerald City for the Seattle Distance Skating team’s ${ORDINAL} annual skating event - all skaters welcome!`} />
       <header>
         <NavBar active="home" />
       </header>
@@ -16,7 +17,7 @@ const Index = (): ReactElement => {
         <div className="container mvxl">
           <div className="row">
             <div className="text-xxl font-lilita">
-              Seattle&apos;s debut annual inline skate event
+              Seattle&apos;s {ORDINAL} annual inline skate event
             </div>
             <div className="col-md-8">
               <div className="bold text-xl font-italic">

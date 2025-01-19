@@ -2,6 +2,7 @@ import "@styles/index.scss";
 import React, { ReactElement } from "react";
 import { AppProps } from "next/app";
 import Head from "next/head";
+import { YEAR } from "../src/domain/consts";
 
 const App = ({ Component, pageProps }: AppProps): ReactElement => {
   return (
@@ -19,7 +20,7 @@ const App = ({ Component, pageProps }: AppProps): ReactElement => {
         `,
           }}
         />
-        <title>Seattle Spicy Salmon Roll 2024</title>
+        <title>Seattle Spicy Salmon Roll {YEAR}</title>
       </Head>
       <Component {...pageProps} />
     </>
