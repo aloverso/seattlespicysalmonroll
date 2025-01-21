@@ -1,4 +1,4 @@
-import React, { ReactElement, useMemo } from "react";
+import React, { ReactElement } from "react";
 import { NavBar } from "../../src/components/NavBar";
 import { Footer } from "../../src/components/Footer";
 import { Event, SPICE } from "../../src/domain/types";

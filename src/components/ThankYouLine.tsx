@@ -6,7 +6,7 @@ interface Props {
 }
 
 export const ThankYouLine = (props: Props): ReactElement => {
-  const handleLink = props.handle.replace('@', '')
+  const handleLink = props.handle.replace("@", "");
   return (
     <li className="mbs bullet">
       <span className="">{props.name}</span>
@@ -14,5 +14,5 @@ export const ThankYouLine = (props: Props): ReactElement => {
         <span className="mlxs">{props.handle}</span>
       </a>
     </li>
-  )
-}
+  );
+};

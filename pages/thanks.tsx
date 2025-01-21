@@ -6,8 +6,7 @@ import { ThankYouLine } from "../src/components/ThankYouLine";
 import { CONTROLS } from "../src/domain/consts";
 
 const Faq = (): ReactElement => {
-
-  if (!CONTROLS.showThanks) return <></>
+  if (!CONTROLS.showThanks) return <></>;
 
   return (
     <div className="bg-theme">
@@ -26,9 +25,13 @@ const Faq = (): ReactElement => {
               <h2 className="text-l bold pvd">Sponsors</h2>
               <img src="/images/shop-task-logo-black.jpg" alt="" className="ptd pbm width-100" />
               <p>
-              A huge thank-you to <a href="https://usa.shop-task.com/" target="_blank" rel="noopener noreferrer">Shop Task</a> for sponsoring this event!
-              Shop Task is located in South Lake Union in Seattle, and is an inline skate store by and for skaters.
-              At any point during the event, they can be a source of skates, wheels, bearings, gear, and more.
+                A huge thank-you to{" "}
+                <a href="https://usa.shop-task.com/" target="_blank" rel="noopener noreferrer">
+                  Shop Task
+                </a>{" "}
+                for sponsoring this event! Shop Task is located in South Lake Union in Seattle, and
+                is an inline skate store by and for skaters. At any point during the event, they can
+                be a source of skates, wheels, bearings, gear, and more.
               </p>
             </>
           )}
@@ -65,7 +68,10 @@ const Faq = (): ReactElement => {
           <h2 className="text-l bold ptd">Local Skate Groups</h2>
           <ul className="ptd">
             <ThankYouLine name="Seattle Skates" handle="@seattle_skates" />
-            <ThankYouLine name="Seattle Weekly Session of Friendship" handle="@seattleweeklyskatesession" />
+            <ThankYouLine
+              name="Seattle Weekly Session of Friendship"
+              handle="@seattleweeklyskatesession"
+            />
           </ul>
 
           <h2 className="text-l bold ptd">Donors and Partners</h2>
@@ -79,8 +85,7 @@ const Faq = (): ReactElement => {
       </main>
       <Footer />
     </div>
-  )
-    ;
+  );
 };
 
 export default Faq;

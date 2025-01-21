@@ -29,8 +29,8 @@ export const Hero = (): ReactElement => {
   };
 
   const isUpcoming = timeUntil.day >= 0 && timeUntil.hour >= 0 && timeUntil.minute >= 0;
-  const isPast = dayjs().isAfter(END_DATE)
-  const today = dayjs().format('YYYY-MM-DD')
+  const isPast = dayjs().isAfter(END_DATE);
+  const today = dayjs().format("YYYY-MM-DD");
 
   React.useEffect(() => {
     const timer = setInterval(() => {
@@ -54,7 +54,7 @@ export const Hero = (): ReactElement => {
         <div className="hero-label">{timeUntil.minute === 1 ? "minute" : "minutes"}</div>
       </div>
     </div>
-  )
+  );
 
   return (
     <>
@@ -63,12 +63,13 @@ export const Hero = (): ReactElement => {
           Seattle Distance Skating Club presents:
         </div>
         <div className="row">
-          {CONTROLS.showLiveUpdates
-            ? (<div className="col-lg-4 order-lg-0 order-2 mtl feed-parent">
-                <LiveUpdates />
-              </div>)
-            : (<div className="col-lg-3 order-lg-0 order-2 mtl feed-parent"/>)
-          }
+          {CONTROLS.showLiveUpdates ? (
+            <div className="col-lg-4 order-lg-0 order-2 mtl feed-parent">
+              <LiveUpdates />
+            </div>
+          ) : (
+            <div className="col-lg-3 order-lg-0 order-2 mtl feed-parent" />
+          )}
 
           <div className="col-lg-8 order-1 mtl">
             <div className="fdr hero-parent">
@@ -81,7 +82,7 @@ export const Hero = (): ReactElement => {
                 Salmon Roll
               </h1>
             </div>
-            {(!isPast && CONTROLS.registrationLive) && (
+            {!isPast && CONTROLS.registrationLive && (
               <div className="fdr hero-parent">
                 <button
                   className={`button button-hero ${!isUpcoming && "button-hero-secondary"}`}
@@ -91,7 +92,7 @@ export const Hero = (): ReactElement => {
                 </button>
               </div>
             )}
-            {(!isUpcoming && !isPast) && (
+            {!isUpcoming && !isPast && (
               <div className="fdr hero-parent mtd">
                 <a href={`/schedule#${today}`}>
                   <button className="button button-hero" onClick={registerButton}>

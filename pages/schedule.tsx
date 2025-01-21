@@ -39,9 +39,7 @@ const Schedule = (props: Props): ReactElement => {
             </div>
           </div>
         ))}
-        {(Object.keys(props.dayGroups).length === 0) && (
-          <p>Schedule coming later!</p>
-        )}
+        {Object.keys(props.dayGroups).length === 0 && <p>Schedule coming later!</p>}
       </main>
       <Footer />
     </div>

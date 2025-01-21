@@ -9,7 +9,7 @@ interface Props {
 
 export const Metadata = (props: Props): ReactElement => {
   const sitename = `Seattle Spicy Salmon Roll ${YEAR}`;
-  const title = props.title ? `${props.title} | ${sitename}` : sitename
+  const title = props.title ? `${props.title} | ${sitename}` : sitename;
 
   return (
     <Head>

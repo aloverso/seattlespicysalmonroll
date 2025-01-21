@@ -1,7 +1,7 @@
 import React, { ReactElement, useEffect } from "react";
 import { MediaQueries } from "../MediaQueries";
-import useMediaQuery from '@mui/material/useMediaQuery';
-import Menu from '@mui/material/Menu';
+import useMediaQuery from "@mui/material/useMediaQuery";
+import Menu from "@mui/material/Menu";
 import { CONTROLS, INSTA_LINK } from "../domain/consts";
 
 interface Props {
@@ -46,13 +46,13 @@ export const NavBar = (props: Props): ReactElement => {
           Media
         </a>
       </li>
-      {CONTROLS.showThanks &&
+      {CONTROLS.showThanks && (
         <li className={`nav-item fdr fjc ${props.active === "thanks" ? "active" : ""}`}>
           <a href="/thanks" className="nav-link">
             Thanks
           </a>
         </li>
-      }
+      )}
       <li className="fdr fjc nav-item radius icon">
         <a href={INSTA_LINK} target="_blank" rel="noopener noreferrer">
           <img
@@ -63,7 +63,11 @@ export const NavBar = (props: Props): ReactElement => {
         </a>
       </li>
       <li className="fdr fjc nav-item radius icon">
-        <a href="https://www.facebook.com/groups/135066862931505/" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://www.facebook.com/groups/135066862931505/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img src="/icons/facebook.svg" alt="FACEBOOK" style={{ width: "24px", height: "24px" }} />
         </a>
       </li>
@@ -74,7 +78,7 @@ export const NavBar = (props: Props): ReactElement => {
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
         <a className="navbar-brand" href="/">
-        <span className="font-lilita text-xl text-black">Seattle Spicy Salmon Roll</span>
+          <span className="font-lilita text-xl text-black">Seattle Spicy Salmon Roll</span>
         </a>
         <div className="mobile-only">
           <button

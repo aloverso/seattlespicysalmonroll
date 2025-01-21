@@ -21,7 +21,9 @@ const Faq = (): ReactElement => {
       <main className="container mtxl">
         <h1 className="text-xxl font-lilita mbd">FAQ</h1>
         <div className="col-md-8">
-          {CONTROLS.showSpiceLevelFAQ && <FaqBlock q={`What do the ${SPICE} spice levels mean?`} a={<SpiceLevels />} />}
+          {CONTROLS.showSpiceLevelFAQ && (
+            <FaqBlock q={`What do the ${SPICE} spice levels mean?`} a={<SpiceLevels />} />
+          )}
 
           <FaqBlock
             q="What can I expect from this event?"
@@ -104,7 +106,11 @@ const Faq = (): ReactElement => {
             q="Where can I get gear? Skates, wheels, bearings, etc"
             a={
               <p>
-                Check out <a href="https://usa.shop-task.com/" target="_blank" rel="noopener noreferrer">Shop Task</a> in South Lake Union!
+                Check out{" "}
+                <a href="https://usa.shop-task.com/" target="_blank" rel="noopener noreferrer">
+                  Shop Task
+                </a>{" "}
+                in South Lake Union!
               </p>
             }
           />
@@ -114,8 +120,14 @@ const Faq = (): ReactElement => {
             a={
               <>
                 <p>
-                  <a href="https://app.leg.wa.gov/rcw/default.aspx?cite=9.91.025" target="_blank" rel="noopener noreferrer">Legally</a>:
-                  &quot;[Unlawful transit conduct:] Skates on roller skates or in-line skates, or
+                  <a
+                    href="https://app.leg.wa.gov/rcw/default.aspx?cite=9.91.025"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Legally
+                  </a>
+                  : &quot;[Unlawful transit conduct:] Skates on roller skates or in-line skates, or
                   rides in or upon or by any means a coaster, skateboard, toy vehicle, or any
                   similar device. However, a person may walk while wearing skates or carry a
                   skateboard while on or in a transit vehicle or in or at a transit station if that

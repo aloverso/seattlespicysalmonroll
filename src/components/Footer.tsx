@@ -9,17 +9,15 @@ export const Footer = (): ReactElement => {
         <div>&copy; {YEAR} Seattle Distance Skating Club</div>
         <Sponsorship />
         <div>
-          <span>
-            Site by Anne LoVerso
-          </span>
-          {CONTROLS.showThanks &&
+          <span>Site by Anne LoVerso</span>
+          {CONTROLS.showThanks && (
             <>
               <span className="mhs">•</span>
               <span>
                 <a href="/thanks">Acknowledgements</a>
               </span>
             </>
-          }
+          )}
         </div>
       </div>
     </footer>

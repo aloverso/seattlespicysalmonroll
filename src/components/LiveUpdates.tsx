@@ -3,11 +3,9 @@ import { UpdateMessage } from "../domain/types";
 import { Update } from "./Update";
 
 export const LiveUpdates = (): ReactElement => {
-
-  const [updates, setUpdates] = useState<UpdateMessage[]>([])
+  const [updates, setUpdates] = useState<UpdateMessage[]>([]);
 
   useEffect(() => {
-
     // setUpdates(
     //   [
     //     {"message":"third thing","timestamp":"2024-07-17T23:50:34+00:00","id":"9988764"},
@@ -21,22 +19,20 @@ export const LiveUpdates = (): ReactElement => {
     //     // {"message":"test new","timestamp":"2024-07-17T23:50:26+00:00","id":"329113594"},
     //   ]
     // )
-    fetch('/api/getstore')
-      .then(response => {
-        response.json().then((json) => {
-          setUpdates(json)
-        })
-      })
-  }, [])
+    fetch("/api/getstore").then((response) => {
+      response.json().then((json) => {
+        setUpdates(json);
+      });
+    });
+  }, []);
 
   React.useEffect(() => {
     const timer = setInterval(() => {
-      fetch('/api/getstore')
-        .then(response => {
-          response.json().then((json) => {
-            setUpdates(json)
-          })
-        })
+      fetch("/api/getstore").then((response) => {
+        response.json().then((json) => {
+          setUpdates(json);
+        });
+      });
     }, 60000);
     return () => clearInterval(timer);
   }, []);
@@ -44,8 +40,16 @@ export const LiveUpdates = (): ReactElement => {
   return (
     <div className="text-white bg-overlay pad">
       <h2 className="text-xl bold mbd">Live Updates</h2>
-      <p>Check here during the event for regular live updates on the group and routes! Or visit
-        our <a href="https://www.instagram.com/seattlespicysalmonroll_24/" target="_blank" rel="noopener noreferrer">event Instagram</a>.
+      <p>
+        Check here during the event for regular live updates on the group and routes! Or visit our{" "}
+        <a
+          href="https://www.instagram.com/seattlespicysalmonroll_24/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          event Instagram
+        </a>
+        .
       </p>
       <div className="pvs feed">
         <div className="brad bg-white-overlay pad mvs text-black ">
@@ -54,9 +58,12 @@ export const LiveUpdates = (): ReactElement => {
             <div className="text-s text-uppercase mlxs">PINNED</div>
           </div>
           <div>
-            Use the <a className="bold" href="http://glympse.com/!seattlespicysalmonroll2024">Glympse app</a>&nbsp;to
-            find live-location sharing for safety marshals during the event. Our Glympse public tag
-            is <span className="bold">seattlespicysalmonroll2024</span>.
+            Use the{" "}
+            <a className="bold" href="http://glympse.com/!seattlespicysalmonroll2024">
+              Glympse app
+            </a>
+            &nbsp;to find live-location sharing for safety marshals during the event. Our Glympse
+            public tag is <span className="bold">seattlespicysalmonroll2024</span>.
           </div>
         </div>
         {updates.map((update) => (
