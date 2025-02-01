@@ -13,8 +13,11 @@ export type EventIdParam = {
 const eventsDir = path.join(process.cwd(), "content", "events");
 
 export const loadAllEventIds = (): PathParams<EventIdParam>[] => {
-  const eventFilenames = fs.readdirSync(eventsDir);
+  if (!fs.existsSync(eventsDir)) {
+    return []
+  }
 
+  const eventFilenames = fs.readdirSync(eventsDir);
   return eventFilenames.map((filename) => ({
     params: { eventId: filename.split(".md")[0] },
   }));
