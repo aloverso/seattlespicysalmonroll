@@ -46,6 +46,13 @@ export const NavBar = (props: Props): ReactElement => {
           Media
         </a>
       </li>
+      {CONTROLS.registrationLive && (
+        <li className={`nav-item fdr fjc ${props.active === "register" ? "active" : ""}`}>
+          <a href="/register" className="nav-link">
+            Register
+          </a>
+        </li>
+      )}
       {CONTROLS.showThanks && (
         <li className={`nav-item fdr fjc ${props.active === "thanks" ? "active" : ""}`}>
           <a href="/thanks" className="nav-link">
