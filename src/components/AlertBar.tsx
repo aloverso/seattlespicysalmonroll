@@ -7,7 +7,7 @@ export const AlertBar = (): ReactElement => {
   if (!showAlert || !CONTROLS.registrationLive) return <></>;
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-alert">
+    <nav className="navbar navbar-expand-lg navbar-light bg-yellow">
       <div className="container weight-500">
         <div>
           All skaters MUST{" "}

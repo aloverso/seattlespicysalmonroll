@@ -4,6 +4,7 @@ export const REGISTER_LINK =
   "https://docs.google.com/forms/d/e/1FAIpQLSeHfNtfWKPwXkBmftylXlxHjW_ldfRj5RdmZXCm5sB059VCRg/viewform?usp=dialog";
 
 export const INSTA_LINK = "https://www.instagram.com/seattle_distance_skating_club/";
+export const GOFUNDME_LINK = "https://www.gofundme.com/f/roll-with-seattle-distance-skating-club-this-summer";
 
 export const CONTROLS = {
   showSponsorship: false,
@@ -11,6 +12,7 @@ export const CONTROLS = {
   showLiveUpdates: false,
   showSpiceLevelFAQ: false,
   showThanks: false,
+  showGoFundMe: true
 };
 
 export const ORDINAL = "2nd";

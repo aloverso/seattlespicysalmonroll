@@ -5,7 +5,7 @@ $dark-teal: #00e09d;
 $blue: #00d0ff;
 $dark-blue: #0085a3;
 $extra-dark-blue: #005366;
-$alert: #ffb647;
+$yellow: #fed47e;
 $black: #151515;
 $med-grey: #999;
 
@@ -49,8 +49,8 @@ $med-grey: #999;
   background-color: $teal;
 }
 
-.bg-alert {
-  background-color: $alert;
+.bg-yellow {
+  background-color: $yellow;
 }
 
 .border-blue {

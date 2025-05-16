@@ -3,7 +3,8 @@ import { NavBar } from "../src/components/NavBar";
 import { Hero } from "../src/components/Hero";
 import { Footer } from "../src/components/Footer";
 import { Metadata } from "../src/components/Metadata";
-import { DATE_STRING, ORDINAL } from "../src/domain/consts";
+import { CONTROLS, DATE_STRING, ORDINAL } from "../src/domain/consts";
+import { GoFundMeBlock } from "../src/components/GoFundMeBlock";
 
 const Index = (): ReactElement => {
   return (
@@ -18,15 +19,17 @@ const Index = (): ReactElement => {
         <Hero />
         <div className="container mvxl">
           <div className="row">
-            <div className="text-xxl font-lilita">
+            <h2 className="text-xxl font-lilita">
               Seattle&apos;s {ORDINAL} annual inline skate event
-            </div>
+            </h2>
             <div className="col-md-8">
-              <div className="bold text-xl font-italic">
+              <div className="bold text-xl font-italic mbm">
                 hosted by Seattle Distance Skating Club.
               </div>
 
-              <p className="bold mtl">The Seattle Spicy Salmon Roll: Official Recipe</p>
+              {CONTROLS.showGoFundMe && <GoFundMeBlock />}
+
+              <h3 className="text-l bold mtl mbd">The Seattle Spicy Salmon Roll: Official Recipe</h3>
 
               <p>
                 Take 6-12 fresh wheels (round, spacers included), stuffed with 12-24 bearings dipped
@@ -49,7 +52,7 @@ const Index = (): ReactElement => {
               <p>Get your skate buds ready!</p>
             </div>
             <div className="col-md-4 fdc fae">
-              <img alt="" src="/images/logo.png" className="width-100" />
+              <img alt="" src="/images/logo2025.png" className="width-100" />
             </div>
           </div>
         </div>
