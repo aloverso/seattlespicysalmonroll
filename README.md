@@ -16,5 +16,4 @@ npm run dev
 
 ## Deployment
 
-This site is deployed using Netlify via GitHub Actions. 
-Any commit to the main branch is automatically deployed to the live site. 
+This site is deployed using Netlify. Any commit to the main branch is automatically deployed to the live site. 
