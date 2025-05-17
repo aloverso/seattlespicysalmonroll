@@ -10,9 +10,9 @@ export const CONTROLS = {
   showSponsorship: false,
   registrationLive: true,
   showLiveUpdates: false,
-  showSpiceLevelFAQ: false,
   showThanks: false,
-  showGoFundMe: true
+  showGoFundMe: true,
+  showEvents: false
 };
 
 export const ORDINAL = "2nd";

@@ -5,7 +5,7 @@ import { Metadata } from "../src/components/Metadata";
 import { ThankYouLine } from "../src/components/ThankYouLine";
 import { CONTROLS } from "../src/domain/consts";
 
-const Faq = (): ReactElement => {
+const Thanks = (): ReactElement => {
   if (!CONTROLS.showThanks) return <></>;
 
   return (
@@ -88,4 +88,4 @@ const Faq = (): ReactElement => {
   );
 };
 
-export default Faq;
+export default Thanks;

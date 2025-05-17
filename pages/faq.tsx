@@ -21,7 +21,7 @@ const Faq = (): ReactElement => {
       <main className="container mtxl">
         <h1 className="text-xxl font-lilita mbd">FAQ</h1>
         <div className="col-md-8">
-          {CONTROLS.showSpiceLevelFAQ && (
+          {CONTROLS.showEvents && (
             <FaqBlock q={`What do the ${SPICE} spice levels mean?`} a={<SpiceLevels />} />
           )}
 

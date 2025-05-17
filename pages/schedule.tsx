@@ -8,7 +8,7 @@ import dayjs from "dayjs";
 import { EventSummary } from "../src/components/EventSummary";
 import { Metadata } from "../src/components/Metadata";
 import { AlertBar } from "../src/components/AlertBar";
-import { ORDINAL, YEAR } from "../src/domain/consts";
+import { CONTROLS, ORDINAL, YEAR } from "../src/domain/consts";
 
 interface Props {
   events: Event[];
@@ -16,6 +16,9 @@ interface Props {
 }
 
 const Schedule = (props: Props): ReactElement => {
+
+  const hasZeroEvents = Object.keys(props.dayGroups).length === 0
+
   return (
     <div className="bg-theme">
       <Metadata
@@ -24,11 +27,11 @@ const Schedule = (props: Props): ReactElement => {
       />
       <header>
         <NavBar active="schedule" />
-        <AlertBar />
+        {CONTROLS.showEvents && <AlertBar />}
       </header>
       <main className="container mtxl bg-white">
         <h1 className="text-xxl font-lilita mbd">Schedule</h1>
-        {Object.keys(props.dayGroups).map((date) => (
+        {CONTROLS.showEvents && (Object.keys(props.dayGroups).map((date) => (
           <div key={date} id={date}>
             <h2 className="text-xl bold mtl">{dayjs(date).format("dddd MMM DD, YYYY")}</h2>
             <hr />
@@ -38,8 +41,8 @@ const Schedule = (props: Props): ReactElement => {
               ))}
             </div>
           </div>
-        ))}
-        {Object.keys(props.dayGroups).length === 0 && <p>Schedule coming later!</p>}
+        )))}
+        {(hasZeroEvents || !CONTROLS.showEvents) && <p>Schedule coming later!</p>}
       </main>
       <Footer />
     </div>

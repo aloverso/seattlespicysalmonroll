@@ -49,7 +49,7 @@ const EventPage = (props: Props): ReactElement => {
               <>
                 <p>
                   <span className="bold text-uppercase">Distance:</span>
-                  <span className="mls">{props.event.distance}</span>
+                  <span className="mls">{props.event.distance} miles</span>
                 </p>
                 <p>
                   <span className="bold text-uppercase">Meeting Time:</span>
