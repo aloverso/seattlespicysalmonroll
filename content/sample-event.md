@@ -1,27 +1,24 @@
 ---
-id: "2024-07-18-afternoon"
+id: "2024-07-21-afternoon"
 type: "Skate"
-date: "2024-07-18"
-name: "Downtown Commute"
-description: "Skate from Green Lake to the downtown for our waterfront skate"
-timeOfDay: "Afternoon"
-distance: "8 miles"
-spice: 3
-meetingTime: "2:00 PM"
-startTime: "2:30 PM"
-meetingLocationTitle: "Green Lake Arch"
-meetingLocationAddress: "Green Lake Arch\n
-7201 East Green Lake Dr N\n
-Seattle, WA 98115"
-meetingLocationLink: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6203.613222512954!2d-122.3384989246565!3d47.67902958150348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x549015254dcb9fd1%3A0x4370ed6fff0037fd!2sGreen%20Lake%20Arch!5e0!3m2!1sen!2sus!4v1720154839639!5m2!1sen!2sus"
+date: "2024-07-21"
+name: "Two Bridge Loop Marathon"
+description: "Hit both the 520 and I-90 floating bridges of Lake Washington"
+spice: 5
+timeOfDay: "Afternoon/Evening"
+distance: "26+"
+meetingLocationAddress: "Triangle Garage\n
+Seattle, WA 98195"
+meetingLocationTitle: "Triangle Garage"
+startTime: "1:00 PM"
+meetingTime: "11:30 AM"
+meetingLocationLink: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9709.467055849913!2d-122.32088977039456!3d47.65221575329358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x549014ec836e16b9%3A0x4a82ded5d3d30152!2sTriangle%20Garage%2C%20Seattle%2C%20WA%2098195!5e0!3m2!1sen!2sus!4v1720458396259!5m2!1sen!2sus"
 ---
 
-Take the skate way downtown to find your way to the starting point for today's evening waterfront skate.
+Starting at 11:30 AM, we will have free bagels graciously donated by [Zylberschtein's Delicatessen & Bakery](https://zylberschtein.com/) available to skaters at the Triangle meeting spot.
 
-If you don't want to do this one, you can take the light rail downtown instead.
+We'll hang out a bit with bagels and then the skate rollout is at 1:00 PM.
 
-This route departs Greenlake and heads up to Roosevelt, eventually through the University to Eastlake Bridge. From there, we ascend Capitol Hill to the beautiful Melrose Avenue view and skate through Broadway to the Seattle University campus on the way to bomb 12th Avenue and Jackson towards International and Stadium districts. Be prepared for a few miles of hills!
+Marathon loop route starting & ending near the light rail at University of Washington. We meet at the concrete benches on the top of the Triangle Garage.
 
-**Finish at:** 5:00 - 5:30pm, Lumen Field
-800 Occidental Ave S
-Seattle, WA 98134
+Loop both floating bridges across Lake Washington. Take in everything Seattle has to offer, and finish this event by giving it everything you've got! Cover over 40 miles in one day if you do this plus the morning half-marathon!
