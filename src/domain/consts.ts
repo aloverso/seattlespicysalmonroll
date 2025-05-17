@@ -6,18 +6,20 @@ export const REGISTER_LINK =
 export const INSTA_LINK = "https://www.instagram.com/seattle_distance_skating_club/";
 export const GOFUNDME_LINK = "https://www.gofundme.com/f/roll-with-seattle-distance-skating-club-this-summer";
 
+export const ORDINAL = "2nd";
+export const DATE = "2025-07-17 5:00:00";
+export const END_DATE = "2025-07-20 11:59:00";
+
 export const CONTROLS = {
+  showThanks: false,
   showSponsorship: false,
   registrationLive: true,
   showLiveUpdates: false,
-  showThanks: false,
   showGoFundMe: true,
   showEvents: false
 };
 
-export const ORDINAL = "2nd";
-export const DATE = "2025-07-17 5:00:00";
-export const END_DATE = "2025-07-20 11:59:00";
+// calculated values (no need to change)
 export const YEAR = dayjs(DATE).year();
 export const DATE_STRING = `${dayjs(DATE).format("MMMM DD")}–${dayjs(END_DATE).format(
   "DD"

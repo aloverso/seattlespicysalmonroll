@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { Category, Event, TimeOfDay } from "./types";
+import { Event, TimeOfDay } from "./types";
 import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
@@ -56,5 +56,4 @@ type EventGrayMatter = {
   meetingLocationTitle: string;
   meetingLocationAddress: string;
   meetingLocationLink: string;
-  category: Category;
 };
