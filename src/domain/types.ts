@@ -6,7 +6,6 @@ export type Event = {
   description: string;
   meetingTime: string;
   startTime: string;
-  timeOfDay: TimeOfDay;
   distance: string;
   meetingLocationTitle: string;
   meetingLocationAddress: string;
@@ -20,7 +19,5 @@ export type UpdateMessage = {
   timestamp: string;
   id: string;
 };
-
-export type TimeOfDay = "Morning" | "Afternoon" | "Afternoon/Evening" | "Evening";
 
 export const SPICE = "🔥";

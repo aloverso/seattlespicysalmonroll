@@ -8,6 +8,8 @@ import dayjs from "dayjs";
 import Link from "next/link";
 import { BeginnerRoute } from "../../src/components/BeginnerRoute";
 import { AlertBar } from "../../src/components/AlertBar";
+import { CONTROLS } from "../../src/domain/consts";
+import { PreliminaryAlert } from "../../src/components/PreliminaryAlert";
 
 interface Props {
   event: Event;
@@ -47,18 +49,18 @@ const EventPage = (props: Props): ReactElement => {
 
             {props.event.type === "Skate" && (
               <>
-                <p>
+                {props.event.distance && <p>
                   <span className="bold text-uppercase">Distance:</span>
                   <span className="mls">{props.event.distance} miles</span>
-                </p>
-                <p>
+                </p>}
+                {props.event.meetingTime && <p>
                   <span className="bold text-uppercase">Meeting Time:</span>
                   <span className="mls">{props.event.meetingTime}</span>
-                </p>
-                <p>
+                </p>}
+                {props.event.startTime && <p>
                   <span className="bold text-uppercase">Start Time:</span>
                   <span className="mls">{props.event.startTime}</span>
-                </p>
+                </p>}
                 <p>
                   <span className="bold text-uppercase">Meeting Location:</span>
                   <br />
@@ -71,10 +73,14 @@ const EventPage = (props: Props): ReactElement => {
                 </p>
                 <p>
                   <span className="bold text-uppercase">Spice Level:</span>
-                  <span className="mls">{spice}</span>
-                  <div className="mld mbm">
-                    <a href="/faq">What does this mean?</a>
-                  </div>
+                  {props.event.spice > 0
+                    ? <>
+                    <span className="mls">{spice}</span>
+                      <div className="mld mbm">
+                        <a href="/faq">What does this mean?</a>
+                      </div>
+                    </>
+                    : <span> None</span>}
                 </p>
               </>
             )}
@@ -99,10 +105,11 @@ const EventPage = (props: Props): ReactElement => {
           )}
         </div>
 
+        {CONTROLS.preliminarySchedule && <PreliminaryAlert />}
         <h2 className="text-l bold mtl mbs">Description</h2>
         <div className="row">
           <div className="col-md-8">
-            <div dangerouslySetInnerHTML={{ __html: props.event.body }} />
+          <div dangerouslySetInnerHTML={{ __html: props.event.body }} />
           </div>
         </div>
 

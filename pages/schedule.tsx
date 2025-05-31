@@ -9,6 +9,7 @@ import { EventSummary } from "../src/components/EventSummary";
 import { Metadata } from "../src/components/Metadata";
 import { AlertBar } from "../src/components/AlertBar";
 import { CONTROLS, ORDINAL, YEAR } from "../src/domain/consts";
+import { PreliminaryAlert } from "../src/components/PreliminaryAlert";
 
 interface Props {
   events: Event[];
@@ -30,6 +31,7 @@ const Schedule = (props: Props): ReactElement => {
       </header>
       <main className="container mtxl bg-white">
         <h1 className="text-xxl font-lilita mbd">Schedule</h1>
+        {CONTROLS.preliminarySchedule && <PreliminaryAlert/>}
         {CONTROLS.showEvents &&
           Object.keys(props.dayGroups).map((date) => (
             <div key={date} id={date}>
@@ -37,7 +39,7 @@ const Schedule = (props: Props): ReactElement => {
               <hr />
               <div className="col-md-8">
                 {props.dayGroups[date].map((event) => (
-                  <EventSummary key={event.id} event={event} />
+                  <EventSummary key={event.id} event={event} allEventsOnSameDay={props.dayGroups[date]} />
                 ))}
               </div>
             </div>

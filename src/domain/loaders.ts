@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { Event, TimeOfDay } from "./types";
+import { Event } from "./types";
 import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
@@ -47,7 +47,6 @@ type EventGrayMatter = {
   date: string;
   name: string;
   spice: number;
-  timeOfDay: TimeOfDay;
   type: "Skate" | "Event";
   description: string;
   meetingTime: string;

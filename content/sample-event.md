@@ -1,11 +1,10 @@
 ---
-id: "2024-07-21-afternoon"
+id: "2025-07-21-afternoon"
 type: "Skate"
-date: "2024-07-21"
+date: "2025-07-21"
 name: "Two Bridge Loop Marathon"
 description: "Hit both the 520 and I-90 floating bridges of Lake Washington"
 spice: 5
-timeOfDay: "Afternoon/Evening"
 distance: "26+"
 meetingLocationAddress: "Triangle Garage\n
 Seattle, WA 98195"
