@@ -14,7 +14,7 @@ const eventsDir = path.join(process.cwd(), "content", "events");
 
 export const loadAllEventIds = (): PathParams<EventIdParam>[] => {
   if (!fs.existsSync(eventsDir)) {
-    return []
+    return [];
   }
 
   const eventFilenames = fs.readdirSync(eventsDir);

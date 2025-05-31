@@ -8,7 +8,11 @@ export const Sponsorship = (): ReactElement => {
     <div>
       Event sponsored by{" "}
       <a href="https://usa.shop-task.com/" target="_blank" rel="noopener noreferrer">
-        SHOP TASK
+        Shop Task
+      </a>{" "}
+      and{" "}
+      <a href="https://zylberschtein.com/" target="_blank" rel="noopener noreferrer">
+        Zylberschtein's Deli
       </a>
     </div>
   );

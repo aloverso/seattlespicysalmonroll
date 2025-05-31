@@ -29,7 +29,9 @@ const Index = (): ReactElement => {
 
               {CONTROLS.showGoFundMe && <GoFundMeBlock />}
 
-              <h3 className="text-l bold mtl mbd">The Seattle Spicy Salmon Roll: Official Recipe</h3>
+              <h3 className="text-l bold mtl mbd">
+                The Seattle Spicy Salmon Roll: Official Recipe
+              </h3>
 
               <p>
                 Take 6-12 fresh wheels (round, spacers included), stuffed with 12-24 bearings dipped

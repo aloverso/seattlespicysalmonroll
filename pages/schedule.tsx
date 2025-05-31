@@ -16,8 +16,7 @@ interface Props {
 }
 
 const Schedule = (props: Props): ReactElement => {
-
-  const hasZeroEvents = Object.keys(props.dayGroups).length === 0
+  const hasZeroEvents = Object.keys(props.dayGroups).length === 0;
 
   return (
     <div className="bg-theme">
@@ -31,17 +30,18 @@ const Schedule = (props: Props): ReactElement => {
       </header>
       <main className="container mtxl bg-white">
         <h1 className="text-xxl font-lilita mbd">Schedule</h1>
-        {CONTROLS.showEvents && (Object.keys(props.dayGroups).map((date) => (
-          <div key={date} id={date}>
-            <h2 className="text-xl bold mtl">{dayjs(date).format("dddd MMM DD, YYYY")}</h2>
-            <hr />
-            <div className="col-md-8">
-              {props.dayGroups[date].map((event) => (
-                <EventSummary key={event.id} event={event} />
-              ))}
+        {CONTROLS.showEvents &&
+          Object.keys(props.dayGroups).map((date) => (
+            <div key={date} id={date}>
+              <h2 className="text-xl bold mtl">{dayjs(date).format("dddd MMM DD, YYYY")}</h2>
+              <hr />
+              <div className="col-md-8">
+                {props.dayGroups[date].map((event) => (
+                  <EventSummary key={event.id} event={event} />
+                ))}
+              </div>
             </div>
-          </div>
-        )))}
+          ))}
         {(hasZeroEvents || !CONTROLS.showEvents) && <p>Schedule coming later!</p>}
       </main>
       <Footer />
