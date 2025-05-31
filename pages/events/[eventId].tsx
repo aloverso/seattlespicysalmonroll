@@ -49,18 +49,24 @@ const EventPage = (props: Props): ReactElement => {
 
             {props.event.type === "Skate" && (
               <>
-                {props.event.distance && <p>
-                  <span className="bold text-uppercase">Distance:</span>
-                  <span className="mls">{props.event.distance} miles</span>
-                </p>}
-                {props.event.meetingTime && <p>
-                  <span className="bold text-uppercase">Meeting Time:</span>
-                  <span className="mls">{props.event.meetingTime}</span>
-                </p>}
-                {props.event.startTime && <p>
-                  <span className="bold text-uppercase">Start Time:</span>
-                  <span className="mls">{props.event.startTime}</span>
-                </p>}
+                {props.event.distance && (
+                  <p>
+                    <span className="bold text-uppercase">Distance:</span>
+                    <span className="mls">{props.event.distance} miles</span>
+                  </p>
+                )}
+                {props.event.meetingTime && (
+                  <p>
+                    <span className="bold text-uppercase">Meeting Time:</span>
+                    <span className="mls">{props.event.meetingTime}</span>
+                  </p>
+                )}
+                {props.event.startTime && (
+                  <p>
+                    <span className="bold text-uppercase">Start Time:</span>
+                    <span className="mls">{props.event.startTime}</span>
+                  </p>
+                )}
                 <p>
                   <span className="bold text-uppercase">Meeting Location:</span>
                   <br />
@@ -73,14 +79,16 @@ const EventPage = (props: Props): ReactElement => {
                 </p>
                 <p>
                   <span className="bold text-uppercase">Spice Level:</span>
-                  {props.event.spice > 0
-                    ? <>
-                    <span className="mls">{spice}</span>
+                  {props.event.spice > 0 ? (
+                    <>
+                      <span className="mls">{spice}</span>
                       <div className="mld mbm">
                         <a href="/faq">What does this mean?</a>
                       </div>
                     </>
-                    : <span> None</span>}
+                  ) : (
+                    <span> None</span>
+                  )}
                 </p>
               </>
             )}
@@ -109,7 +117,7 @@ const EventPage = (props: Props): ReactElement => {
         <h2 className="text-l bold mtl mbs">Description</h2>
         <div className="row">
           <div className="col-md-8">
-          <div dangerouslySetInnerHTML={{ __html: props.event.body }} />
+            <div dangerouslySetInnerHTML={{ __html: props.event.body }} />
           </div>
         </div>
 

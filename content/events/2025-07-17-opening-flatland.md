@@ -13,6 +13,6 @@ meetingTime: "6:00 PM"
 meetingLocationLink: ""
 ---
 
-For this opening event, we'll gather in a flatland location. Skaters can show off wizard moves 
-and flow skating as we get together to celebrate the start of the Seattle Spicy Salmon Roll and 
+For this opening event, we'll gather in a flatland location. Skaters can show off wizard moves
+and flow skating as we get together to celebrate the start of the Seattle Spicy Salmon Roll and
 gather for the first skates of the event.

@@ -12,7 +12,7 @@ export const Sponsorship = (): ReactElement => {
       </a>{" "}
       and{" "}
       <a href="https://zylberschtein.com/" target="_blank" rel="noopener noreferrer">
-        Zylberschtein's Deli
+        Zylberschtein&apos;s Deli
       </a>
     </div>
   );

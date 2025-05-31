@@ -41,7 +41,7 @@ const Thanks = (): ReactElement => {
                 </a>{" "}
                 and{" "}
                 <a href="https://zylberschtein.com/" target="_blank" rel="noopener noreferrer">
-                  Zylberschtein's Deli
+                  Zylberschtein&apos;s Deli
                 </a>{" "}
                 for sponsoring this event!
               </p>
@@ -52,9 +52,9 @@ const Thanks = (): ReactElement => {
                 skates, wheels, bearings, gear, and more.
               </p>
               <p>
-                <b>Zylberschtein's</b> is a family-owned Jewish-style bakery in Pinehurst, serving
-                top-rated bagels, smoked meats, and more. They will be generously donating bagels
-                and food for skate event days!
+                <b>Zylberschtein&apos;s</b> is a family-owned Jewish-style bakery in Pinehurst,
+                serving top-rated bagels, smoked meats, and more. They will be generously donating
+                bagels and food for skate event days!
               </p>
             </>
           )}

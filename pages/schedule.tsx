@@ -31,7 +31,7 @@ const Schedule = (props: Props): ReactElement => {
       </header>
       <main className="container mtxl bg-white">
         <h1 className="text-xxl font-lilita mbd">Schedule</h1>
-        {CONTROLS.preliminarySchedule && <PreliminaryAlert/>}
+        {CONTROLS.preliminarySchedule && <PreliminaryAlert />}
         {CONTROLS.showEvents &&
           Object.keys(props.dayGroups).map((date) => (
             <div key={date} id={date}>
@@ -39,7 +39,11 @@ const Schedule = (props: Props): ReactElement => {
               <hr />
               <div className="col-md-8">
                 {props.dayGroups[date].map((event) => (
-                  <EventSummary key={event.id} event={event} allEventsOnSameDay={props.dayGroups[date]} />
+                  <EventSummary
+                    key={event.id}
+                    event={event}
+                    allEventsOnSameDay={props.dayGroups[date]}
+                  />
                 ))}
               </div>
             </div>

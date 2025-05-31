@@ -19,7 +19,7 @@ export const CONTROLS = {
   showGoFundMe: true,
   showEvents: true,
   showVolunteers: false,
-  preliminarySchedule: true
+  preliminarySchedule: true,
 };
 
 // calculated values (no need to change)
