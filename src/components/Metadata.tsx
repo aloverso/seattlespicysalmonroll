@@ -19,7 +19,10 @@ export const Metadata = (props: Props): ReactElement => {
       <meta property="og:title" content={sitename} />
       <meta property="og:image" content="https://seattlespicysalmonroll.com/images/logo2025.png" />
       <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:image" content="https://seattlespicysalmonroll.com/images/logo2025.png" />
+      <meta
+        property="twitter:image"
+        content="https://seattlespicysalmonroll.com/images/logo2025.png"
+      />
     </Head>
   );
 };
