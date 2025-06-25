@@ -57,6 +57,49 @@ const Index = (): ReactElement => {
               <img alt="" src="/images/logo2025.png" className="width-100" />
             </div>
           </div>
+
+          <div className="row">
+            <div className="col-md-8 mtl">
+              <p className="text-m small-caps letters-spaced">
+                looking for more skate event opportunities?
+              </p>
+              <h3 className="text-l bold mbd">
+                Check out the Trail Skate Challenge from{" "}
+                <a href="https://skatejourneys.org/" target="_blank" rel="noopener noreferrer">
+                  Skate&nbsp;Journeys
+                </a>
+              </h3>
+
+              <p>
+                Skate with Skate Journeys on 5k and 10k skates! All skill levels are welcome on
+                quads or inlines. All Challenge registration fees are donated to Skate Journeys, a
+                non-profit 501c(3).
+              </p>
+              <p>
+                This friendly trail-skate distance skate series occurs multiple days over June,
+                July, and August 2025, and is designed to help you push your limits, develop new
+                skills, and build endurance to skate longer distances.
+              </p>
+
+              <a
+                href="https://skatejourneys.org/2025-hit-your-stride-trail-skate-challenge/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-black button bg-teal pad hover-light-teal"
+              >
+                Visit Skate Journeys to learn more
+                <img
+                  src="/icons/external.svg"
+                  alt=""
+                  className="mls"
+                  style={{ marginBottom: "3px", width: "16px", height: "16px" }}
+                />
+              </a>
+            </div>
+            <div className="col-md-4 fdc fae">
+              <img alt="" src="/images/hit-your-stride-logo.PNG" className="width-100" />
+            </div>
+          </div>
         </div>
       </main>
       <Footer />
