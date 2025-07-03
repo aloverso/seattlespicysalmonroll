@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import { NavBar } from "../../src/components/NavBar";
 import { Footer } from "../../src/components/Footer";
-import { Event, SPICE } from "../../src/domain/types";
+import { Event } from "../../src/domain/types";
 import { GetStaticPathsResult, GetStaticPropsResult } from "next";
 import { EventIdParam, loadAllEventIds, loadEventById } from "../../src/domain/loaders";
 import dayjs from "dayjs";
@@ -10,6 +10,7 @@ import { BeginnerRoute } from "../../src/components/BeginnerRoute";
 import { AlertBar } from "../../src/components/AlertBar";
 import { CONTROLS } from "../../src/domain/consts";
 import { PreliminaryAlert } from "../../src/components/PreliminaryAlert";
+import { EventSpice } from "../../src/components/EventSpice";
 
 interface Props {
   event: Event;
@@ -20,7 +21,7 @@ interface Props {
 
 const EventPage = (props: Props): ReactElement => {
   const date = dayjs(props.event.date);
-  const spice = Array(props.event.spice).fill(SPICE).join("");
+  const spice = <EventSpice spice={props.event.spice} inheritSize={true} inheritFont={true} />;
 
   const { nextEvent, prevEvent } = props;
 
@@ -79,7 +80,7 @@ const EventPage = (props: Props): ReactElement => {
                 </p>
                 <p>
                   <span className="bold text-uppercase">Spice Level:</span>
-                  {props.event.spice > 0 ? (
+                  {props.event.spice !== 0 ? (
                     <>
                       <span className="mls">{spice}</span>
                       <div className="mld mbm">

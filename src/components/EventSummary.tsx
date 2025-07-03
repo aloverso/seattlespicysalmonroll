@@ -1,6 +1,7 @@
 import React, { ReactElement } from "react";
-import { Event, SPICE } from "../domain/types";
+import { Event } from "../domain/types";
 import Link from "next/link";
+import { EventSpice } from "./EventSpice";
 
 interface Props {
   event: Event;
@@ -31,7 +32,7 @@ export const EventSummary = (props: Props): ReactElement => {
           <h3 className="text-l fdr fac">
             <div>
               <span className="text-xl nowrap">
-                {Array(props.event.spice).fill(SPICE).join("")}
+                <EventSpice spice={props.event.spice} inheritSize={false} inheritFont={false} />
               </span>
               <span className="font-lilita text-underline mls">{props.event.name}</span>
             </div>

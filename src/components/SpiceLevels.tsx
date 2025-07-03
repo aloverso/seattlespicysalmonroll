@@ -4,6 +4,13 @@ import { SPICE } from "../domain/types";
 export const SpiceLevels = (): ReactElement => {
   return (
     <>
+      <SpiceHeader>Varied {SPICE}</SpiceHeader>
+      <p>
+        This is an all-levels skate where individuals will be able to skate at their own pace and
+        level. Some may opt for a 1-spice skate during this skate, others may take a 5-spice skate.
+        You will be able to choose your own adventure!
+      </p>
+
       <SpiceHeader>{SPICE} 1/5 Spice - Beginner</SpiceHeader>
       <p>
         Speeds are slow to moderate, distances are approximately 3-10 miles, with many breaks.
