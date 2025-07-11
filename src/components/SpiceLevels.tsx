@@ -39,11 +39,10 @@ export const SpiceLevels = (): ReactElement => {
         {SPICE}&nbsp; 3/5 Spice - Intermediate
       </SpiceHeader>
       <p>
-        Three spice skates will take place in urban settings, at moderate speeds spanning up to 10
-        miles. A few main breaks will take place at landmarks along the route, enabling us to enjoy
-        the inner urban spaces for a few minutes each before continuing. Skaters should be well
+        Three spice skates take place in urban settings, at moderate speeds spanning up to 10
+        miles. Skaters should be well
         versed in strides, uneven surfaces and cracks, speed control, and stopping techniques (At
-        least one strong stop). Skates may enter the street at time so skaters need to be conscious
+        least one strong stop). These skates may include urban routes and skaters may enter the street at times. Skaters need to be conscious
         of traffic and pay attention to the marshals’ directions to stay safe.
       </p>
       <p>
@@ -58,10 +57,6 @@ export const SpiceLevels = (): ReactElement => {
         {SPICE}
         {SPICE}&nbsp; 4/5 Spice - Advanced
       </SpiceHeader>
-      <p>
-        Our single four Spice skate for the weekend will take place at night on Thursday, the first
-        night of the skate.
-      </p>
 
       <p>
         This level of skate requires strong and fast skating techniques, including the need to able
@@ -78,10 +73,6 @@ export const SpiceLevels = (): ReactElement => {
         {SPICE}
         {SPICE}&nbsp; 5/5 Spice - Advanced + Stamina
       </SpiceHeader>
-      <p>
-        The single five star spice skate happens on the last day of the Spicy Salmon Roll, c rossing
-        both floating bridges and covering many miles.
-      </p>
 
       <p>
         Five star spice skates involve high speed hill bombs of up to 30-40mph, and long distances
