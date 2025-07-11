@@ -39,11 +39,11 @@ export const SpiceLevels = (): ReactElement => {
         {SPICE}&nbsp; 3/5 Spice - Intermediate
       </SpiceHeader>
       <p>
-        Three spice skates take place in urban settings, at moderate speeds spanning up to 10
-        miles. Skaters should be well
-        versed in strides, uneven surfaces and cracks, speed control, and stopping techniques (At
-        least one strong stop). These skates may include urban routes and skaters may enter the street at times. Skaters need to be conscious
-        of traffic and pay attention to the marshals’ directions to stay safe.
+        Three spice skates take place in urban settings, at moderate speeds spanning up to 10 miles.
+        Skaters should be well versed in strides, uneven surfaces and cracks, speed control, and
+        stopping techniques (At least one strong stop). These skates may include urban routes and
+        skaters may enter the street at times. Skaters need to be conscious of traffic and pay
+        attention to the marshals’ directions to stay safe.
       </p>
       <p>
         These skates have moderate inclines and declines throughout the city, a few of them long and
