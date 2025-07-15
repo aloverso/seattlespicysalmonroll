@@ -15,7 +15,7 @@ meetingLocationLink: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2691
 
 Beach party at Alki!
 
-This will be an evening gathering of skaters from across the Seattle community! Besides the hosts of this event (the Seattle Distance Skating Club), we'll be joined by skaters repping Wednesday Night Skates, Emerald City Skaties, Seattle Skates, and more!
+This will be an evening gathering of skaters from across the Seattle community! Besides the hosts of this event (the Seattle Distance Skating Club), we'll be joined by skaters repping Seattle Weekly  Skate Session Of Friendship, Emerald City Skaties, Seattle Skates, and more!
 
 Options for chill beach boardwalk skating, hanging out, food and drinks, music, aggressive rail skating, and more! BYOB or grab food on the waterfront, and expect a fun skater hangout time!
 
