@@ -6,44 +6,40 @@ export const LiveUpdates = (): ReactElement => {
   const [updates, setUpdates] = useState<UpdateMessage[]>([]);
 
   useEffect(() => {
-    // setUpdates(
-    //   [
-    //     {"message":"third thing","timestamp":"2024-07-17T23:50:34+00:00","id":"9988764"},
-    //     // {"message":"test new","timestamp":"2024-07-17T23:50:26+00:00","id":"32913594"},
-    //     // {"message":"test new","timestamp":"2024-07-17T23:50:26+00:00","id":"329132594"},
-    //     // {"message":"test new","timestamp":"2024-07-17T23:50:26+00:00","id":"329153594"},
-    //     // {"message":"test new","timestamp":"2024-07-17T23:50:26+00:00","id":"32e913594"},
-    //     // {"message":"test new","timestamp":"2024-07-17T23:50:26+00:00","id":"32913594"},
-    //     // {"message":"test new","timestamp":"2024-07-17T23:50:26+00:00","id":"329132594"},
-    //     // {"message":"test new","timestamp":"2024-07-17T23:50:26+00:00","id":"329132594"},
-    //     // {"message":"test new","timestamp":"2024-07-17T23:50:26+00:00","id":"329113594"},
-    //   ]
-    // )
-    fetch("/api/getstore").then((response) => {
-      response.json().then((json) => {
-        setUpdates(json);
-      });
-    });
+    setUpdates([
+      {
+        message:
+          "For drivers - note that northbound I-5 will be CLOSED this weekend from I-90 to U-District." +
+          "We recommend taking public transit or finding alternate routes (expect traffic!)",
+        timestamp: "2025-07-16T13:50:42-04:00",
+        id: "1",
+      },
+    ]);
+    // fetch("/api/getstore").then((response) => {
+    //   response.json().then((json) => {
+    //     setUpdates(json);
+    //   });
+    // });
   }, []);
 
-  React.useEffect(() => {
-    const timer = setInterval(() => {
-      fetch("/api/getstore").then((response) => {
-        response.json().then((json) => {
-          setUpdates(json);
-        });
-      });
-    }, 60000);
-    return () => clearInterval(timer);
-  }, []);
+  // React.useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     fetch("/api/getstore").then((response) => {
+  //       response.json().then((json) => {
+  //         setUpdates(json);
+  //       });
+  //     });
+  //   }, 60000);
+  //   return () => clearInterval(timer);
+  // }, []);
 
   return (
     <div className="text-white bg-overlay pad">
-      <h2 className="text-xl bold mbd">Live Updates</h2>
+      <h2 className="text-xl bold mbd">Announcements</h2>
       <p>
-        Check here during the event for regular live updates on the group and routes! Or visit our{" "}
+        Check here during the event for major announcements! Or visit our{" "}
         <a
-          href="https://www.instagram.com/seattlespicysalmonroll_24/"
+          href="https://www.instagram.com/seattlespicysalmonroll/#"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -58,12 +54,11 @@ export const LiveUpdates = (): ReactElement => {
             <div className="text-s text-uppercase mlxs">PINNED</div>
           </div>
           <div>
-            Use the{" "}
-            <a className="bold" href="http://glympse.com/!seattlespicysalmonroll2024">
-              Glympse app
+            Got questions? Want real-time updates? Connect with your fellow SSSR skaters on our{" "}
+            <a className="bold" href="https://chat.whatsapp.com/ERZYFz64NC13ZhiopBL3oQ?mode=r_c">
+              WhatsApp group
             </a>
-            &nbsp;to find live-location sharing for safety marshals during the event. Our Glympse
-            public tag is <span className="bold">seattlespicysalmonroll2024</span>.
+            !
           </div>
         </div>
         {updates.map((update) => (
