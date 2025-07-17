@@ -1,6 +1,7 @@
 import React, { ReactElement, useEffect, useState } from "react";
 import { UpdateMessage } from "../domain/types";
 import { Update } from "./Update";
+import dayjs from "dayjs";
 
 export const LiveUpdates = (): ReactElement => {
   const [updates, setUpdates] = useState<UpdateMessage[]>([]);
@@ -69,7 +70,9 @@ export const LiveUpdates = (): ReactElement => {
             !
           </div>
         </div>
-        {updates.map((update) => (
+        {updates
+          .sort((a, b) => dayjs(a.timestamp).isAfter(dayjs(b.timestamp)) ? -1 : 1)
+          .map((update) => (
           <Update key={update.id} update={update} />
         ))}
       </div>
