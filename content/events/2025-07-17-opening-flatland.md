@@ -6,8 +6,8 @@ name: "Opening Flatland Skate"
 description: "A friendly slide zone flatland session preceding tonight's routes"
 spice: 0
 distance: "0"
-startTime: "5:00 PM"
-meetingTime: "5:00 PM"
+startTime: "6:00 PM"
+meetingTime: "6:00 PM"
 meetingLocationAddress: "Lumen Field North Parking Lot\n
 521 Stadium Pl S\n
 Seattle, WA 98104"
