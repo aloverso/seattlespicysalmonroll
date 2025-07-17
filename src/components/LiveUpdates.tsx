@@ -14,6 +14,14 @@ export const LiveUpdates = (): ReactElement => {
         timestamp: "2025-07-16T13:50:42-04:00",
         id: "1",
       },
+      {
+        message:
+          "We are kicking off Day 1 tonight! Note that there is a baseball game at the " +
+          "stadium tonight, parking is expensive and limited. We advise using public transportation " +
+          "(to the international district light rail station) or use rideshare.",
+        timestamp: "2025-07-17T16:52:12-04:00",
+        id: "2",
+      },
     ]);
     // fetch("/api/getstore").then((response) => {
     //   response.json().then((json) => {
