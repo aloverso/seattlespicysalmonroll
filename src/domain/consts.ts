@@ -7,17 +7,17 @@ export const INSTA_LINK = "https://www.instagram.com/seattlespicysalmonroll/#";
 export const GOFUNDME_LINK =
   "https://www.gofundme.com/f/roll-with-seattle-distance-skating-club-this-summer";
 
-export const ORDINAL = "2nd";
-export const DATE = "2025-07-17 6:00:00";
-export const END_DATE = "2025-07-20 11:59:00";
+export const ORDINAL = "3rd";
+export const DATE = "2026-07-16 6:00:00";
+export const END_DATE = "2026-07-19 11:59:00";
 
 export const CONTROLS = {
-  showThanks: true,
-  showSponsorship: true,
-  registrationLive: true,
-  showLiveUpdates: true,
-  showGoFundMe: true,
-  showEvents: true,
+  showThanks: false,
+  showSponsorship: false,
+  registrationLive: false,
+  showLiveUpdates: false,
+  showGoFundMe: false,
+  showEvents: false,
   showVolunteers: false,
   preliminarySchedule: false,
 };
