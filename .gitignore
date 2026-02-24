@@ -3,3 +3,16 @@
 node_modules/
 .DS_Store
 out/
+# next-video
+y/*
+!y/*.json
+!y/*.js
+!y/*.ts
+public/_next-video
+
+# next-video
+videos/*
+!videos/*.json
+!videos/*.js
+!videos/*.ts
+public/_next-video

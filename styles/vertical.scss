@@ -1,0 +1,182 @@
+@keyframes gradientShift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+html, body, #root {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+.page-wrapper {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+
+/* Background photo — desktop only, sits beneath the gradient */
+.left-bg-image {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .left-bg-image {
+        display: block;
+        position: absolute;
+        top: 0; left: 0;
+        width: 55%;
+        height: 100%;
+        background-image: url('../public/images/seattle_banner3.png');
+        background-size: cover;
+        background-position: 30% 50%;
+        z-index: 1;
+    }
+}
+
+.gradient-bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 55%;
+    height: 100%;
+    background: linear-gradient(135deg,
+        rgba(192, 57, 43, 0.65),
+        rgba(232, 112, 61, 0.65),
+        rgba(44, 62, 107, 0.65),
+        rgba(26, 107, 90, 0.65),
+        rgba(232, 76, 61, 0.65)
+    );    background-size: 300% 300%;
+    animation: gradientShift 12s ease infinite;
+    z-index: 2;
+}
+
+.video-side {
+    position: absolute;
+    top: 0; right: 0;
+    width: 50%;
+    height: 100%;
+}
+
+.video-side video {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+.video-side video.active {
+    opacity: 1;
+}
+
+.text-side {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    /*justify-content: center;*/
+    padding: 3rem 2rem;
+    overflow-y: auto;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.info-box {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    padding: 2.5rem;
+    width: 55vw;
+    box-shadow: 8px 0 40px rgba(0,0,0,0.25);
+    pointer-events: all;
+}
+
+.info-box h1 {
+    /*font-size: clamp(1.6rem, 4vw, 2.8rem);*/
+    /*font-weight: 900;*/
+    /*line-height: 1.1;*/
+    /*margin-bottom: 0.5rem;*/
+    /*color: #fff;*/
+}
+
+.info-box .subtitle {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.info-box p {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.88);
+    line-height: 1.7;
+}
+
+.info-box .btn-primary {
+    background: #fff;
+    border-color: #fff;
+    color: #c0392b;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-radius: 0;
+    padding: 0.65rem 1.5rem;
+}
+
+.info-box .btn-primary:hover {
+    background: rgba(255,255,255,0.85);
+    border-color: rgba(255,255,255,0.85);
+    color: #c0392b;
+}
+
+.event-date {
+    font-weight: 700;
+    color: rgba(255,255,255,0.9);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+@media (max-width: $xs) {
+    html, body, #root { overflow: hidden; }
+
+    .page-wrapper { height: 100dvh; }
+
+    .gradient-bg {
+        width: 100%;
+        height: 50%;
+        top: 50%;
+        bottom: 0;
+    }
+
+    .video-side {
+        width: 100%;
+        top: 0; left: 0; right: auto;
+        height: 100%;
+    }
+
+    .text-side {
+        width: 100%;
+        height: 50%;
+        top: auto; bottom: 0; left: 0;
+        padding: 0;
+        align-items: flex-end;
+        overflow: visible;
+    }
+
+    .info-box {
+        width: 100%;
+        max-width: 100%;
+        box-shadow: 0 -4px 32px rgba(0,0,0,0.35);
+        padding: 1.5rem 1.5rem 2rem;
+        max-height: 50vh;
+        overflow-y: auto;
+        height: 100%
+    }
+}

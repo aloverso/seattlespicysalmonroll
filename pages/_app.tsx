@@ -20,7 +20,7 @@ const App = ({ Component, pageProps }: AppProps): ReactElement => {
         `,
           }}
         />
-        <title>Seattle Spicy Salmon Roll {YEAR}</title>
+        <title>Spicy Salmon Roll {YEAR}</title>
       </Head>
       <Component {...pageProps} />
     </>

@@ -20,6 +20,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["src"],
+  "include": ["video.d.ts", "src"],
   "exclude": ["node_modules"]
 }

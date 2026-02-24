@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev & npx next-video sync -w",
     "build": "next build",
     "export": "next export",
     "test": "jest",
@@ -29,6 +29,7 @@
     "gray-matter": "^4.0.3",
     "next": "^13.5.6",
     "next-seo": "^5.15.0",
+    "next-video": "^2.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1",
