@@ -76,6 +76,9 @@ const Index = (): ReactElement => {
         <div className="page-wrapper">
 
           <div className="left-bg-image" />
+          <div className="logo-image-bg box-shadow-black" />
+          <div className="logo-image-bg box-shadow-gold" />
+          <img className="logo-image" src="images/logo-no-text.png" alt="" />
           <div className="gradient-bg"></div>
 
           <div className="video-side">
@@ -97,14 +100,17 @@ const Index = (): ReactElement => {
 
           <div className="text-side">
             <div className="info-box">
-              <span className="subtitle">Seattle Distance Skating Club presents</span>
-              <div className="fdr hero-parent">
-                <div className="hero-date">{DATE_STRING}</div>
-              </div>
+              <span className="subtitle">Seattle Distance Skating Club presents:</span>
               <div className="fdr hero-parent">
                 <h1 className="hero-header">
                   Spicy Salmon Roll
                 </h1>
+              </div>
+              <div className="fdr hero-parent">
+                <div className="hero-date">Seattle, WA</div>
+              </div>
+              <div className="fdr hero-parent">
+                <div className="hero-date">{DATE_STRING}</div>
               </div>
 
               {/*<a href="/schedule" className="btn btn-primary mt-2">View Schedule</a>*/}

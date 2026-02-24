@@ -260,4 +260,20 @@ li.bullet {
   width: 100%;
 }
 
+.nav-img {
+  height: 2.5rem;
+  margin-right: 0.5rem;
+  z-index: 2;
+}
+
+.nav-img-bg {
+  height: 2rem;
+  width: 2rem;
+  transform: translateX(8px) translateY(1px);
+  position: absolute;
+  background-color: $gold;
+  border-radius: 50%;
+}
+
+
 @import "hero.scss";
