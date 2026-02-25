@@ -2,7 +2,7 @@ import React, { ReactElement, useState } from "react";
 import dayjs from "dayjs";
 import { useRouter } from "next/router";
 import { CONTROLS, DATE, DATE_STRING, END_DATE, REGISTER_LINK } from "../domain/consts";
-import { LiveUpdates } from "./LiveUpdates";
+import { VideoPlayer } from "./VideoPlayer";
 
 type TimeUntil = {
   day: number;
@@ -57,54 +57,48 @@ export const Hero = (): ReactElement => {
   );
 
   return (
-    <>
-      <div className="bg-hero">
-        <div className="text-uppercase text-white fdr fjc hero-presents">
-          Seattle Distance Skating Club presents:
-        </div>
-        <div className="row">
-          {CONTROLS.showLiveUpdates ? (
-            <div className="col-lg-4 order-lg-0 order-2 mtl feed-parent">
-              <LiveUpdates />
-            </div>
-          ) : (
-            <div className="col-lg-3 order-lg-0 order-2 mtl feed-parent" />
-          )}
+    <div className="page-wrapper">
+      <div className="left-bg-image" />
+      <div className="logo-image-bg box-shadow-black" />
+      <div className="logo-image-bg box-shadow-gold" />
+      <img className="logo-image" src="images/logo-no-text.png" alt="" />
+      <div className="gradient-bg"></div>
 
-          <div className="col-lg-8 order-1 mtl">
+      <div className="video-side">
+        <VideoPlayer />
+      </div>
+
+      <div className="text-side">
+        <span className="hero-presents">Seattle Distance Skating Club presents:</span>
+        <div className="info-box">
+          <h1 className="hero-header">
+            Spicy Salmon Roll
+          </h1>
+          <div className="hero-location">Seattle, WA</div>
+          <div className="hero-date">{DATE_STRING}</div>
+
+          {!isPast && CONTROLS.registrationLive && (
             <div className="fdr hero-parent">
-              <div className="hero-date">{DATE_STRING}</div>
+              <button
+                className={`button button-hero ${!isUpcoming && "button-hero-secondary"}`}
+                onClick={registerButton}
+              >
+                Register Here
+              </button>
             </div>
-            <div className="fdr hero-parent">
-              <h1 className="hero-header">
-                Seattle Spicy
-                <br />
-                Salmon Roll
-              </h1>
-            </div>
-            {!isPast && CONTROLS.registrationLive && (
-              <div className="fdr hero-parent">
-                <button
-                  className={`button button-hero ${!isUpcoming && "button-hero-secondary"}`}
-                  onClick={registerButton}
-                >
-                  Register Here
+          )}
+          {!isUpcoming && !isPast && (
+            <div className="fdr hero-parent mtd">
+              <a href={`/schedule#${today}`}>
+                <button className="button button-hero" onClick={registerButton}>
+                  Today&apos;s Schedule
                 </button>
-              </div>
-            )}
-            {!isUpcoming && !isPast && (
-              <div className="fdr hero-parent mtd">
-                <a href={`/schedule#${today}`}>
-                  <button className="button button-hero" onClick={registerButton}>
-                    Today&apos;s Schedule
-                  </button>
-                </a>
-              </div>
-            )}
-            {isUpcoming && countdown()}
-          </div>
+              </a>
+            </div>
+          )}
+          {isUpcoming && countdown()}
         </div>
       </div>
-    </>
+    </div>
   );
 };
