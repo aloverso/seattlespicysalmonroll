@@ -14,82 +14,63 @@
 }
 
 .hero-presents {
-  letter-spacing: 0.3rem;
-
-  @media (max-width: $xxs) {
-    margin-left: 10px;
-    text-align: center;
-    font-size: 12px;
-    letter-spacing: 0.15rem;
-    padding-bottom: 10px;
-  }
-}
-
-.hero-date {
-  padding-top: 50px;
-  margin-right: 200px;
-  font-family: "Open Sans", sans-serif;
-  font-size: 50px;
-  font-weight: 700;
-  color: $white;
-
-  @media (max-width: $sm) {
-    margin-right: 80px;
-    font-size: 40px;
-  }
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  color: rgba(255,255,255,0.7);
 
   @media (max-width: $xs) {
-    margin-right: 60px;
-    font-size: 30px;
-  }
-
-  @media (max-width: $xxs) {
-    padding-top: 10px;
-    margin-right: 10px;
-    font-size: 20px;
-  }
-}
-
-.hero-parent {
-  justify-content: flex-end;
-
-  @media (max-width: $sm) {
-    justify-content: center;
-    //margin-bottom: 0.5rem;
+    letter-spacing: 0.1rem;
+    margin-top: 2.5rem;
+    font-size: 0.75rem;
   }
 }
 
 .hero-header {
-  padding: 20px 50px;
-  margin-right: 80px;
+  //padding: 0px 50px;
+  margin: 0 2rem;
   font-family: "Lilita One", sans-serif;
   font-size: 80px;
+  text-align: center;
   background: -webkit-linear-gradient($blue, $teal);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  //@media (max-width: $md) {
-  //  font-size: 83px;
-  //}
+  @media (max-width: $xs) {
+    padding: 0;
+    font-size: 3rem;
+  }
+}
 
-  //@media (max-width: $sm) {
-  //  padding: 30px;
-  //  margin-right: 0;
-  //  font-size: 80px;
-  //}
+.hero-location {
+  font-family: "Open Sans", sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.9);
+  font-weight: 400;
+  margin-top: 0.5rem;
+
+  @media (max-width: $xs) {
+    letter-spacing: 0.1em;
+    padding: 0;
+    font-size: 1rem;
+  }
+}
+
+.hero-date {
+  font-family: "Open Sans", sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: $white;
+  padding: 1rem;
+  margin-top: 2.5rem;
 
   @media (max-width: $xs) {
     padding: 0;
-    //margin-bottom: 0.75rem;
-    margin-right: 0;
-    font-size: 43px;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
   }
-
-  //@media (max-width: $xxs) {
-  //  padding: 16px;
-  //  margin-right: 0;
-  //  font-size: 60px;
-  //}
 }
 
 .button-hero-secondary {
@@ -133,49 +114,38 @@
 
 .hero-countdown {
   text-transform: uppercase;
-  padding-top: 50px;
+  margin-top: 5rem;
+
+  @media (max-width: $xs) {
+    margin-top: 1.8rem; 
+  }
 }
 
 .hero-number {
   font-weight: 700;
-  font-size: 80px;
-  margin-bottom: 30px;
-
-  @media (max-width: $sm) {
-    font-size: 70px;
-    margin-bottom: 25px;
-  }
+  font-size: 50px;
+  margin-bottom: 20px;
 
   @media (max-width: $xs) {
-    font-size: 60px;
-    margin-bottom: 20px;
-  }
-
-  @media (max-width: $xxs) {
-    font-size: 40px;
-    margin-bottom: 5px;
+    font-size: 1.5rem;
+    margin-bottom: 0;
   }
 }
 
 .hero-label {
-  font-weight: 500;
-  font-size: 32px;
-
-  @media (max-width: $sm) {
-    font-size: 28px;
-  }
+  font-weight: 400;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.9);
 
   @media (max-width: $xs) {
-    font-size: 24px;
-  }
-
-  @media (max-width: $xxs) {
-    font-size: 16px;
+    font-size: 0.8rem;
   }
 }
 
 .hero-countdown-item {
-  margin: 0 80px;
+  margin: 0 20px;
 
   @media (max-width: $sm) {
     margin: 0 60px;

@@ -3,8 +3,25 @@ import { NavBar } from "../src/components/NavBar";
 import { Hero } from "../src/components/Hero";
 import { Footer } from "../src/components/Footer";
 import { Metadata } from "../src/components/Metadata";
-import { CONTROLS, DATE_STRING, ORDINAL } from "../src/domain/consts";
+import { CONTROLS, DATE, DATE_STRING, ORDINAL } from "../src/domain/consts";
 import { GoFundMeBlock } from "../src/components/GoFundMeBlock";
+import dayjs from "dayjs";
+
+type TimeUntil = {
+  day: number;
+  hour: number;
+  minute: number;
+};
+
+const calcTimeUntil = (): TimeUntil => {
+  const date = dayjs(DATE);
+  const now = dayjs();
+  return {
+    day: date.diff(now, "day"),
+    hour: date.diff(now, "hour") % 24,
+    minute: date.diff(now, "minute") % 60,
+  };
+};
 
 const Index = (): ReactElement => {
 
@@ -12,6 +29,25 @@ const Index = (): ReactElement => {
     "https://stream.mux.com/O9lf025TeKLvg8xzMUx7nWpdSYB02OJsCSJsPkCQcwSVc.m3u8",
     "https://stream.mux.com/02nWac25JxvSTO20201wKLx8ZUR7g02S1pddLIiRZH01e902k.m3u8",
   ]
+
+  const [timeUntil, setTimeUntil] = useState<TimeUntil>(calcTimeUntil());
+  const isUpcoming = timeUntil.day >= 0 && timeUntil.hour >= 0 && timeUntil.minute >= 0;
+  const countdown = () => (
+    <div className="fdr text-white hero-countdown fjc">
+      <div className="fdc fac hero-countdown-item">
+        <div className="hero-number">{timeUntil.day}</div>
+        <div className="hero-label">{timeUntil.day === 1 ? "day" : "days"}</div>
+      </div>
+      <div className="fdc fac hero-countdown-item">
+        <div className="hero-number">{timeUntil.hour}</div>
+        <div className="hero-label">{timeUntil.hour === 1 ? "hour" : "hours"}</div>
+      </div>
+      <div className="fdc fac hero-countdown-item">
+        <div className="hero-number">{timeUntil.minute}</div>
+        <div className="hero-label">{timeUntil.minute === 1 ? "minute" : "minutes"}</div>
+      </div>
+    </div>
+  );
 
   const [indexA, setIndexA] = useState(0);
   const [indexB, setIndexB] = useState(1);
@@ -99,21 +135,15 @@ const Index = (): ReactElement => {
           </div>
 
           <div className="text-side">
+            <span className="hero-presents">Seattle Distance Skating Club presents:</span>
             <div className="info-box">
-              <span className="subtitle">Seattle Distance Skating Club presents:</span>
-              <div className="fdr hero-parent">
-                <h1 className="hero-header">
-                  Spicy Salmon Roll
-                </h1>
-              </div>
-              <div className="fdr hero-parent">
-                <div className="hero-date">Seattle, WA</div>
-              </div>
-              <div className="fdr hero-parent">
-                <div className="hero-date">{DATE_STRING}</div>
-              </div>
+              <h1 className="hero-header">
+                Spicy Salmon Roll
+              </h1>
+              <div className="hero-location">Seattle, WA</div>
+              <div className="hero-date">{DATE_STRING}</div>
 
-              {/*<a href="/schedule" className="btn btn-primary mt-2">View Schedule</a>*/}
+              {isUpcoming && countdown()}
             </div>
           </div>
 
