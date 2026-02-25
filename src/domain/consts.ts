@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 export const REGISTER_LINK =
   "https://docs.google.com/forms/d/e/1FAIpQLSeHfNtfWKPwXkBmftylXlxHjW_ldfRj5RdmZXCm5sB059VCRg/viewform?usp=dialog";
 
-export const INSTA_LINK = "https://www.instagram.com/seattlespicysalmonroll/#";
+export const INSTA_LINK = "https://www.instagram.com/rollsalmon";
 export const GOFUNDME_LINK =
   "https://www.gofundme.com/f/roll-with-seattle-distance-skating-club-this-summer";
 

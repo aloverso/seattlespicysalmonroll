@@ -1,9 +1,24 @@
 import React, { useEffect, useRef, useState } from "react";
 
 const VIDEOS = [
-  "https://stream.mux.com/O9lf025TeKLvg8xzMUx7nWpdSYB02OJsCSJsPkCQcwSVc.m3u8",
-  "https://stream.mux.com/02nWac25JxvSTO20201wKLx8ZUR7g02S1pddLIiRZH01e902k.m3u8",
+  "https://stream.mux.com/NuOMGMRvlhcCrhYXg35FpHayztEtQjPtMU22h7zTsFs?max_resolution=720p",
+  "https://stream.mux.com/4ERzmVgRy731XvZbaA01e7YKgGTaOhu8sRptFnqTnBLk?max_resolution=720p",
+  "https://stream.mux.com/VFkQf2i8OhcQVRLrfD3PdZXLEsnOoSN402KgDDqZscQM?max_resolution=720p",
+  "https://stream.mux.com/YxX3Vd50200OOH7W02I00UHULGuN8t592dgWxI008HJgpQpQ?max_resolution=720p",
+  "https://stream.mux.com/iJQBXtFN02B2aH6mUY8ZkdV6KnLCTPh5PVlwFufVcRQg?max_resolution=720p",
+  "https://stream.mux.com/nUG5mFttoL2CYwAwPDdkkkA6Ab01TL1vt9EdVaDWKQlY?max_resolution=720p",
+  "https://stream.mux.com/NFNVTZr01PQH01HqL1vm3LteP2B027iBa00jCq9JUV1lcnI?max_resolution=720p",
+  "https://stream.mux.com/x1BmaBqF00zPESMvFDpPFIkgnuY5x7r027GjASXOY5du8?max_resolution=720p",
+  "https://stream.mux.com/pDmJSq2vIza73otH8L014MV8wtz9EhdmW4FUNK02Qse02s?max_resolution=720p",
+  "https://stream.mux.com/ulCOE95pK2RLTHLZAYvbtJCOU01n3mQ00toSoo7m2dvv00?max_resolution=720p",
+  "https://stream.mux.com/cGS57025PlltgH006rzijg6FIodDqdeapoTWGTYlV01IcE?max_resolution=720p",
+  "https://stream.mux.com/rY02RlaRQGd7IyAVVT9AXEaELhxBcU13l9IrNRHmBEIw?max_resolution=720p",
+  "https://stream.mux.com/fQolJKNxgDsgYF8HAMI5Ae3vsxrkKMJzUk7O01Cu02Kk00?max_resolution=720p",
+  "https://stream.mux.com/2Msy4rjapcVeKhFuEacp02wv53PLW9zqrI6SJHBbf56A?max_resolution=720p",
+  "https://stream.mux.com/65t2Jf200nOzJgUOLHJ8WNbxasDEzypT2C86GXw9xBDo?max_resolution=720p",
+  "https://stream.mux.com/aSUYficeQgFAJnrYuSDnCxMf11ENS00Nfezp1QkabCvo?max_resolution=720p",
 ]
+
 
 export const VideoPlayer = () => {
 
@@ -26,6 +41,15 @@ export const VideoPlayer = () => {
     }
   }, []);
 
+  function handleTimeUpdate(e: React.SyntheticEvent<HTMLVideoElement>) {
+    const video = e.currentTarget;
+    if (!video.duration) return;
+    const timeLeft = video.duration - video.currentTime;
+    if (timeLeft <= 1) {
+      handleVideoEnd();
+    }
+  }
+
   function handleVideoEnd() {
     if (fading) return;
     setFading(true);
@@ -39,17 +63,17 @@ export const VideoPlayer = () => {
 
     // After fade completes, swap active/next and preload the one after
     setTimeout(() => {
-      const newNext = indexB + 1 >= VIDEOS.length ? 0 : indexB + 1
+      const randomNextIndex = Math.floor(Math.random() * VIDEOS.length)
 
       if (activeIsA && refA.current) {
-        setIndexA(newNext);
-        refA.current.src = VIDEOS[newNext];
+        setIndexA(randomNextIndex);
+        refA.current.src = VIDEOS[randomNextIndex];
         refA.current.load();
         setActiveIsA(false)
       } else {
-        setIndexB(newNext);
+        setIndexB(randomNextIndex);
         if (refB.current) {
-          refB.current.src = VIDEOS[newNext];
+          refB.current.src = VIDEOS[randomNextIndex];
           refB.current.load();
         }
         setActiveIsA(true)
@@ -66,15 +90,16 @@ export const VideoPlayer = () => {
         className={activeIsA ? (fading ? "" : "active") : (fading ? "active" : "")}
         muted
         playsInline
-        onEnded={handleVideoEnd}
+        onTimeUpdate={handleTimeUpdate}
       />
       <video
         ref={refB}
         className={activeIsA ? (fading ? "active" : "") : (fading ? "" : "active")}
         muted
         playsInline
-        onEnded={handleVideoEnd}
+        onTimeUpdate={handleTimeUpdate}
       />
+      <div className="video-overlay"></div>
     </>
   )
 }
