@@ -77,25 +77,23 @@ export const Hero = (): ReactElement => {
           <div className="hero-location">Seattle, WA</div>
           <div className="hero-date">{DATE_STRING}</div>
 
-          {!isPast && CONTROLS.registrationLive && (
-            <div className="fdr hero-parent">
-              <button
-                className={`button button-hero ${!isUpcoming && "button-hero-secondary"}`}
-                onClick={registerButton}
-              >
-                Register Here
-              </button>
-            </div>
-          )}
-          {!isUpcoming && !isPast && (
-            <div className="fdr hero-parent mtd">
-              <a href={`/schedule#${today}`}>
-                <button className="button button-hero" onClick={registerButton}>
-                  Today&apos;s Schedule
+          <div className="hero-button-group">
+            {!isPast && CONTROLS.registrationLive && (
+                <button
+                  className={`button button-hero ${!isUpcoming && "button-hero-secondary"}`}
+                  onClick={registerButton}
+                >
+                  Register Here
                 </button>
-              </a>
-            </div>
-          )}
+            )}
+            {!isUpcoming && !isPast && (
+                <a href={`/schedule#${today}`}>
+                  <button className="button button-hero" onClick={registerButton}>
+                    Today&apos;s Schedule
+                  </button>
+                </a>
+            )}
+          </div>
           {isUpcoming && countdown()}
         </div>
       </div>
