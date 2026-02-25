@@ -20,6 +20,7 @@ export const CONTROLS = {
   showEvents: false,
   showVolunteers: false,
   preliminarySchedule: false,
+  showPNWFest: true,
 };
 
 // calculated values (no need to change)
