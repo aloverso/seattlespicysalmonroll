@@ -1,6 +1,9 @@
 @keyframes gradientShift {
   0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
+  20%  { background-position: 80% 20%; }
+  40%  { background-position: 100% 80%; }
+  60%  { background-position: 30% 100%; }
+  80%  { background-position: 60% 10%; }
   100% { background-position: 0% 50%; }
 }
 
@@ -41,8 +44,9 @@
           rgba(44, 62, 107, 0.65),
           rgba(26, 107, 90, 0.65),
           rgba(232, 76, 61, 0.65)
-  );    background-size: 300% 300%;
-  animation: gradientShift 12s ease infinite;
+  );
+  background-size: 300% 300%;
+  animation: gradientShift 18s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
   z-index: 2;
 
   @media (max-width: $xs) {
@@ -91,6 +95,24 @@
   object-fit: cover;
   opacity: 0; // hidden unless active
   transition: opacity 1.5s ease;
+}
+
+.pause-video {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  pointer-events: all;
+  color: white;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  margin: 0.25rem;
+  padding: 0.1rem 0.45rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border: 1px solid white;
 }
 
 .video-side video.active {

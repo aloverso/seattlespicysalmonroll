@@ -55,10 +55,11 @@ const VIDEOS = [
 
 export const VideoPlayer = () => {
 
-  const [indexA, setIndexA] = useState(0);
-  const [indexB, setIndexB] = useState(1);
+  const [indexA, setIndexA] = useState(Math.floor(Math.random() * VIDEOS.length));
+  const [indexB, setIndexB] = useState(Math.floor(Math.random() * VIDEOS.length));
   const [fading, setFading] = useState(false);
   const [activeIsA, setActiveIsA] = useState(true);
+  const [isPaused, setIsPaused] = useState(false);
 
   const refA = useRef<HTMLVideoElement>(null);
   const refB = useRef<HTMLVideoElement>(null);
@@ -73,6 +74,23 @@ export const VideoPlayer = () => {
       refB.current.load();
     }
   }, []);
+
+  function togglePause() {
+    if (!isPaused) {
+      setIsPaused(true);
+      if (refA.current) refA.current.pause();
+      if (refB.current) refB.current.pause();
+    } else {
+      setIsPaused(false)
+      if (activeIsA) {
+        if (refA.current) refA.current.play();
+        if (refB.current) refB.current.load();
+      } else {
+        if (refA.current) refA.current.load();
+        if (refB.current) refB.current.play();
+      }
+    }
+  }
 
   function handleTimeUpdate(e: React.SyntheticEvent<HTMLVideoElement>) {
     const video = e.currentTarget;
@@ -118,6 +136,9 @@ export const VideoPlayer = () => {
 
   return (
     <>
+      <button className="button pause-video" onClick={togglePause}>
+        {isPaused ? "play" : "pause"} video
+      </button>
       <video
         ref={refA}
         className={activeIsA ? (fading ? "" : "active") : (fading ? "active" : "")}
