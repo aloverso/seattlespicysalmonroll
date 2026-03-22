@@ -45,15 +45,17 @@ const Index = (): ReactElement => {
                   </p>
 
                   <p>
-                    Our team is committed to delivering high-energy, spicy routes that
-                    embrace all the complexity of terrain our city has to offer. We also
-                    revel in offering chill skates that cater to a wide diversity of
-                    experience.
+                    Our team is committed to planning skate routes for every mood and
+                    skill level. Some of our chill skates will let you soak in some of
+                    Seattle&apos;s most beloved spots at a relaxed pace. Other skates will
+                    dial up the spice level with the intention of capturing our
+                    city&apos;s varied and renowned hilly terrain.
                   </p>
 
                   <p>
-                    Meet new people, learn new skills, and take in Seattle on wheels.
-                    We can&apos;t wait to welcome you to our community!
+                    You’ll meet new people, pick up new skills, and experience the city
+                    from a whole new perspective, all while the wheels keep rolling.
+                    We can&apos;t wait to welcome you into our community!
                   </p>
                 </div>
               </div>
@@ -67,7 +69,7 @@ const Index = (): ReactElement => {
               <div className="row mtxl">
                 <div className="col-12 mbm">
                   <div className="bold text-xl font-italic">
-                    we&apos;re part of the
+                    we&apos;re part of the first-ever
                   </div>
                   <h2 className="text-xxl font-lilita">
                     Pacific Northwest Skate Fest
@@ -76,7 +78,7 @@ const Index = (): ReactElement => {
                 <div className="col-md-7">
                   <div className="bg-white pad brad">
                     <p>
-                      Portland and Seattle are linking up to create a joint skate festival!
+                      Portland and Seattle are linking up to create their first joint skate festival!
                     </p>
                     <p>
                       Two urban skate events join forces to create an experience that is louder, faster, and more

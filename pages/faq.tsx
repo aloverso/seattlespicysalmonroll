@@ -50,10 +50,14 @@ const Faq = (): ReactElement => {
                 </a>
                 &nbsp;is hosting this event! We host weekly skates in the Seattle area to bring
                 skaters of all levels together to explore trails amd city landscapes, enjoying the
-                views and the friendship. Our regular Tuesday skates are all-level, at the pace of
-                the slowest skater, no one left behind. Our regular Saturday skates are at the
-                intermediate/advanced level and explore more difficult, hilly, or diverse terrain.
-                All skaters are welcome to join and start having fun with us.
+                views and the friendship.Our regular skate days are Saturday and Tuesday. We offer
+                skates that span all levels, some skates will be at the pace of the slowest skater,
+                no one left behind. Other skates will cater to the intermediate or advanced level
+                skaters and explore more difficult, hilly, or diverse terrain. The{" "}
+                <a href="https://www.facebook.com/story.php?story_fbid=390964204008435&id=135066862931505" target="_blank" rel="noopener noreferrer">
+                  Seattle Distance Skating Club Guidebook
+                </a>
+                &nbsp;can offer guidance to the range and scope of different skates, according to spice level.
               </p>
             }
           />
@@ -71,10 +75,32 @@ const Faq = (): ReactElement => {
           />
 
           <FaqBlock
+            q="Are there recommended places to stay?"
+            a={
+            <>
+              <p>Here are our team&apos;s accommodation recommendations for the Spicy Salmon Roll:</p>
+              <p><b>Pike Place Market</b></p>
+              <p><i>Note: You’ll need to skate (or walk) down a hill on your way out.</i></p>
+              <ul>
+                <li><a href="https://greentortoise.net/" target="_blank" rel="noopener noreferrer">Green Tortoise Hostel</a></li>
+                <li><a href="https://www.statehotel.com/" target="_blank" rel="noopener noreferrer">The State Hotel</a></li>
+              </ul>
+              <p><b>International District</b></p>
+              <ul>
+                <li><a href="https://www.americanhotelseattle.com/" target="_blank" rel="noopener noreferrer">The American Hostel</a>
+                  &nbsp;&mdash; a flat terrain option located at sea level.</li>
+              </ul>
+
+              <p>Aside from the Pike Place Market being a slight hill, all three locations have easy access to the route start locations.</p>
+            </>
+            }
+          />
+
+          <FaqBlock
             q="How good do you have to be to participate?"
             a={
               <p>
-                Each skate will be rated on a <b>1-5 {SPICE} spice scale</b> for skaters to assess
+                Each skate will be rated on a <b>1&ndash;5 {SPICE} spice scale</b> for skaters to assess
                 against their own skill level and what they can expect from each route. In general,
                 skaters should be able to stride, turn, and perform at least one basic stop. All
                 skates will have regular rest stops to regroup, refuel, hydrate, and recover.
