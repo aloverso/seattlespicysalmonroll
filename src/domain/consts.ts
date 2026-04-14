@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 
 export const REGISTER_LINK =
-  "https://docs.google.com/forms/d/e/1FAIpQLSeHfNtfWKPwXkBmftylXlxHjW_ldfRj5RdmZXCm5sB059VCRg/viewform?usp=dialog";
+  "https://forms.gle/VE3kaLyU8G76jfMEA";
 
 export const INSTA_LINK = "https://www.instagram.com/rollsalmon";
 export const GOFUNDME_LINK =
@@ -14,7 +14,7 @@ export const END_DATE = "2026-07-19 11:59:00";
 export const CONTROLS = {
   showThanks: false,
   showSponsorship: false,
-  registrationLive: false,
+  registrationLive: true,
   showLiveUpdates: false,
   showGoFundMe: false,
   showEvents: false,
