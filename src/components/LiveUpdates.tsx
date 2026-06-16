@@ -20,14 +20,14 @@ export const LiveUpdates = (): ReactElement => {
           "We are kicking off Day 1 tonight! Note that there is a baseball game at the " +
           "stadium tonight, parking is expensive and limited. We advise using public transportation " +
           "(to the international district light rail station) or use rideshare.",
-        timestamp: "2025-07-17T16:52:12-04:00",
+        timestamp: "2025-07-16T16:52:12-04:00",
         id: "2",
       },
       {
         message:
           "This evening's Steampunk to Playa skate will be delaying the start time by half an hour" +
           "to give folks time for a break. New meeting time: 6:00pm. New rollout time: 6:30pm",
-        timestamp: "2025-07-19T17:07:12-04:00",
+        timestamp: "2025-07-18T17:07:12-04:00",
         id: "3",
       },
       {

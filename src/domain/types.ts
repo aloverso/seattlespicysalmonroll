@@ -12,6 +12,7 @@ export type Event = {
   meetingLocationLink: string;
   spice: number;
   body: string;
+  lead: string;
 };
 
 export type UpdateMessage = {

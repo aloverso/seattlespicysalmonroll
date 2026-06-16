@@ -91,6 +91,12 @@ const EventPage = (props: Props): ReactElement => {
                     <span> None</span>
                   )}
                 </p>
+                {props.event.lead && (
+                  <p>
+                    <span className="bold text-uppercase">Lead:</span>
+                    <span className="mls">{props.event.lead}</span>
+                  </p>
+                )}
               </>
             )}
           </div>
@@ -122,7 +128,7 @@ const EventPage = (props: Props): ReactElement => {
           </div>
         </div>
 
-        <div className="row">
+        <div className="row mtxl">
           <div className="col-5">
             {prevEvent && (
               <Link href={`/events/${prevEvent.id}`}>

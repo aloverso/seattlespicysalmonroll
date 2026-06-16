@@ -52,6 +52,7 @@ type EventGrayMatter = {
   meetingTime: string;
   startTime: string;
   distance: string;
+  lead: string;
   meetingLocationTitle: string;
   meetingLocationAddress: string;
   meetingLocationLink: string;

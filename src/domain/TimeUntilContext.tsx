@@ -4,8 +4,8 @@ import { DATE } from "./consts";
 
 type TimeUntilContextType = {
   isUpcoming: boolean;
-  timeUntil: TimeUntil
-}
+  timeUntil: TimeUntil;
+};
 
 type TimeUntil = {
   day: number;
@@ -15,7 +15,7 @@ type TimeUntil = {
 
 export const TimeUntilContext = React.createContext<TimeUntilContextType>({
   isUpcoming: true,
-  timeUntil: { day: 0, hour: 0, minute: 0 }
+  timeUntil: { day: 0, hour: 0, minute: 0 },
 });
 
 const calcTimeUntil = (): TimeUntil => {
@@ -32,7 +32,6 @@ interface Props {
   children: ReactNode;
 }
 
-
 export const TimeUntilProvider = (props: Props) => {
   const [timeUntil, setTimeUntil] = useState<TimeUntil>(calcTimeUntil());
   const isUpcoming = timeUntil.day >= 0 && timeUntil.hour >= 0 && timeUntil.minute >= 0;
@@ -48,5 +47,5 @@ export const TimeUntilProvider = (props: Props) => {
     <TimeUntilContext.Provider value={{ isUpcoming, timeUntil }}>
       {props.children}
     </TimeUntilContext.Provider>
-  )
+  );
 };

@@ -50,11 +50,9 @@ const VIDEOS = [
   "https://stream.mux.com/8RftwHYHs3EywfO00QGom5sNbqt02aMVVthgkA8N9EP9c?max_resolution=720p",
   "https://stream.mux.com/ClxhU5F2Tm01jA5k12UBWQk7ktdDoobrT02LjqMrgCVdo?max_resolution=720p",
   "https://stream.mux.com/W77n7fqv5ON02ti01KYE1gwn9iJ014spYdzbrenLrv02i400?max_resolution=720p",
-]
-
+];
 
 export const VideoPlayer = () => {
-
   const [indexA, setIndexA] = useState(Math.floor(Math.random() * VIDEOS.length));
   const [indexB, setIndexB] = useState(Math.floor(Math.random() * VIDEOS.length));
   const [fading, setFading] = useState(false);
@@ -81,7 +79,7 @@ export const VideoPlayer = () => {
       if (refA.current) refA.current.pause();
       if (refB.current) refB.current.pause();
     } else {
-      setIsPaused(false)
+      setIsPaused(false);
       if (activeIsA) {
         if (refA.current) refA.current.play();
         if (refB.current) refB.current.load();
@@ -114,20 +112,20 @@ export const VideoPlayer = () => {
 
     // After fade completes, swap active/next and preload the one after
     setTimeout(() => {
-      const randomNextIndex = Math.floor(Math.random() * VIDEOS.length)
+      const randomNextIndex = Math.floor(Math.random() * VIDEOS.length);
 
       if (activeIsA && refA.current) {
         setIndexA(randomNextIndex);
         refA.current.src = VIDEOS[randomNextIndex];
         refA.current.load();
-        setActiveIsA(false)
+        setActiveIsA(false);
       } else {
         setIndexB(randomNextIndex);
         if (refB.current) {
           refB.current.src = VIDEOS[randomNextIndex];
           refB.current.load();
         }
-        setActiveIsA(true)
+        setActiveIsA(true);
       }
 
       setFading(false);
@@ -141,19 +139,19 @@ export const VideoPlayer = () => {
       </button>
       <video
         ref={refA}
-        className={activeIsA ? (fading ? "" : "active") : (fading ? "active" : "")}
+        className={activeIsA ? (fading ? "" : "active") : fading ? "active" : ""}
         muted
         playsInline
         onTimeUpdate={handleTimeUpdate}
       />
       <video
         ref={refB}
-        className={activeIsA ? (fading ? "active" : "") : (fading ? "" : "active")}
+        className={activeIsA ? (fading ? "active" : "") : fading ? "" : "active"}
         muted
         playsInline
         onTimeUpdate={handleTimeUpdate}
       />
       <div className="video-overlay"></div>
     </>
-  )
-}
+  );
+};

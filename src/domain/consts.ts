@@ -1,7 +1,6 @@
 import dayjs from "dayjs";
 
-export const REGISTER_LINK =
-  "https://forms.gle/VE3kaLyU8G76jfMEA";
+export const REGISTER_LINK = "https://forms.gle/VE3kaLyU8G76jfMEA";
 
 export const INSTA_LINK = "https://www.instagram.com/rollsalmon";
 export const GOFUNDME_LINK =
@@ -17,7 +16,7 @@ export const CONTROLS = {
   registrationLive: true,
   showLiveUpdates: false,
   showGoFundMe: false,
-  showEvents: false,
+  showEvents: true,
   showVolunteers: false,
   preliminarySchedule: false,
   showPNWFest: true,

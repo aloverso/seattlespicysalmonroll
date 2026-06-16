@@ -1,4 +1,4 @@
-import React, { ReactElement, useContext, useState } from "react";
+import React, { ReactElement, useContext } from "react";
 import dayjs from "dayjs";
 import { useRouter } from "next/router";
 import { CONTROLS, DATE_STRING, END_DATE, REGISTER_LINK } from "../domain/consts";
@@ -8,7 +8,7 @@ import { TimeUntilContext } from "../domain/TimeUntilContext";
 
 export const Hero = (): ReactElement => {
   const router = useRouter();
-  const { isUpcoming } = useContext(TimeUntilContext)
+  const { isUpcoming } = useContext(TimeUntilContext);
 
   const registerButton = () => {
     router.push(REGISTER_LINK);
@@ -16,7 +16,6 @@ export const Hero = (): ReactElement => {
 
   const isPast = dayjs().isAfter(END_DATE);
   const today = dayjs().format("YYYY-MM-DD");
-
 
   return (
     <div className="page-wrapper">
@@ -33,9 +32,7 @@ export const Hero = (): ReactElement => {
       <div className="text-side">
         <span className="hero-presents">Seattle Distance Skating Club presents:</span>
         <div className="info-box">
-          <h1 className="hero-header">
-            Spicy Salmon Roll
-          </h1>
+          <h1 className="hero-header">Spicy Salmon Roll</h1>
           <div className="hero-location">Seattle, WA</div>
           <div className="hero-date">{DATE_STRING}</div>
 

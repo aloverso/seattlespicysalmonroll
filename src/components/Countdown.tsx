@@ -2,10 +2,9 @@ import React, { useContext } from "react";
 import { TimeUntilContext } from "../domain/TimeUntilContext";
 
 export const Countdown = () => {
+  const { isUpcoming, timeUntil } = useContext(TimeUntilContext);
 
-  const { isUpcoming, timeUntil } = useContext(TimeUntilContext)
-
-  if (!isUpcoming) return <></>
+  if (!isUpcoming) return <></>;
 
   return (
     <div className="fdr hero-countdown fjc">
@@ -22,5 +21,5 @@ export const Countdown = () => {
         <div className="hero-label">{timeUntil.minute === 1 ? "minute" : "minutes"}</div>
       </div>
     </div>
-  )
-}
+  );
+};

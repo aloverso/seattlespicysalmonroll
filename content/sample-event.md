@@ -1,7 +1,7 @@
 ---
-id: "2025-07-21-afternoon"
+id: "2026-07-21-afternoon"
 type: "Skate"
-date: "2025-07-21"
+date: "2026-07-21"
 name: "Two Bridge Loop Marathon"
 description: "Hit both the 520 and I-90 floating bridges of Lake Washington"
 spice: 5

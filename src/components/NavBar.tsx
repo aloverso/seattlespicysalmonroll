@@ -80,8 +80,8 @@ export const NavBar = (props: Props): ReactElement => {
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
         <a className="navbar-brand fdr fac" href="/">
-          <div className="nav-img-bg"/>
-          <img className="nav-img" src="images/logo-no-text.png" alt=""/>
+          <div className="nav-img-bg" />
+          <img className="nav-img" src="images/logo-no-text.png" alt="" />
           <span className="font-lilita text-xl text-black">Spicy Salmon Roll</span>
         </a>
         <div className="mobile-only">
