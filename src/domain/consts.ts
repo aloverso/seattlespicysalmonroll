@@ -4,7 +4,7 @@ export const REGISTER_LINK = "https://forms.gle/VE3kaLyU8G76jfMEA";
 
 export const INSTA_LINK = "https://www.instagram.com/rollsalmon";
 export const GOFUNDME_LINK =
-  "https://www.gofundme.com/f/roll-with-seattle-distance-skating-club-this-summer";
+  "https://gofund.me/bd728bec3";
 export const WHATSAPP_LINK =
   "https://chat.whatsapp.com/DyX2LZIV9IJGqCp72UwHcq";
 
@@ -17,7 +17,7 @@ export const CONTROLS = {
   showSponsorship: false,
   registrationLive: true,
   showLiveUpdates: false,
-  showGoFundMe: false,
+  showGoFundMe: true,
   showEvents: true,
   showVolunteers: false,
   preliminarySchedule: false,
