@@ -1,7 +1,7 @@
 import React, { ReactElement, useContext } from "react";
 import dayjs from "dayjs";
 import { useRouter } from "next/router";
-import { CONTROLS, DATE_STRING, END_DATE, REGISTER_LINK } from "../domain/consts";
+import { CONTROLS, DATE_STRING, END_DATE, REGISTER_LINK, WHATSAPP_LINK } from "../domain/consts";
 import { VideoPlayer } from "./VideoPlayer";
 import { Countdown } from "./Countdown";
 import { TimeUntilContext } from "../domain/TimeUntilContext";
@@ -42,13 +42,20 @@ export const Hero = (): ReactElement => {
                 className={`button button-hero ${!isUpcoming && "button-hero-secondary"}`}
                 onClick={registerButton}
               >
-                Register Here
+                Register here
               </button>
+            )}
+            {!isPast && CONTROLS.showWhatsApp && (
+              <a href={WHATSAPP_LINK}>
+                <button className="button button-hero button-hero-secondary" onClick={registerButton}>
+                  Join WhatsApp chat
+                </button>
+              </a>
             )}
             {!isUpcoming && !isPast && (
               <a href={`/schedule#${today}`}>
                 <button className="button button-hero" onClick={registerButton}>
-                  Today&apos;s Schedule
+                  Today&apos;s schedule
                 </button>
               </a>
             )}

@@ -5,6 +5,8 @@ export const REGISTER_LINK = "https://forms.gle/VE3kaLyU8G76jfMEA";
 export const INSTA_LINK = "https://www.instagram.com/rollsalmon";
 export const GOFUNDME_LINK =
   "https://www.gofundme.com/f/roll-with-seattle-distance-skating-club-this-summer";
+export const WHATSAPP_LINK =
+  "https://chat.whatsapp.com/DyX2LZIV9IJGqCp72UwHcq";
 
 export const ORDINAL = "3rd";
 export const DATE = "2026-07-16 6:00:00";
@@ -20,6 +22,7 @@ export const CONTROLS = {
   showVolunteers: false,
   preliminarySchedule: false,
   showPNWFest: true,
+  showWhatsApp: true
 };
 
 // calculated values (no need to change)
