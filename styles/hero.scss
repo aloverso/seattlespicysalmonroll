@@ -288,6 +288,7 @@
 
   @media (max-width: $xs) {
     flex-direction: row;
+    flex-wrap: wrap;
   }
 }
 
@@ -315,6 +316,18 @@
     margin-right: 0.5rem;
     font-size: 1rem;
     padding: 10px;
+  }
+}
+
+.button-hero.half {
+  @media (max-width: $xs) {
+    flex-basis: 45%;
+  }
+}
+
+.button-hero.full {
+  @media (max-width: $xs) {
+    flex-basis: 100%;
   }
 }
 

@@ -39,7 +39,7 @@ export const Hero = (): ReactElement => {
           <div className="hero-button-group">
             {!isPast && CONTROLS.registrationLive && (
               <button
-                className={`button button-hero ${!isUpcoming && "button-hero-secondary"}`}
+                className={`button button-hero half ${!isUpcoming && "button-hero-secondary"}`}
                 onClick={registerButton}
               >
                 Register here
@@ -47,14 +47,14 @@ export const Hero = (): ReactElement => {
             )}
             {!isPast && CONTROLS.showWhatsApp && (
               <a href={WHATSAPP_LINK}>
-                <button className="button button-hero button-hero-secondary" onClick={registerButton}>
+                <button className="button button-hero half button-hero-secondary" onClick={registerButton}>
                   Join WhatsApp chat
                 </button>
               </a>
             )}
             {!isUpcoming && !isPast && (
-              <a href={`/schedule#${today}`}>
-                <button className="button button-hero" onClick={registerButton}>
+              <a className="button button-hero full" href={`/schedule#${today}`}>
+                <button onClick={registerButton}>
                   Today&apos;s schedule
                 </button>
               </a>
