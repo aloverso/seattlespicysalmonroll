@@ -6,7 +6,6 @@ import { Metadata } from "../src/components/Metadata";
 import { CONTROLS, DATE_STRING, GOFUNDME_LINK, ORDINAL } from "../src/domain/consts";
 import { TimeUntilProvider } from "../src/domain/TimeUntilContext";
 import { Countdown } from "../src/components/Countdown";
-import { SPICE } from "../src/domain/types";
 
 const Index = (): ReactElement => {
   return (
@@ -60,7 +59,7 @@ const Index = (): ReactElement => {
                     {CONTROLS.showGoFundMe && (
                       <div className="bg-light bad brad border-blue pad">
                         <p>
-                          <b>Can you contribute to the festival?</b> We're raising money to pay for
+                          <b>Can you contribute to the festival?</b> We&apos;re raising money to pay for
                           snacks and drinks for routes. <a target="_blank" rel="noopener noreferrer" href={GOFUNDME_LINK}>Here
                           is our fundraising page!</a>
                         </p>
