@@ -26,7 +26,7 @@ const Index = (): ReactElement => {
             </div>
 
             <div className="container ptxl">
-              <div className="row">
+              <div className="row extra-on-mobile">
                 <div className="col-md-10">
                   <h2 className="text-xxl font-lilita">
                     Seattle&apos;s {ORDINAL} annual urban & distance skate festival

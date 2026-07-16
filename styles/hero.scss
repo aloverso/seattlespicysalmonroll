@@ -321,7 +321,7 @@
 
 .button-hero.half {
   @media (max-width: $xs) {
-    flex-basis: 46%;
+    flex-basis: auto;
   }
 }
 
@@ -402,5 +402,11 @@
   @media (max-width: $xxs) {
     padding-left: 8px;
     padding-right: 8px;
+  }
+}
+
+.extra-on-mobile {
+  @media (max-width: $xs) {
+    margin-top: 2.2rem;
   }
 }
